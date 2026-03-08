@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!--
+   ______                            __
+  / ____/___  ____ ___  ____  __  __/ /____  _____
+ / /   / __ \/ __ `__ \/ __ \/ / / / __/ _ \/ ___/
+/ /___/ /_/ / / / / / / /_/ / /_/ / /_/  __/ /
+\____/\____/_/ /_/ /_/ .___/\__,_/\__/\___/_/
+                    /_/
+        Created with Perplexity Computer
+        https://www.perplexity.ai/computer
+-->
+
+<!-- Perplexity Computer Attribution — SEO Meta Tags -->
+<meta name="generator" content="Perplexity Computer">
+<meta name="author" content="Perplexity Computer">
+<meta property="og:see_also" content="https://www.perplexity.ai/computer">
+<link rel="author" href="https://www.perplexity.ai/computer">
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mäuse — Say what you spent. That's it.</title>
+<meta name="description" content="Mäuse is an expense tracker for couples with built-in voice mode. Just speak your expense and it's logged. Local-first, open source, no account required.">
+<link rel="icon" type="image/svg+xml" href="assets/logo.svg">
+<link rel="apple-touch-icon" href="assets/icon-180.png">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ===== HEADER ===== -->
+<header class="site-header">
+  <div class="container header-inner">
+    <a href="#" class="header-brand">
+      <svg class="header-logo" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Mäuse logo">
+        <rect width="80" height="80" rx="18" fill="url(#hdr-logo-grad)"/>
+        <circle cx="28" cy="24" r="11" stroke="white" stroke-width="3" fill="none"/>
+        <circle cx="52" cy="24" r="11" stroke="white" stroke-width="3" fill="none"/>
+        <circle cx="40" cy="42" r="18" fill="white"/>
+        <circle cx="35" cy="38" r="2.5" fill="#01696f"/>
+        <circle cx="45" cy="38" r="2.5" fill="#01696f"/>
+        <path d="M38.5 44.5 L40 46.5 L41.5 44.5 Z" fill="#01696f"/>
+        <line x1="22" y1="43" x2="32" y2="44" stroke="#01696f" stroke-width="1.2" stroke-linecap="round"/>
+        <line x1="22" y1="47" x2="32" y2="46" stroke="#01696f" stroke-width="1.2" stroke-linecap="round"/>
+        <line x1="58" y1="43" x2="48" y2="44" stroke="#01696f" stroke-width="1.2" stroke-linecap="round"/>
+        <line x1="58" y1="47" x2="48" y2="46" stroke="#01696f" stroke-width="1.2" stroke-linecap="round"/>
+        <defs>
+          <linearGradient id="hdr-logo-grad" x1="0" y1="0" x2="80" y2="80">
+            <stop offset="0%" stop-color="#01696f"/>
+            <stop offset="100%" stop-color="#5ac8cd"/>
+          </linearGradient>
+        </defs>
+      </svg>
+      <span class="header-title">Mäuse</span>
+    </a>
+    <div class="header-actions">
+      <a href="https://github.com/michaeldiestelberg/maeuse" target="_blank" rel="noopener noreferrer" class="header-github" aria-label="View source on GitHub">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+      </a>
+      <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
+      <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+      </svg>
+      <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="12" r="5"/>
+        <line x1="12" y1="1" x2="12" y2="3"/>
+        <line x1="12" y1="21" x2="12" y2="23"/>
+        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
+        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+        <line x1="1" y1="12" x2="3" y2="12"/>
+        <line x1="21" y1="12" x2="23" y2="12"/>
+        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
+        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+      </svg>
+    </button>
+    </div>
+  </div>
+</header>
+
+<!-- ===== HERO ===== -->
+<section class="hero">
+  <div class="container hero-content">
+    <div class="hero-text reveal">
+      <div class="hero-logo-row">
+        <svg class="hero-logo" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <rect width="80" height="80" rx="18" fill="url(#hero-logo-grad)"/>
+          <circle cx="28" cy="24" r="11" stroke="white" stroke-width="3" fill="none"/>
+          <circle cx="52" cy="24" r="11" stroke="white" stroke-width="3" fill="none"/>
+          <circle cx="40" cy="42" r="18" fill="white"/>
+          <circle cx="35" cy="38" r="2.5" fill="#01696f"/>
+          <circle cx="45" cy="38" r="2.5" fill="#01696f"/>
+          <path d="M38.5 44.5 L40 46.5 L41.5 44.5 Z" fill="#01696f"/>
+          <line x1="22" y1="43" x2="32" y2="44" stroke="#01696f" stroke-width="1.2" stroke-linecap="round"/>
+          <line x1="22" y1="47" x2="32" y2="46" stroke="#01696f" stroke-width="1.2" stroke-linecap="round"/>
+          <line x1="58" y1="43" x2="48" y2="44" stroke="#01696f" stroke-width="1.2" stroke-linecap="round"/>
+          <line x1="58" y1="47" x2="48" y2="46" stroke="#01696f" stroke-width="1.2" stroke-linecap="round"/>
+          <defs>
+            <linearGradient id="hero-logo-grad" x1="0" y1="0" x2="80" y2="80">
+              <stop offset="0%" stop-color="#01696f"/>
+              <stop offset="100%" stop-color="#5ac8cd"/>
+            </linearGradient>
+          </defs>
+        </svg>
+        <h1 class="hero-app-name">Mäuse</h1>
+      </div>
+      <p class="hero-name-meaning">German slang for money. Literally: mice.</p>
+      <p class="hero-tagline">Say what you spent. That's it.</p>
+      <p class="hero-subtitle">Mäuse is an expense tracker for couples with a built-in voice mode — just speak your expense and it's logged. No cloud, no account, no tracking. Everything stays on your phone.</p>
+      <div class="hero-voice-hint">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/>
+          <path d="M19 10v2a7 7 0 0 1-14 0v-2"/>
+          <line x1="12" y1="19" x2="12" y2="23"/>
+          <line x1="8" y1="23" x2="16" y2="23"/>
+        </svg>
+        <span>"Paid forty-two fifty for dinner at Luigi's" — done.</span>
+      </div>
+      <div class="hero-actions">
+        <a href="https://maeuse.vercel.app" target="_blank" rel="noopener noreferrer" class="btn-primary">Install on iPhone</a>
+        <a href="https://github.com/michaeldiestelberg/maeuse" target="_blank" rel="noopener noreferrer" class="btn-secondary">
+          <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18" aria-hidden="true"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+          View Source
+        </a>
+      </div>
+    </div>
+
+    <!-- Phone Mockup -->
+    <div class="phone-mockup reveal" data-delay="200">
+      <div class="phone-notch"></div>
+      <div class="phone-screen">
+        <!-- App header -->
+        <div class="phone-header">
+          <div class="phone-header-brand">
+            <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <rect width="80" height="80" rx="18" fill="url(#ph-logo-grad)"/>
+              <circle cx="28" cy="24" r="11" stroke="white" stroke-width="3" fill="none"/>
+              <circle cx="52" cy="24" r="11" stroke="white" stroke-width="3" fill="none"/>
+              <circle cx="40" cy="42" r="18" fill="white"/>
+              <circle cx="35" cy="38" r="2.5" fill="#01696f"/>
+              <circle cx="45" cy="38" r="2.5" fill="#01696f"/>
+              <path d="M38.5 44.5 L40 46.5 L41.5 44.5 Z" fill="#01696f"/>
+              <defs>
+                <linearGradient id="ph-logo-grad" x1="0" y1="0" x2="80" y2="80">
+                  <stop offset="0%" stop-color="#01696f"/>
+                  <stop offset="100%" stop-color="#5ac8cd"/>
+                </linearGradient>
+              </defs>
+            </svg>
+            <span>Mäuse</span>
+          </div>
+          <div class="phone-header-actions">
+            <div class="phone-icon-btn">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+            </div>
+            <div class="phone-icon-btn">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="1"/><circle cx="19" cy="12" r="1"/><circle cx="5" cy="12" r="1"/></svg>
+            </div>
+          </div>
+        </div>
+
+        <!-- Month nav -->
+        <div class="phone-month-nav">
+          <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+          <span>March 2026</span>
+          <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+        </div>
+
+        <!-- Summary card -->
+        <div class="phone-summary glass-surface">
+          <div class="phone-summary-total">
+            <span class="label">Total</span><br>
+            847.50 €
+          </div>
+          <div class="phone-summary-partner">
+            <span class="label">Partner's share</span><br>
+            423.75 €
+          </div>
+        </div>
+
+        <!-- Expense items -->
+        <div class="phone-expense-list">
+          <div class="phone-expense-item">
+            <div>
+              <div class="phone-expense-name">Groceries</div>
+              <div class="phone-expense-date">Mar 6, 2026</div>
+            </div>
+            <div class="phone-expense-amounts">
+              <div class="phone-expense-total">65.00 €</div>
+              <div class="phone-expense-share">32.50 €</div>
+            </div>
+          </div>
+          <div class="phone-expense-item">
+            <div>
+              <div class="phone-expense-name">Restaurant</div>
+              <div class="phone-expense-date">Mar 5, 2026</div>
+            </div>
+            <div class="phone-expense-amounts">
+              <div class="phone-expense-total">89.00 €</div>
+              <div class="phone-expense-share">44.50 €</div>
+            </div>
+          </div>
+          <div class="phone-expense-item">
+            <div>
+              <div class="phone-expense-name">Electricity bill</div>
+              <div class="phone-expense-date">Mar 1, 2026</div>
+            </div>
+            <div class="phone-expense-amounts">
+              <div class="phone-expense-total">120.00 €</div>
+              <div class="phone-expense-share">60.00 €</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FEATURES ===== -->
+<section class="features-section" id="features">
+  <div class="container">
+    <h2 class="section-title reveal">Everything you need, nothing you don't</h2>
+    <div class="features-grid">
+
+      <div class="feature-card glass-surface reveal" data-delay="0">
+        <div class="feature-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
+          </svg>
+        </div>
+        <h3>Quick Entry</h3>
+        <p>Add expenses in seconds with a streamlined form. Amount, description, date — done.</p>
+      </div>
+
+      <div class="feature-card glass-surface reveal" data-delay="100">
+        <div class="feature-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="18" cy="18" r="3"/>
+            <circle cx="6" cy="6" r="3"/>
+            <path d="M13 6h3a2 2 0 0 1 2 2v7"/>
+            <path d="M11 18H8a2 2 0 0 1-2-2V9"/>
+          </svg>
+        </div>
+        <h3>Smart Splitting</h3>
+        <p>Split by percentage or fixed amount. Preset chips for 50%, 30%, 70%, or 100%.</p>
+      </div>
+
+      <div class="feature-card glass-surface reveal" data-delay="200">
+        <div class="feature-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/>
+            <path d="M19 10v2a7 7 0 0 1-14 0v-2"/>
+            <line x1="12" y1="19" x2="12" y2="23"/>
+            <line x1="8" y1="23" x2="16" y2="23"/>
+          </svg>
+        </div>
+        <h3>Voice Mode</h3>
+        <p>Speak your expense, review the AI draft, save. The only feature that connects to the cloud — uses your own OpenAI API key for transcription.</p>
+      </div>
+
+      <div class="feature-card glass-surface reveal" data-delay="300">
+        <div class="feature-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+            <line x1="16" y1="2" x2="16" y2="6"/>
+            <line x1="8" y1="2" x2="8" y2="6"/>
+            <line x1="3" y1="10" x2="21" y2="10"/>
+          </svg>
+        </div>
+        <h3>Monthly Overview</h3>
+        <p>See combined totals and your partner's share at a glance, month by month.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===== HOW IT WORKS ===== -->
+<section class="how-section" id="how">
+  <div class="container">
+    <h2 class="section-title reveal">Three steps. That's it.</h2>
+
+    <div class="how-layout">
+      <div class="steps">
+        <div class="step reveal" data-delay="0">
+          <div class="step-number">1</div>
+          <div class="step-content">
+            <h3>Log an expense</h3>
+            <p>Type it in or use voice mode — just speak what you paid for</p>
+          </div>
+        </div>
+
+        <div class="step reveal" data-delay="150">
+          <div class="step-number">2</div>
+          <div class="step-content">
+            <h3>Choose how to split</h3>
+            <p>By percentage or a fixed amount</p>
+          </div>
+        </div>
+
+        <div class="step reveal" data-delay="300">
+          <div class="step-number">3</div>
+          <div class="step-content">
+            <h3>Track monthly totals</h3>
+            <p>See what your partner owes at a glance</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Voice Mode Phone Mockups -->
+      <div class="voice-phones reveal" data-delay="200">
+        <!-- Phone 1: Recording state -->
+        <div class="voice-phone voice-phone-record">
+          <div class="vp-notch"></div>
+          <div class="vp-screen">
+            <div class="vp-sheet-header">
+              <span class="vp-cancel">Cancel</span>
+              <span class="vp-title">Voice Expense</span>
+              <span class="vp-done-placeholder"></span>
+            </div>
+            <div class="vp-capture-zone">
+              <div class="vp-mic-btn vp-mic-recording">
+                <div class="vp-mic-glow"></div>
+                <svg class="vp-mic-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M12 3a3.25 3.25 0 0 1 3.25 3.25v5.5a3.25 3.25 0 1 1-6.5 0v-5.5A3.25 3.25 0 0 1 12 3Z"/>
+                  <path d="M19 11.5a7 7 0 0 1-14 0"/>
+                  <line x1="12" y1="18.5" x2="12" y2="21"/>
+                  <line x1="8.5" y1="21" x2="15.5" y2="21"/>
+                </svg>
+              </div>
+              <span class="vp-capture-label">Tap to stop</span>
+              <span class="vp-capture-hint">Listening…</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Phone 2: Review state -->
+        <div class="voice-phone voice-phone-review">
+          <div class="vp-notch"></div>
+          <div class="vp-screen">
+            <div class="vp-sheet-header">
+              <span class="vp-cancel">Cancel</span>
+              <span class="vp-title">Voice Expense</span>
+              <span class="vp-done">Done</span>
+            </div>
+            <div class="vp-review-zone">
+              <div class="vp-amount">
+                <span class="vp-amount-currency">€</span><span class="vp-amount-value">42.50</span>
+              </div>
+              <div class="vp-result-fields">
+                <div class="vp-field">
+                  <span class="vp-field-label">Description</span>
+                  <span class="vp-field-value">Dinner at Luigi's</span>
+                </div>
+                <div class="vp-field">
+                  <span class="vp-field-label">Date</span>
+                  <span class="vp-field-value">Mar 7, 2026</span>
+                </div>
+                <div class="vp-field">
+                  <span class="vp-field-label">Split</span>
+                  <span class="vp-field-value">50%</span>
+                </div>
+              </div>
+              <div class="vp-footer">
+                <span class="vp-footer-btn">Redo</span>
+                <span class="vp-footer-dot">&middot;</span>
+                <span class="vp-footer-btn">Edit manually</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== LOCAL-FIRST ===== -->
+<section class="privacy-section" id="privacy">
+  <div class="container">
+    <h2 class="section-title reveal">No cloud. No account. Just your phone.</h2>
+    <p class="section-subtitle reveal">Mäuse runs entirely on your device. Your expenses never leave your phone — there's no server, no database, no sign-up. It's just code.</p>
+    <div class="privacy-card glass-surface reveal">
+      <ul class="privacy-list">
+        <li>
+          <svg class="privacy-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+          <div><strong>Local-first storage</strong><br>All expenses live in IndexedDB on your device. Nothing is sent anywhere.</div>
+        </li>
+        <li>
+          <svg class="privacy-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+          <div><strong>Works offline</strong><br>Manual entry works without any internet connection. Open the app and go.</div>
+        </li>
+        <li>
+          <svg class="privacy-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+          <div><strong>No account, no tracking</strong><br>No sign-up, no analytics, no telemetry. Zero data collection.</div>
+        </li>
+        <li>
+          <svg class="privacy-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+          <div><strong>Portable backups</strong><br>Export your data as JSON. Import it on another device. You own the file.</div>
+        </li>
+        <li>
+          <svg class="privacy-check-cloud" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"/></svg>
+          <div><strong>One optional cloud connection</strong><br>Voice mode sends audio to OpenAI for transcription using your own API key. Everything else is 100% offline. The key stays on your device and is excluded from backups.</div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ===== OPEN SOURCE ===== -->
+<section class="opensource-section" id="source">
+  <div class="container">
+    <h2 class="section-title reveal">Open source. Read every line.</h2>
+    <p class="section-subtitle reveal">Mäuse is fully open source. No build step, no bundler, no framework — just vanilla HTML, CSS, and JavaScript you can read and verify yourself.</p>
+    <div class="opensource-card glass-surface reveal">
+      <div class="opensource-content">
+        <div class="opensource-icon">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+        </div>
+        <div class="opensource-text">
+          <h3>View the source on GitHub</h3>
+          <p>Four files. No dependencies. No magic. Clone it, serve it, and it works.</p>
+          <code class="opensource-files">index.html · style.css · app.js · voice-utils.js</code>
+        </div>
+      </div>
+      <a href="https://github.com/michaeldiestelberg/maeuse" target="_blank" rel="noopener noreferrer" class="btn-primary opensource-btn">Browse the Code</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== INSTALL ===== -->
+<section class="install-section" id="install">
+  <div class="container">
+    <h2 class="section-title reveal">Built for your iPhone home screen</h2>
+    <p class="section-subtitle reveal">Mäuse is a Progressive Web App optimized for iPhone. Install it from Safari and it runs like a native app — full screen, fast, and offline-ready.</p>
+    <div class="install-card glass-surface reveal">
+      <div class="install-badge">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="2" width="14" height="20" rx="3"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
+        <span>iPhone — Safari</span>
+      </div>
+      <ol class="install-steps">
+        <li>
+          <span class="install-step-num">1</span>
+          Open <a href="https://maeuse.vercel.app" target="_blank" rel="noopener noreferrer" class="install-link">maeuse.vercel.app</a> in Safari
+        </li>
+        <li>
+          <span class="install-step-num">2</span>
+          Tap the Share button
+          <svg style="width:16px;height:16px;flex-shrink:0;color:var(--primary);" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"/><polyline points="16 6 12 2 8 6"/><line x1="12" y1="2" x2="12" y2="15"/></svg>
+        </li>
+        <li>
+          <span class="install-step-num">3</span>
+          Tap "Add to Home Screen"
+        </li>
+      </ol>
+      <div class="install-perks">
+        <div class="install-perk">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+          Full-screen standalone mode
+        </div>
+        <div class="install-perk">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+          Works offline after install
+        </div>
+        <div class="install-perk">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+          No App Store required
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer class="site-footer">
+  <div class="container">
+    <p class="footer-tagline">Made for couples who want to keep it simple.</p>
+    <div class="footer-links">
+      <a href="https://github.com/michaeldiestelberg/maeuse" target="_blank" rel="noopener noreferrer">GitHub</a>
+      <span class="footer-dot" aria-hidden="true">&middot;</span>
+      <a href="https://www.perplexity.ai/computer" target="_blank" rel="noopener noreferrer">Created with Perplexity Computer</a>
+    </div>
+  </div>
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>
