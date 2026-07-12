@@ -1,7 +1,0 @@
-<svg viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg">
-  <!-- coin-mouse: yellow coin with mouse ears, € face -->
-  <circle cx="17" cy="15" r="11" fill="#FFCF3F" stroke="#241C05" stroke-width="4"/>
-  <circle cx="63" cy="15" r="11" fill="#FFCF3F" stroke="#241C05" stroke-width="4"/>
-  <circle cx="40" cy="44" r="32" fill="#FFCF3F" stroke="#241C05" stroke-width="4"/>
-  <text x="40" y="58" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="38" font-weight="800" fill="#241C05">€</text>
-</svg>
