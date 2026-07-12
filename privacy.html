@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Privacy Policy — Mäuse</title>
+  <meta name="description" content="Privacy policy for the Mäuse iPhone app and website, including local expense storage, optional OpenAI Voice Mode, and Vercel Web Analytics.">
+  <link rel="canonical" href="https://xn--muse-loa.app/privacy.html">
+  <link rel="icon" type="image/png" sizes="192x192" href="assets/coin-mouse.png">
+  <link rel="stylesheet" href="legal.css">
+  <script>
+    try { if (localStorage.getItem('maeuse-site-theme') === 'dark') document.documentElement.setAttribute('data-theme', 'dark'); } catch (e) {}
+  </script>
+  <script>window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };</script>
+  <script defer src="/_vercel/insights/script.js"></script>
+</head>
+<body>
+  <header class="legal-header">
+    <nav class="legal-nav" aria-label="Legal page navigation">
+      <a class="legal-brand" href="index.html"><img src="assets/coin-mouse.png" alt=""><span>Mäuse</span></a>
+      <div class="legal-actions">
+        <a href="index.html">← Home</a>
+        <button type="button" id="legal-lang-en" aria-pressed="true">EN</button>
+        <button type="button" id="legal-lang-de" aria-pressed="false">DE</button>
+        <button type="button" id="legal-theme" aria-label="Toggle dark mode">◐</button>
+      </div>
+    </nav>
+  </header>
+
+  <main class="legal-main">
+    <article class="lang-en">
+      <span class="legal-kicker">PRIVACY</span>
+      <h1>Privacy Policy</h1>
+      <p class="legal-lead">Mäuse is local-first. Manual expense tracking stays on your iPhone. The optional Voice Mode sends data to OpenAI only after you explicitly enable it. This policy also explains the privacy-focused analytics used on this website.</p>
+      <p class="legal-updated">Effective: July 12, 2026 · Version 1.0</p>
+
+      <section class="legal-card">
+        <h2>Who is responsible?</h2>
+        <p>Mäuse is developed and provided by Michael Diestelberg in Germany. For privacy questions or requests, email <a href="mailto:m.diestelberg@gmail.com">m.diestelberg@gmail.com</a>.</p>
+      </section>
+
+      <h2>1. Manual expense tracking</h2>
+      <p>Expenses you enter manually—including amount, description, date, and split—are stored locally on your device using Apple’s SwiftData framework. Mäuse does not operate an account system or an app backend, and the developer does not receive this information.</p>
+      <p>You can edit or delete individual expenses in the app. You can also replace all local expenses by importing a backup.</p>
+
+      <h2>2. Backup and restore</h2>
+      <p>When you export a backup, Mäuse creates a JSON file containing your expense records. You choose where to save or share that file using Apple’s system interface. Mäuse does not upload backups to a developer-operated server. Your OpenAI API key and Voice Mode consent settings are never included in backups.</p>
+
+      <h2 id="voice-mode">3. Optional Voice Mode and OpenAI</h2>
+      <p>Voice Mode is disabled by default. Before it can be enabled, Mäuse displays a dedicated disclosure and asks for your explicit consent. Manual entry remains available if you decline.</p>
+      <p>When you verify an API key, the key is sent directly over HTTPS to OpenAI to request a short-lived Realtime client secret. The API key is stored in Apple Keychain on your device. It is not sent to the Mäuse developer and is not included in backups.</p>
+      <p>Only while you run a Voice Mode session, Mäuse sends the following directly to OpenAI:</p>
+      <ul>
+        <li>live microphone audio;</li>
+        <li>the expense details you speak during that session;</li>
+        <li>session instructions needed to produce structured expense drafts; and</li>
+        <li>corrections or removals you make within the temporary voice workspace.</li>
+      </ul>
+      <p>OpenAI returns transcripts, confirmations, and structured expense drafts. Drafts are saved to your local expense database only when you choose to save them.</p>
+      <p>According to OpenAI’s current API data controls, API content is not used to train OpenAI models unless the API account owner explicitly opts in. For the Realtime API, abuse-monitoring logs may retain customer content for up to 30 days by default, unless longer retention is required by law or needed for safety. See <a href="https://developers.openai.com/api/docs/guides/your-data" target="_blank" rel="noopener">OpenAI’s API data controls</a> and <a href="https://openai.com/policies/privacy-policy/" target="_blank" rel="noopener">OpenAI’s Privacy Policy</a>.</p>
+      <p>Voice Mode uses your own OpenAI API project. OpenAI may charge that project for usage. Mäuse does not receive any part of those charges.</p>
+
+      <h3>Your Voice Mode choices</h3>
+      <ul>
+        <li>Disable Voice Mode at any time to stop future audio transmission.</li>
+        <li>Use “Withdraw Voice Consent” to revoke consent and disable Voice Mode.</li>
+        <li>Use “Remove Saved Key” to delete the API key from Keychain.</li>
+        <li>End a voice session to stop microphone capture and disconnect from OpenAI.</li>
+      </ul>
+
+      <h2>4. Microphone permission</h2>
+      <p>iOS asks for microphone access the first time Voice Mode needs it. Mäuse accesses the microphone only during an active Voice Mode session. You can revoke microphone access in iOS Settings.</p>
+
+      <h2>5. App analytics, advertising, and tracking</h2>
+      <p>The Mäuse iPhone app contains no advertising SDK, analytics SDK, telemetry service, or cross-app tracking. It does not use Apple’s advertising identifier.</p>
+
+      <h2>6. Website hosting and Vercel Web Analytics</h2>
+      <p>The Mäuse website is hosted by Vercel and uses Vercel Web Analytics. Vercel receives technical request information needed to deliver and protect the site. Web Analytics records page views using privacy-focused, aggregated data such as the visited page, referrer, country or region, browser, operating system, and device type.</p>
+      <p>Vercel states that Web Analytics does not use third-party cookies, does not associate analytics data with an individual or IP address, and uses a request-derived visitor hash that is discarded after 24 hours. See <a href="https://vercel.com/docs/analytics/privacy-policy" target="_blank" rel="noopener">Vercel’s Web Analytics privacy information</a> and <a href="https://vercel.com/legal/privacy-policy" target="_blank" rel="noopener">Vercel’s Privacy Policy</a>.</p>
+      <p>The website stores only your language and theme preferences in browser local storage. These preferences stay in your browser until you clear them.</p>
+
+      <h2>7. Legal bases for processing</h2>
+      <p>Where the EU General Data Protection Regulation applies, Voice Mode data is transmitted on the basis of your consent and at your request to provide the feature. Website delivery, security, and aggregated traffic measurement are based on legitimate interests in operating, protecting, and improving the website.</p>
+
+      <h2>8. International processing</h2>
+      <p>OpenAI and Vercel may process information outside your country. Their applicable contracts, privacy policies, and transfer safeguards govern that processing. Because Voice Mode uses your own OpenAI project, any project-level data residency or retention settings are controlled by the owner of that OpenAI account.</p>
+
+      <h2>9. Retention</h2>
+      <ul>
+        <li>Local expenses remain on your device until you delete them, replace them through import, or remove the app and its data.</li>
+        <li>The API key remains in Keychain until you remove it or erase the relevant device data.</li>
+        <li>Voice Mode consent remains on device until withdrawn or reset by a future consent update.</li>
+        <li>OpenAI and Vercel retain information according to their policies and your applicable account configuration.</li>
+      </ul>
+
+      <h2>10. Your rights</h2>
+      <p>Depending on applicable law, you may have rights to access, correct, delete, restrict, or object to processing, and to withdraw consent. You may also complain to your local data protection authority. Most app data is controlled directly by you on your device; the developer cannot retrieve local expenses or your API key.</p>
+
+      <h2>11. Children</h2>
+      <p>Mäuse is not directed specifically at children and should not be used to send another person’s sensitive information to OpenAI without their permission.</p>
+
+      <h2>12. Changes to this policy</h2>
+      <p>This policy may be updated when Mäuse, its service providers, or legal requirements change. Material changes to Voice Mode data sharing will require renewed in-app consent.</p>
+
+      <section class="legal-card">
+        <h2>Contact</h2>
+        <p>Questions about privacy or the app are welcome.</p>
+        <a class="contact-button" href="mailto:m.diestelberg@gmail.com?subject=M%C3%A4use%20Privacy">Email privacy support</a>
+      </section>
+    </article>
+
+    <article class="lang-de" hidden>
+      <span class="legal-kicker">DATENSCHUTZ</span>
+      <h1>Datenschutzerklärung</h1>
+      <p class="legal-lead">Mäuse ist „Local First“: Manuell erfasste Ausgaben bleiben auf deinem iPhone. Der optionale Sprachmodus übermittelt Daten erst nach deiner ausdrücklichen Einwilligung an OpenAI. Diese Erklärung beschreibt außerdem die datenschutzfreundliche Reichweitenmessung dieser Website.</p>
+      <p class="legal-updated">Gültig ab: 12. Juli 2026 · Version 1.0</p>
+
+      <section class="legal-card">
+        <h2>Wer ist verantwortlich?</h2>
+        <p>Mäuse wird von Michael Diestelberg in Deutschland entwickelt und angeboten. Datenschutzanfragen bitte an <a href="mailto:m.diestelberg@gmail.com">m.diestelberg@gmail.com</a>.</p>
+      </section>
+
+      <h2>1. Manuelle Ausgabenerfassung</h2>
+      <p>Manuell eingegebene Ausgaben – Betrag, Beschreibung, Datum und Aufteilung – werden mit Apples SwiftData-Framework lokal auf deinem Gerät gespeichert. Mäuse betreibt weder ein Benutzerkontensystem noch ein eigenes App-Backend. Der Entwickler erhält diese Informationen nicht.</p>
+      <p>Du kannst einzelne Ausgaben in der App ändern oder löschen. Durch den Import eines Backups kannst du außerdem alle lokalen Ausgaben ersetzen.</p>
+
+      <h2>2. Backup und Wiederherstellung</h2>
+      <p>Beim Export erstellt Mäuse eine JSON-Datei mit deinen Ausgaben. Über Apples Systemdialog entscheidest du selbst, wo die Datei gespeichert oder geteilt wird. Mäuse lädt Backups nicht auf einen eigenen Server. Dein OpenAI-API-Schlüssel und die Einwilligung für den Sprachmodus sind niemals Teil eines Backups.</p>
+
+      <h2 id="voice-mode-de">3. Optionaler Sprachmodus und OpenAI</h2>
+      <p>Der Sprachmodus ist standardmäßig deaktiviert. Vor der Aktivierung zeigt Mäuse einen eigenen Hinweis und fragt nach deiner ausdrücklichen Einwilligung. Die manuelle Eingabe funktioniert auch ohne Einwilligung weiter.</p>
+      <p>Beim Prüfen eines API-Schlüssels wird dieser direkt über HTTPS an OpenAI gesendet, um ein kurzlebiges Realtime-Client-Secret anzufordern. Der API-Schlüssel wird im Apple-Schlüsselbund auf deinem Gerät gespeichert. Er wird weder an den Mäuse-Entwickler gesendet noch in Backups aufgenommen.</p>
+      <p>Nur während einer laufenden Sprachsitzung sendet Mäuse folgende Daten direkt an OpenAI:</p>
+      <ul>
+        <li>Live-Mikrofonaudio;</li>
+        <li>die während der Sitzung gesprochenen Ausgabendetails;</li>
+        <li>Sitzungsanweisungen zur Erstellung strukturierter Ausgabenentwürfe; und</li>
+        <li>Korrekturen oder Löschungen im temporären Sprach-Arbeitsbereich.</li>
+      </ul>
+      <p>OpenAI liefert Transkripte, Bestätigungen und strukturierte Ausgabenentwürfe zurück. Diese werden erst in deiner lokalen Ausgabendatenbank gespeichert, wenn du sie ausdrücklich speicherst.</p>
+      <p>Laut den aktuellen API-Datenkontrollen von OpenAI werden API-Inhalte nicht zum Training von OpenAI-Modellen verwendet, sofern der Inhaber des API-Kontos dem nicht ausdrücklich zustimmt. Beim Realtime-API können Protokolle zur Missbrauchsprävention Kundeninhalte standardmäßig bis zu 30 Tage speichern; eine längere Speicherung kann gesetzlich oder aus Sicherheitsgründen erforderlich sein. Weitere Informationen: <a href="https://developers.openai.com/api/docs/guides/your-data" target="_blank" rel="noopener">OpenAI API-Datenkontrollen</a> und <a href="https://openai.com/policies/privacy-policy/" target="_blank" rel="noopener">OpenAI-Datenschutzrichtlinie</a>.</p>
+      <p>Der Sprachmodus nutzt dein eigenes OpenAI-API-Projekt. OpenAI kann die Nutzung diesem Projekt berechnen. Mäuse erhält keinen Anteil an diesen Kosten.</p>
+
+      <h3>Deine Wahlmöglichkeiten</h3>
+      <ul>
+        <li>Deaktiviere den Sprachmodus, um zukünftige Audioübertragungen zu stoppen.</li>
+        <li>Widerrufe die Einwilligung in den Einstellungen; dadurch wird der Sprachmodus deaktiviert.</li>
+        <li>Lösche den gespeicherten Schlüssel aus dem Schlüsselbund.</li>
+        <li>Beende eine Sprachsitzung, um Mikrofonaufnahme und OpenAI-Verbindung zu stoppen.</li>
+      </ul>
+
+      <h2>4. Mikrofonberechtigung</h2>
+      <p>iOS fragt beim ersten Bedarf nach Mikrofonzugriff. Mäuse greift nur während einer aktiven Sprachsitzung auf das Mikrofon zu. Du kannst die Berechtigung jederzeit in den iOS-Einstellungen widerrufen.</p>
+
+      <h2>5. App-Analyse, Werbung und Tracking</h2>
+      <p>Die Mäuse-iPhone-App enthält keine Werbe-, Analyse- oder Telemetrie-SDKs und kein App-übergreifendes Tracking. Sie verwendet nicht Apples Werbe-ID.</p>
+
+      <h2>6. Website-Hosting und Vercel Web Analytics</h2>
+      <p>Die Mäuse-Website wird von Vercel gehostet und verwendet Vercel Web Analytics. Vercel erhält technische Anfragedaten, die zur Auslieferung und Absicherung der Website erforderlich sind. Web Analytics erfasst Seitenaufrufe mit datenschutzorientierten, aggregierten Angaben wie aufgerufener Seite, Referrer, Land oder Region, Browser, Betriebssystem und Gerätetyp.</p>
+      <p>Vercel erklärt, dass Web Analytics keine Drittanbieter-Cookies verwendet, Analysedaten keiner Person oder IP-Adresse zuordnet und einen aus der Anfrage erzeugten Besucher-Hash nach 24 Stunden verwirft. Weitere Informationen: <a href="https://vercel.com/docs/analytics/privacy-policy" target="_blank" rel="noopener">Datenschutz bei Vercel Web Analytics</a> und <a href="https://vercel.com/legal/privacy-policy" target="_blank" rel="noopener">Vercel-Datenschutzrichtlinie</a>.</p>
+      <p>Die Website speichert ausschließlich deine Sprach- und Designauswahl im lokalen Browserspeicher. Diese Einstellungen bleiben bis zum Löschen der Browserdaten erhalten.</p>
+
+      <h2>7. Rechtsgrundlagen</h2>
+      <p>Soweit die DSGVO gilt, erfolgt die Übermittlung im Sprachmodus auf Grundlage deiner Einwilligung und zur Bereitstellung der von dir angeforderten Funktion. Auslieferung, Sicherheit und aggregierte Reichweitenmessung der Website beruhen auf berechtigten Interessen am Betrieb, Schutz und an der Verbesserung der Website.</p>
+
+      <h2>8. Internationale Verarbeitung</h2>
+      <p>OpenAI und Vercel können Informationen außerhalb deines Landes verarbeiten. Maßgeblich sind deren Verträge, Datenschutzrichtlinien und Übermittlungsmechanismen. Da der Sprachmodus dein eigenes OpenAI-Projekt verwendet, werden projektspezifische Datenresidenz- und Aufbewahrungseinstellungen vom Inhaber dieses OpenAI-Kontos gesteuert.</p>
+
+      <h2>9. Speicherdauer</h2>
+      <ul>
+        <li>Lokale Ausgaben bleiben auf dem Gerät, bis du sie löschst, per Import ersetzt oder die App samt Daten entfernst.</li>
+        <li>Der API-Schlüssel bleibt im Schlüsselbund, bis du ihn entfernst oder die zugehörigen Gerätedaten löschst.</li>
+        <li>Die Einwilligung bleibt lokal gespeichert, bis du sie widerrufst oder eine zukünftige Einwilligungsversion sie ersetzt.</li>
+        <li>OpenAI und Vercel speichern Informationen entsprechend ihren Richtlinien und deiner jeweiligen Kontokonfiguration.</li>
+      </ul>
+
+      <h2>10. Deine Rechte</h2>
+      <p>Je nach anwendbarem Recht kannst du Auskunft, Berichtigung, Löschung, Einschränkung oder Widerspruch verlangen und eine Einwilligung widerrufen. Du kannst dich außerdem bei einer Datenschutzaufsichtsbehörde beschweren. Die meisten App-Daten kontrollierst du direkt auf deinem Gerät; der Entwickler kann lokale Ausgaben oder deinen API-Schlüssel nicht abrufen.</p>
+
+      <h2>11. Kinder</h2>
+      <p>Mäuse richtet sich nicht speziell an Kinder. Übermittle im Sprachmodus keine sensiblen Informationen anderer Personen ohne deren Erlaubnis.</p>
+
+      <h2>12. Änderungen</h2>
+      <p>Diese Erklärung kann angepasst werden, wenn sich Mäuse, die eingesetzten Dienste oder rechtliche Anforderungen ändern. Wesentliche Änderungen an der Datenweitergabe im Sprachmodus erfordern eine erneute Einwilligung in der App.</p>
+
+      <section class="legal-card">
+        <h2>Kontakt</h2>
+        <p>Fragen zum Datenschutz oder zur App sind willkommen.</p>
+        <a class="contact-button" href="mailto:m.diestelberg@gmail.com?subject=M%C3%A4use%20Datenschutz">Datenschutz kontaktieren</a>
+      </section>
+    </article>
+  </main>
+
+  <footer class="legal-footer">
+    <div class="legal-footer-inner">
+      <span>© 2026 Michael Diestelberg · Mäuse</span>
+      <nav class="legal-footer-links" aria-label="Legal links">
+        <a href="privacy.html">Privacy</a>
+        <a href="support.html">Support</a>
+        <a href="terms.html">Terms</a>
+        <a href="https://github.com/michaeldiestelberg/maeuse-ios">GitHub</a>
+      </nav>
+    </div>
+  </footer>
+  <script src="legal.js"></script>
+</body>
+</html>

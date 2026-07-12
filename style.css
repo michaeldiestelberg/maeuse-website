@@ -80,7 +80,7 @@ body {
   margin: 0;
   background: var(--bg);
   color: var(--text);
-  font-family: ui-rounded, 'Nunito', -apple-system, system-ui, sans-serif;
+  font-family: ui-rounded, "SF Pro Rounded", "Arial Rounded MT Bold", -apple-system, system-ui, sans-serif;
   font-weight: 700;
 }
 
@@ -762,7 +762,7 @@ html[data-theme="dark"] .theme-toggle .icon-sun { display: block; }
   text-align: center;
   font-size: 15px; font-weight: 700;
   color: var(--text);
-  font-family: ui-rounded, 'Nunito', -apple-system, system-ui, sans-serif;
+  font-family: ui-rounded, "SF Pro Rounded", "Arial Rounded MT Bold", -apple-system, system-ui, sans-serif;
   width: 220px;
 }
 .ed-amount input::placeholder { color: var(--sub); }
