@@ -4,6 +4,8 @@ This repository contains the website for Mäuse, a local-first expense tracker f
 
 Live website: [mäuse.app](https://xn--muse-loa.app)
 
+App Store: [Mäuse](https://apps.apple.com/de/app/m%C3%A4use/id6769447003)
+
 App source code: [michaeldiestelberg/maeuse](https://github.com/michaeldiestelberg/maeuse-ios)
 
 The static site includes bilingual English/German pages for the homepage, privacy policy, support, and terms. Vercel Web Analytics is intentionally enabled on every page through `/_vercel/insights/script.js`.

@@ -8,11 +8,11 @@
   var strings = {
     en: {
       navFeatures: 'Features', navVoice: 'Voice', navPrivacy: 'Privacy', navSupport: 'Support', navGet: 'Get the app',
-      badge: 'COMING SOON TO THE APP STORE',
+      badge: 'NOW ON THE APP STORE',
       h1a: 'Say what you spent.', h1b: 'That’s it.',
       heroSub: 'Mäuse is the expense tracker for you and your favorite Maus. Log it, slice the cheese, and always know who owes what - right on your iPhone.',
       voiceHint: '“Paid forty-two fifty for dinner at Luigi’s” - logged.',
-      downloadCta: 'App Store launch coming soon', viewSource: 'View the source',
+      downloadCta: 'Download on the App Store', viewSource: 'View the source',
       slang: '“Mäuse” is German slang for money - literally “mice”.',
       tapAround: 'GO AHEAD, IT’S THE REAL APP - TAP AROUND',
       featTitle: 'Everything a Maus needs.', featSub: 'Nothing that nibbles at your attention.',
@@ -35,18 +35,18 @@
       osTitle: 'See every crumb.',
       osBody: 'The Mäuse source is publicly viewable on GitHub for transparency. Read how local storage, backups, and Voice Mode work.',
       osCta: 'Browse the code',
-      dlTitle: 'The trap is almost set.',
-      dlBody: 'Mäuse is being prepared for its App Store launch. It will be free for iPhone, with no Mäuse account required.',
+      dlTitle: 'The trap is set.',
+      dlBody: 'Mäuse is free on the App Store for iPhone. No Mäuse account required.',
       dlMeta: 'Free · iPhone · No account required',
       footerTag: 'Made for couples who keep it simple.', footerPrivacy: 'Privacy', footerSupport: 'Support', footerTerms: 'Terms'
     },
     de: {
       navFeatures: 'Funktionen', navVoice: 'Sprachmodus', navPrivacy: 'Datenschutz', navSupport: 'Support', navGet: 'App holen',
-      badge: 'BALD IM APP STORE',
+      badge: 'JETZT IM APP STORE',
       h1a: 'Sag, was du ausgegeben hast.', h1b: 'Mehr nicht.',
       heroSub: 'Mäuse ist der Ausgaben-Tracker für dich und deine Lieblingsmaus. Eintragen, den Käse teilen und immer wissen, wer wem was schuldet - direkt auf deinem iPhone.',
       voiceHint: '„Zweiundvierzig fünfzig fürs Abendessen bei Luigi“ - erfasst.',
-      downloadCta: 'App-Store-Start folgt bald', viewSource: 'Quellcode ansehen',
+      downloadCta: 'Im App Store laden', viewSource: 'Quellcode ansehen',
       slang: '„Mäuse“ ist umgangssprachlich Geld - wortwörtlich: Mäuse.',
       tapAround: 'NUR ZU, DAS IST DIE ECHTE APP - TIPP DICH DURCH',
       featTitle: 'Alles, was eine Maus braucht.', featSub: 'Nichts, was an deiner Aufmerksamkeit knabbert.',
@@ -69,8 +69,8 @@
       osTitle: 'Sieh jeden Krümel.',
       osBody: 'Der Mäuse-Quellcode ist zur Transparenz öffentlich auf GitHub einsehbar. Schau nach, wie lokale Speicherung, Backups und Sprachmodus funktionieren.',
       osCta: 'Code ansehen',
-      dlTitle: 'Die Falle ist fast gestellt.',
-      dlBody: 'Mäuse wird gerade für den App-Store-Start vorbereitet. Die iPhone-App wird kostenlos sein und kein Mäuse-Konto benötigen.',
+      dlTitle: 'Die Falle ist gestellt.',
+      dlBody: 'Mäuse ist kostenlos im App Store fürs iPhone. Kein Mäuse-Konto nötig.',
       dlMeta: 'Gratis · iPhone · Kein Konto nötig',
       footerTag: 'Gemacht für Paare, die es einfach halten.', footerPrivacy: 'Datenschutz', footerSupport: 'Support', footerTerms: 'Bedingungen'
     }
