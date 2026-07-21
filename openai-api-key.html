@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Get an OpenAI API key — Mäuse</title>
+  <meta name="description" content="Step-by-step guide to create an OpenAI API key for Mäuse Voice Mode on platform.openai.com.">
+  <link rel="canonical" href="https://xn--muse-loa.app/openai-api-key.html">
+  <link rel="icon" type="image/png" sizes="192x192" href="assets/coin-mouse.png">
+  <link rel="apple-touch-icon" href="assets/icon-180.png">
+  <meta name="theme-color" content="#FFF6DE" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#211A09" media="(prefers-color-scheme: dark)">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="legal.css">
+  <script>try { if (localStorage.getItem('maeuse-site-theme') === 'dark') document.documentElement.setAttribute('data-theme', 'dark'); } catch (e) {}</script>
+  <script>window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };</script>
+  <script defer src="/_vercel/insights/script.js"></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="brand">
+        <img class="brand-mark" src="assets/coin-mouse.png" alt="" aria-hidden="true">
+        <span class="brand-name">Mäuse</span>
+      </a>
+      <nav class="main-nav">
+        <a href="index.html#features" data-i18n="navFeatures">Features</a>
+        <a href="index.html#voice" data-i18n="navVoice">Voice</a>
+        <a href="support.html" data-i18n="navSupport">Support</a>
+      </nav>
+      <div class="header-actions">
+        <a class="icon-btn" href="https://github.com/michaeldiestelberg/maeuse-ios" target="_blank" rel="noopener" aria-label="GitHub" data-link="github">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+        </a>
+        <div class="lang-switch" role="group" aria-label="Language">
+          <button type="button" id="lang-en" aria-pressed="true">EN</button>
+          <button type="button" id="lang-de" aria-pressed="false">DE</button>
+        </div>
+        <button type="button" class="icon-btn theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
+          <svg class="icon-moon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+          <svg class="icon-sun" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4.5"/><line x1="12" y1="1.5" x2="12" y2="4"/><line x1="12" y1="20" x2="12" y2="22.5"/><line x1="1.5" y1="12" x2="4" y2="12"/><line x1="20" y1="12" x2="22.5" y2="12"/><line x1="4.6" y1="4.6" x2="6.3" y2="6.3"/><line x1="17.7" y1="17.7" x2="19.4" y2="19.4"/><line x1="4.6" y1="19.4" x2="6.3" y2="17.7"/><line x1="17.7" y1="6.3" x2="19.4" y2="4.6"/></svg>
+        </button>
+        <a href="index.html#download" class="btn-nav-cta" data-i18n="navGet">Get the app</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="legal-main">
+    <article class="lang-en">
+      <span class="legal-kicker">GUIDE</span>
+      <h1>Get an OpenAI API key</h1>
+      <p class="legal-lead">Mäuse Voice Mode talks to OpenAI’s Realtime API with a key you create. This takes a few minutes on the OpenAI Platform — not in the ChatGPT app.</p>
+
+      <div class="guide-note">
+        <p>A ChatGPT Plus or Pro subscription does <strong>not</strong> include API access. You need a separate account at <a href="https://platform.openai.com" target="_blank" rel="noopener">platform.openai.com</a> with prepaid API credits.</p>
+      </div>
+
+      <section class="guide-step">
+        <h2>1. Open the OpenAI Platform</h2>
+        <p>Go to <a href="https://platform.openai.com" target="_blank" rel="noopener">platform.openai.com</a> and sign in — or create an account with email, Google, Microsoft, or Apple. First-time setup may ask you to verify email or phone and create an organization.</p>
+        <figure class="guide-figure">
+          <img src="assets/guide/01-platform-home.png" alt="OpenAI Platform home dashboard after signing in" width="1536" height="1024" loading="lazy">
+          <figcaption>After login you land on the Platform home. API Keys is in the left sidebar. (OpenAI’s UI can change over time.)</figcaption>
+        </figure>
+      </section>
+
+      <section class="guide-step">
+        <h2>2. Add billing credits</h2>
+        <p>API calls draw from a prepaid credit balance. Open <strong>Settings → Billing</strong> (or go to <a href="https://platform.openai.com/settings/organization/billing" target="_blank" rel="noopener">Billing overview</a>), add a payment method if needed, then choose <strong>Add to credit balance</strong>. A small top-up (for example $5–$10) is enough to start Voice Mode.</p>
+        <figure class="guide-figure">
+          <img src="assets/guide/04-billing.png" alt="OpenAI Platform billing overview with credit balance" width="1536" height="1024" loading="lazy">
+          <figcaption>Billing overview shows your credit balance and Add to credit balance.</figcaption>
+        </figure>
+        <div class="guide-note">
+          <p>Without credits, a new key may look valid in Mäuse but Voice Mode requests will fail. Optional: turn on auto recharge or set a monthly spend limit under Usage limits so costs stay predictable.</p>
+        </div>
+      </section>
+
+      <section class="guide-step">
+        <h2>3. Open API keys</h2>
+        <p>In the left sidebar, click <strong>API Keys</strong> — or open <a href="https://platform.openai.com/api-keys" target="_blank" rel="noopener">platform.openai.com/api-keys</a> directly. You’ll see any keys you already created for this project.</p>
+        <figure class="guide-figure">
+          <img src="assets/guide/02-api-keys.png" alt="OpenAI Platform API keys list with Create new secret key button" width="1536" height="1024" loading="lazy">
+          <figcaption>The API keys page. Use Create new secret key in the top right.</figcaption>
+        </figure>
+      </section>
+
+      <section class="guide-step">
+        <h2>4. Create a secret key</h2>
+        <p>Click <strong>Create new secret key</strong>. In the dialog:</p>
+        <ul>
+          <li>Leave <strong>Owned by</strong> on <strong>You</strong> (unless you intentionally use a service account).</li>
+          <li>Give it a clear <strong>Name</strong>, for example <em>Mäuse</em>.</li>
+          <li>Choose your <strong>Project</strong> (Default project is fine).</li>
+          <li>Set <strong>Permissions</strong> to <strong>All</strong> unless you know how to restrict Realtime access.</li>
+        </ul>
+        <p>Then click <strong>Create secret key</strong>.</p>
+        <figure class="guide-figure">
+          <img src="assets/guide/03-create-secret-key.png" alt="Create new secret key dialog with name Mäuse" width="1536" height="1024" loading="lazy">
+          <figcaption>Name the key, pick the project, then create it.</figcaption>
+        </figure>
+        <div class="guide-note">
+          <p>OpenAI shows the full secret key <strong>only once</strong>. Copy it immediately into a password manager or straight into Mäuse. If you close the dialog without copying, create a new key — the old value cannot be revealed again.</p>
+        </div>
+      </section>
+
+      <section class="guide-step">
+        <h2>5. Paste the key into Mäuse</h2>
+        <p>On your iPhone, open Mäuse → <strong>Settings</strong>, paste the key, verify it, accept the Voice Mode disclosure, and enable Voice Mode. The microphone control appears after a successful setup.</p>
+      </section>
+
+      <section class="legal-card">
+        <h2>Security tips</h2>
+        <ul>
+          <li>Never email your key or put it in screenshots, chats, or GitHub.</li>
+          <li>If a key leaks, delete it on the API keys page and create a new one.</li>
+          <li>Mäuse stores the key on your device for Voice Mode; the Mäuse developer never receives it.</li>
+        </ul>
+      </section>
+
+      <p><a href="support.html">← Back to Support</a></p>
+    </article>
+
+    <article class="lang-de" hidden>
+      <span class="legal-kicker">ANLEITUNG</span>
+      <h1>OpenAI-API-Schlüssel holen</h1>
+      <p class="legal-lead">Der Mäuse-Sprachmodus nutzt die OpenAI-Realtime-API mit einem Schlüssel, den du selbst erstellst. Das dauert wenige Minuten auf der OpenAI Platform — nicht in der ChatGPT-App.</p>
+
+      <div class="guide-note">
+        <p>Ein ChatGPT-Plus- oder Pro-Abo enthält <strong>keinen</strong> API-Zugang. Du brauchst ein separates Konto unter <a href="https://platform.openai.com" target="_blank" rel="noopener">platform.openai.com</a> mit vorausbezahltem API-Guthaben.</p>
+      </div>
+
+      <section class="guide-step">
+        <h2>1. OpenAI Platform öffnen</h2>
+        <p>Öffne <a href="https://platform.openai.com" target="_blank" rel="noopener">platform.openai.com</a> und melde dich an — oder lege ein Konto per E-Mail, Google, Microsoft oder Apple an. Beim ersten Mal können E-Mail- oder Telefonbestätigung und das Anlegen einer Organisation nötig sein.</p>
+        <figure class="guide-figure">
+          <img src="assets/guide/01-platform-home.png" alt="OpenAI-Platform-Startseite nach dem Login" width="1536" height="1024" loading="lazy">
+          <figcaption>Nach dem Login landest du auf der Platform-Startseite. API Keys findest du in der linken Seitenleiste. (Die OpenAI-Oberfläche kann sich ändern.)</figcaption>
+        </figure>
+      </section>
+
+      <section class="guide-step">
+        <h2>2. Guthaben aufladen</h2>
+        <p>API-Aufrufe werden von einem Prepaid-Guthaben abgebucht. Öffne <strong>Settings → Billing</strong> (oder die <a href="https://platform.openai.com/settings/organization/billing" target="_blank" rel="noopener">Billing-Übersicht</a>), hinterlege bei Bedarf eine Zahlungsmethode und wähle <strong>Add to credit balance</strong>. Ein kleiner Betrag (z.&nbsp;B. 5–10&nbsp;$) reicht zum Einstieg.</p>
+        <figure class="guide-figure">
+          <img src="assets/guide/04-billing.png" alt="OpenAI-Platform-Billing mit Credit-Balance" width="1536" height="1024" loading="lazy">
+          <figcaption>Unter Billing siehst du dein Guthaben und Add to credit balance.</figcaption>
+        </figure>
+        <div class="guide-note">
+          <p>Ohne Guthaben kann ein Schlüssel in Mäuse gültig wirken, aber Sprachmodus-Anfragen scheitern. Optional: Auto-Recharge aktivieren oder unter Usage limits ein monatliches Limit setzen.</p>
+        </div>
+      </section>
+
+      <section class="guide-step">
+        <h2>3. API Keys öffnen</h2>
+        <p>Klicke links auf <strong>API Keys</strong> — oder öffne direkt <a href="https://platform.openai.com/api-keys" target="_blank" rel="noopener">platform.openai.com/api-keys</a>. Dort siehst du vorhandene Schlüssel für dieses Projekt.</p>
+        <figure class="guide-figure">
+          <img src="assets/guide/02-api-keys.png" alt="OpenAI-API-Keys-Liste mit Button Create new secret key" width="1536" height="1024" loading="lazy">
+          <figcaption>Die API-Keys-Seite. Oben rechts: Create new secret key.</figcaption>
+        </figure>
+      </section>
+
+      <section class="guide-step">
+        <h2>4. Secret Key erstellen</h2>
+        <p>Klicke auf <strong>Create new secret key</strong>. Im Dialog:</p>
+        <ul>
+          <li><strong>Owned by</strong> auf <strong>You</strong> lassen (außer du nutzt bewusst ein Service Account).</li>
+          <li>Einen klaren <strong>Name</strong> vergeben, z.&nbsp;B. <em>Mäuse</em>.</li>
+          <li>Das <strong>Project</strong> wählen (Default project reicht).</li>
+          <li><strong>Permissions</strong> auf <strong>All</strong> setzen, sofern du Realtime nicht gezielt einschränkst.</li>
+        </ul>
+        <p>Dann auf <strong>Create secret key</strong> klicken.</p>
+        <figure class="guide-figure">
+          <img src="assets/guide/03-create-secret-key.png" alt="Dialog Create new secret key mit Namen Mäuse" width="1536" height="1024" loading="lazy">
+          <figcaption>Namen vergeben, Projekt wählen, Schlüssel erstellen.</figcaption>
+        </figure>
+        <div class="guide-note">
+          <p>OpenAI zeigt den vollständigen Secret Key <strong>nur einmal</strong>. Kopiere ihn sofort in einen Passwortmanager oder direkt in Mäuse. Ohne Kopie musst du einen neuen Schlüssel anlegen — der alte Wert lässt sich nicht erneut anzeigen.</p>
+        </div>
+      </section>
+
+      <section class="guide-step">
+        <h2>5. Schlüssel in Mäuse eintragen</h2>
+        <p>Öffne auf dem iPhone Mäuse → <strong>Einstellungen</strong>, füge den Schlüssel ein, verifiziere ihn, akzeptiere den Datenschutzhinweis und aktiviere den Sprachmodus. Danach erscheint das Mikrofonsymbol.</p>
+      </section>
+
+      <section class="legal-card">
+        <h2>Sicherheitshinweise</h2>
+        <ul>
+          <li>Sende den Schlüssel nie per E-Mail und teile ihn nicht in Screenshots, Chats oder auf GitHub.</li>
+          <li>Bei Leak: Schlüssel auf der API-Keys-Seite löschen und einen neuen erstellen.</li>
+          <li>Mäuse speichert den Schlüssel auf deinem Gerät; der Entwickler erhält ihn nicht.</li>
+        </ul>
+      </section>
+
+      <p><a href="support.html">← Zurück zum Support</a></p>
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <span class="footer-tag" data-i18n="footerTag">Made for couples who keep it simple.</span>
+      <div class="footer-links">
+        <a href="https://github.com/michaeldiestelberg/maeuse-ios" target="_blank" rel="noopener" data-link="github">GitHub</a>
+        <a href="privacy.html" data-i18n="footerPrivacy">Privacy</a>
+        <a href="support.html" data-i18n="footerSupport">Support</a>
+        <a href="terms.html" data-i18n="footerTerms">Terms</a>
+        <a href="https://apps.apple.com/de/app/m%C3%A4use/id6769447003" target="_blank" rel="noopener" data-link="appstore">App Store</a>
+      </div>
+    </div>
+  </footer>
+  <script src="legal.js"></script>
+</body>
+</html>

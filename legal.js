@@ -5,11 +5,11 @@
 
   var strings = {
     en: {
-      navFeatures: 'Features', navVoice: 'Voice', navPrivacy: 'Privacy', navSupport: 'Support', navGet: 'Get the app',
+      navFeatures: 'Features', navVoice: 'Voice', navSupport: 'Support', navGet: 'Get the app',
       footerTag: 'Made for couples who keep it simple.', footerPrivacy: 'Privacy', footerSupport: 'Support', footerTerms: 'Terms'
     },
     de: {
-      navFeatures: 'Funktionen', navVoice: 'Sprachmodus', navPrivacy: 'Datenschutz', navSupport: 'Support', navGet: 'App holen',
+      navFeatures: 'Funktionen', navVoice: 'Sprachmodus', navSupport: 'Support', navGet: 'App holen',
       footerTag: 'Gemacht für Paare, die es einfach halten.', footerPrivacy: 'Datenschutz', footerSupport: 'Support', footerTerms: 'Bedingungen'
     }
   };
