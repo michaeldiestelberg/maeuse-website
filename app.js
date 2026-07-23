@@ -7,7 +7,7 @@
 
   var strings = {
     en: {
-      navFeatures: 'Features', navVoice: 'Voice', navPrivacy: 'Privacy', navSupport: 'Support', navGet: 'Get the app',
+      navFeatures: 'Features', navVoice: 'Voice', navSupport: 'Support', navGet: 'Get the app',
       badge: 'NOW ON THE APP STORE',
       h1a: 'Say what you spent.', h1b: 'That’s it.',
       heroSub: 'Mäuse is the expense tracker for you and your favorite Maus. Log it, slice the cheese, and always know who owes what - right on your iPhone.',
@@ -41,7 +41,7 @@
       footerTag: 'Made for couples who keep it simple.', footerPrivacy: 'Privacy', footerSupport: 'Support', footerTerms: 'Terms'
     },
     de: {
-      navFeatures: 'Funktionen', navVoice: 'Sprachmodus', navPrivacy: 'Datenschutz', navSupport: 'Support', navGet: 'App holen',
+      navFeatures: 'Funktionen', navVoice: 'Sprachmodus', navSupport: 'Support', navGet: 'App holen',
       badge: 'JETZT IM APP STORE',
       h1a: 'Sag, was du ausgegeben hast.', h1b: 'Mehr nicht.',
       heroSub: 'Mäuse ist der Ausgaben-Tracker für dich und deine Lieblingsmaus. Eintragen, den Käse teilen und immer wissen, wer wem was schuldet - direkt auf deinem iPhone.',
