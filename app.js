@@ -1,4 +1,4 @@
-/* ===== Mäuse marketing site — theme, language, phone mockup ===== */
+/* ===== Mäuse marketing site - theme, language, phone mockup ===== */
 
 (function () {
   'use strict';
@@ -38,7 +38,7 @@
       dlTitle: 'The trap is set.',
       dlBody: 'Mäuse is free on the App Store for iPhone. No Mäuse account required.',
       dlMeta: 'Free · iPhone · No account required',
-      footerTag: 'Made for couples who keep it simple.', footerPrivacy: 'Privacy', footerSupport: 'Support', footerTerms: 'Terms'
+      footerTag: 'Made for couples who keep it simple.', footerPrivacy: 'Privacy', footerSupport: 'Support', footerChangelog: 'Changelog', footerTerms: 'Terms'
     },
     de: {
       navFeatures: 'Funktionen', navVoice: 'Sprachmodus', navSupport: 'Support', navGet: 'App holen',
@@ -72,7 +72,7 @@
       dlTitle: 'Die Falle ist gestellt.',
       dlBody: 'Mäuse ist kostenlos im App Store fürs iPhone. Kein Mäuse-Konto nötig.',
       dlMeta: 'Gratis · iPhone · Kein Konto nötig',
-      footerTag: 'Gemacht für Paare, die es einfach halten.', footerPrivacy: 'Datenschutz', footerSupport: 'Support', footerTerms: 'Bedingungen'
+      footerTag: 'Gemacht für Paare, die es einfach halten.', footerPrivacy: 'Datenschutz', footerSupport: 'Support', footerChangelog: 'Changelog', footerTerms: 'Bedingungen'
     }
   };
 

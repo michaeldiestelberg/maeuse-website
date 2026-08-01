@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Changelog - Mäuse</title>
+  <meta name="description" content="Release notes and version history for the Mäuse iPhone expense tracker.">
+  <link rel="canonical" href="https://xn--muse-loa.app/changelog.html">
+  <link rel="icon" type="image/png" sizes="192x192" href="assets/coin-mouse.png">
+  <link rel="apple-touch-icon" href="assets/icon-180.png">
+  <meta name="theme-color" content="#FFF6DE" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#211A09" media="(prefers-color-scheme: dark)">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="legal.css">
+  <script>try { if (localStorage.getItem('maeuse-site-theme') === 'dark') document.documentElement.setAttribute('data-theme', 'dark'); } catch (e) {}</script>
+  <script>window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };</script>
+  <script defer src="/_vercel/insights/script.js"></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="brand">
+        <img class="brand-mark" src="assets/coin-mouse.png" alt="" aria-hidden="true">
+        <span class="brand-name">Mäuse</span>
+      </a>
+      <nav class="main-nav">
+        <a href="index.html#features" data-i18n="navFeatures">Features</a>
+        <a href="index.html#voice" data-i18n="navVoice">Voice</a>
+        <a href="support.html" data-i18n="navSupport">Support</a>
+      </nav>
+      <div class="header-actions">
+        <a class="icon-btn" href="https://github.com/michaeldiestelberg/maeuse-ios" target="_blank" rel="noopener" aria-label="GitHub" data-link="github">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+        </a>
+        <div class="lang-switch" role="group" aria-label="Language">
+          <button type="button" id="lang-en" aria-pressed="true">EN</button>
+          <button type="button" id="lang-de" aria-pressed="false">DE</button>
+        </div>
+        <button type="button" class="icon-btn theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
+          <svg class="icon-moon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+          <svg class="icon-sun" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4.5"/><line x1="12" y1="1.5" x2="12" y2="4"/><line x1="12" y1="20" x2="12" y2="22.5"/><line x1="1.5" y1="12" x2="4" y2="12"/><line x1="20" y1="12" x2="22.5" y2="12"/><line x1="4.6" y1="4.6" x2="6.3" y2="6.3"/><line x1="17.7" y1="17.7" x2="19.4" y2="19.4"/><line x1="4.6" y1="19.4" x2="6.3" y2="17.7"/><line x1="17.7" y1="6.3" x2="19.4" y2="4.6"/></svg>
+        </button>
+        <a href="index.html#download" class="btn-nav-cta" data-i18n="navGet">Get the app</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="legal-main">
+    <article class="lang-en">
+      <span class="legal-kicker">RELEASES</span>
+      <h1>Changelog</h1>
+      <p class="legal-lead">What’s new in Mäuse.</p>
+
+      <section class="legal-card">
+        <h2>Version 1.3.0</h2>
+        <p>Faster ways to log an expense, clearer editing, and small polish for voice entry.</p>
+        <ul>
+          <li><strong>Lock Screen &amp; Control Center</strong> - start a new expense or begin dictating without opening the app first; custom mouse-themed icons.</li>
+          <li><strong>Widgets</strong> - Home Screen and Lock Screen widgets to add an expense or start voice dictation; Lock Screen widgets use a light background so icons stay readable.</li>
+          <li><strong>Safer delete</strong> - delete is its own action, with a confirmation before an expense is removed.</li>
+          <li><strong>Home screen</strong> - when voice entry is set up, dictating is the main action.</li>
+          <li><strong>Haptics while dictating</strong> - light feedback when listening starts and when expenses are captured; can be turned off in Settings.</li>
+          <li><strong>Bug fixes</strong> - various small fixes and polish.</li>
+        </ul>
+      </section>
+
+      <section class="legal-card">
+        <h2>Version 1.2.0</h2>
+        <p class="legal-updated">July 15, 2026 · Initial public release</p>
+        <p>First public release on the App Store: a local-first expense tracker for two. Add and split shared costs, browse by month, back up as JSON, use the app fully offline, and optionally dictate expenses by voice with your own OpenAI API key (stored in Keychain). Full UI in English and German; light, dark, or system appearance.</p>
+        <ul>
+          <li>Log shared expenses by month with amount, note, and date.</li>
+          <li>Split costs by percent or a fixed amount, with handy presets.</li>
+          <li>See monthly totals and who owes whom at a glance.</li>
+          <li>Export and restore portable JSON backups you control.</li>
+          <li>Optional voice dictation with your own OpenAI API key (internet required).</li>
+          <li>No Mäuse account, ads, or app analytics - data stays on your iPhone unless you enable voice entry.</li>
+        </ul>
+      </section>
+    </article>
+
+    <article class="lang-de" hidden>
+      <span class="legal-kicker">VERSIONEN</span>
+      <h1>Changelog</h1>
+      <p class="legal-lead">Was ist neu in Mäuse.</p>
+
+      <section class="legal-card">
+        <h2>Version 1.3.0</h2>
+        <p>Schneller zur neuen Ausgabe, klareres Bearbeiten und ein paar Feinschliffe für die Spracheingabe.</p>
+        <ul>
+          <li><strong>Sperrbildschirm &amp; Kontrollzentrum</strong> - neue Ausgabe starten oder diktieren, ohne die App erst zu öffnen; eigene Maus-Icons.</li>
+          <li><strong>Widgets</strong> - auf dem Home- und Sperrbildschirm: Ausgabe erfassen oder per Sprache diktieren; leichter Hintergrund, damit die Icons lesbar bleiben.</li>
+          <li><strong>Sicherer löschen</strong> - Löschen als eigene Aktion mit Rückfrage, bevor etwas entfernt wird.</li>
+          <li><strong>Startbildschirm</strong> - ist die Spracheingabe eingerichtet, steht das Diktieren im Vordergrund.</li>
+          <li><strong>Haptik beim Diktieren</strong> - spürbares Feedback beim Starten und beim Erfassen; in den Einstellungen abschaltbar.</li>
+          <li><strong>Fehlerbehebungen</strong> - diverse kleine Fixes und Feinschliff.</li>
+        </ul>
+      </section>
+
+      <section class="legal-card">
+        <h2>Version 1.2.0</h2>
+        <p class="legal-updated">15. Juli 2026 · Erster öffentlicher Release</p>
+        <p>Erste öffentliche Version im App Store: der Ausgaben-Tracker für dich und deine Maus. Gemeinsame Kosten erfassen und teilen, monatsweise browsen, als JSON sichern, offline nutzen - und optional per Sprache diktieren (dein OpenAI-Schlüssel, sicher im Schlüsselbund). Komplett auf Deutsch und Englisch; hell, dunkel oder System.</p>
+        <ul>
+          <li>Gemeinsame Ausgaben monatsweise erfassen: Betrag, Notiz und Datum.</li>
+          <li>Kosten teilen - nach Prozent oder festem Betrag, mit Vorlagen für die üblichen Fälle.</li>
+          <li>Monatssummen und den Saldo zwischen euch auf einen Blick sehen.</li>
+          <li>Backups als JSON exportieren und wieder einspielen - du behältst die Kontrolle.</li>
+          <li>Optional Ausgaben diktieren mit deinem eigenen OpenAI-API-Schlüssel (braucht Internet).</li>
+          <li>Kein Mäuse-Konto, keine Werbung, keine Analytics in der App. Deine Daten bleiben auf dem iPhone - außer du schaltest die Spracheingabe ein.</li>
+        </ul>
+      </section>
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <span class="footer-tag" data-i18n="footerTag">Made for couples who keep it simple.</span>
+      <div class="footer-links">
+        <a href="https://github.com/michaeldiestelberg/maeuse-ios" target="_blank" rel="noopener" data-link="github">GitHub</a>
+        <a href="privacy.html" data-i18n="footerPrivacy">Privacy</a>
+        <a href="support.html" data-i18n="footerSupport">Support</a>
+        <a href="changelog.html" data-i18n="footerChangelog">Changelog</a>
+        <a href="terms.html" data-i18n="footerTerms">Terms</a>
+        <a href="https://apps.apple.com/de/app/m%C3%A4use/id6769447003" target="_blank" rel="noopener" data-link="appstore">App Store</a>
+      </div>
+    </div>
+  </footer>
+  <script src="legal.js"></script>
+</body>
+</html>

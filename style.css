@@ -1,5 +1,5 @@
 /* ============================================================
-   Mäuse — marketing site
+   Mäuse - marketing site
    Cheese-yellow neo-brutalist design (relaunch 2026)
    ============================================================ */
 
@@ -344,7 +344,7 @@ html[data-theme="dark"] .theme-toggle .icon-sun { display: block; }
   overflow: hidden;
   position: relative;
   background: var(--bg);
-  /* isolate the scaled, animating app layer — without this the whole
+  /* isolate the scaled, animating app layer - without this the whole
      page can fail to repaint while scrolled */
   contain: paint;
 }
