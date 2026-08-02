@@ -17,7 +17,7 @@
       tapAround: 'GO AHEAD, IT’S THE REAL APP - TAP AROUND',
       featTitle: 'Everything a Maus needs.', featSub: 'Nothing that nibbles at your attention.',
       f1t: 'Fast as a mouse', f1b: 'Amount, note, done. Logging an expense takes seconds, not taps.',
-      f2t: 'Slice the cheese', f2b: 'Split by percent or a fixed amount, with preset chips for the usual 50 / 30 / 70 / 100.',
+      f2t: 'Slice the cheese', f2b: 'Drag the split slider in 5% steps - you and your Maus each see your share right away.',
       f3t: 'Squeak to log', f3b: 'Say what you spent - even a few things at once. Mäuse drafts them, you tap save.',
       f4t: 'The monthly stash', f4b: 'Totals per month and exactly what your Maus owes you. No spreadsheets, no math.',
       vTitle: 'Talk. It’s logged.',
@@ -51,7 +51,7 @@
       tapAround: 'NUR ZU, DAS IST DIE ECHTE APP - TIPP DICH DURCH',
       featTitle: 'Alles, was eine Maus braucht.', featSub: 'Nichts, was an deiner Aufmerksamkeit knabbert.',
       f1t: 'Flink wie eine Maus', f1b: 'Betrag, Notiz, fertig. Eine Ausgabe ist in Sekunden drin - nicht in Minuten.',
-      f2t: 'Den Käse teilen', f2b: 'Nach Prozent oder festem Betrag, mit Chips für die üblichen 50 / 30 / 70 / 100.',
+      f2t: 'Den Käse teilen', f2b: 'Zieh den Split-Regler in 5%-Schritten - du und deine Maus seht sofort euren Anteil.',
       f3t: 'Piepsen statt tippen', f3b: 'Sag, was du ausgegeben hast - auch mehrere Dinge auf einmal. Mäuse entwirft die Einträge, du tippst auf Speichern.',
       f4t: 'Der Monatsvorrat', f4b: 'Monatssummen und genau das, was deine Maus dir schuldet. Keine Tabellen, kein Kopfrechnen.',
       vTitle: 'Sprich. Schon erfasst.',
@@ -120,11 +120,16 @@
   });
 
   /* ---------- hero phone: interactive app demo ---------- */
-  /* A vanilla replica of the design prototype: month navigation, expense
-     editor with keypad and split presets, scripted voice input, settings. */
+  /* A vanilla replica of the iOS app: month navigation, expense
+     editor with keypad and split slider, scripted voice input, settings. */
 
   var MONTHS = ['JUNE 2026', 'JULY 2026', 'AUGUST 2026'];
   var ABBRS = ['JUN', 'JUL', 'AUG'];
+  var DATE_LABELS = {
+    0: 'Jun 28, 2026',
+    1: 'Jul 10, 2026',
+    2: 'Aug 2, 2026'
+  };
 
   var demo = {
     monthIdx: 1,
@@ -135,7 +140,7 @@
       { id: 4, m: 1, day: 8, desc: 'Coffee at Röstlab', partnerPct: 50, amount: 7.60 },
       { id: 5, m: 1, day: 7, desc: 'Train tickets', partnerPct: 50, amount: 26.00 },
       { id: 6, m: 1, day: 5, desc: 'Dinner at Luigi’s', partnerPct: 50, amount: 62.50 },
-      { id: 7, m: 1, day: 3, desc: 'Pharmacy', fixed: 10.00, partnerPct: 50, amount: 18.90 },
+      { id: 7, m: 1, day: 3, desc: 'Pharmacy', partnerPct: 55, amount: 18.90 },
       { id: 8, m: 1, day: 1, desc: 'Cleaning supplies', partnerPct: 50, amount: 14.20 }
     ],
     nextId: 100,
@@ -143,7 +148,7 @@
     editingId: null,
     amountText: '',
     youPct: 50,
-    fixedMode: false,
+    editDay: 10,
     // voice
     drafts: [],
     voiceTimer1: null,
@@ -161,13 +166,17 @@
   }
 
   function partnerOf(e) {
-    return e.fixed != null ? Math.min(e.fixed, e.amount) : e.amount * e.partnerPct / 100;
+    return e.amount * e.partnerPct / 100;
   }
 
   function splitLabel(e) {
-    return e.fixed != null
-      ? 'Fixed €' + e.fixed.toFixed(2)
-      : (100 - e.partnerPct) + ' / ' + e.partnerPct + ' split';
+    return (100 - e.partnerPct) + ' / ' + e.partnerPct + ' split';
+  }
+
+  function dateLabel(monthIdx, day) {
+    var months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+    // demo months are June/July/August 2026 (idx 0/1/2 → calendar month 5/6/7)
+    return months[monthIdx + 5] + ' ' + day + ', 2026';
   }
 
   function replay(node, fallbackAnim) {
@@ -242,21 +251,25 @@
   /* ----- editor sheet ----- */
 
   var noteInput = el('ed-note');
+  var confirmEl = el('ed-confirm');
 
   function openEditor(id) {
     demo.editingId = id != null ? id : null;
+    confirmEl.hidden = true;
     if (id != null) {
       var e = demo.expenses.find(function (x) { return x.id === id; });
       if (!e) return;
       demo.amountText = e.amount.toFixed(2);
-      demo.youPct = e.fixed != null ? 50 : 100 - e.partnerPct;
-      demo.fixedMode = e.fixed != null;
+      demo.youPct = 100 - e.partnerPct;
+      demo.editDay = e.day;
       noteInput.value = e.desc;
+      el('ed-date-val').textContent = dateLabel(e.m, e.day);
     } else {
       demo.amountText = '';
       demo.youPct = 50;
-      demo.fixedMode = false;
+      demo.editDay = 10;
       noteInput.value = '';
+      el('ed-date-val').textContent = DATE_LABELS[demo.monthIdx] || dateLabel(demo.monthIdx, 10);
     }
     el('ed-title').textContent = id != null ? 'Edit Expense' : 'New Expense';
     el('ed-remove').hidden = id == null;
@@ -264,32 +277,31 @@
     el('ed-overlay').hidden = false;
   }
 
+  function setYouPct(pct) {
+    var snapped = Math.round(pct / 5) * 5;
+    demo.youPct = Math.max(0, Math.min(100, snapped));
+    updateEditor();
+  }
+
   function updateEditor() {
     var amt = parseFloat(demo.amountText) || 0;
     var partnerPct = 100 - demo.youPct;
-    var youShare = demo.fixedMode ? Math.max(amt - 10, 0) : amt * demo.youPct / 100;
-    var partnerShare = demo.fixedMode ? Math.min(10, amt) : amt * partnerPct / 100;
-    var youFrac = demo.fixedMode ? (amt > 0 ? youShare / amt : 0.5) : demo.youPct / 100;
+    var youShare = amt * demo.youPct / 100;
+    var partnerShare = amt * partnerPct / 100;
 
     var valEl = el('ed-amount');
     valEl.textContent = demo.amountText || '0.00';
     valEl.classList.toggle('empty', !demo.amountText);
 
-    el('ed-you-pct').textContent = demo.fixedMode ? 'rest' : demo.youPct + '%';
-    el('ed-partner-pct').textContent = demo.fixedMode ? '€10 fixed' : partnerPct + '%';
+    el('ed-you-pct').textContent = demo.youPct + '%';
+    el('ed-partner-pct').textContent = partnerPct + '%';
     el('ed-you-share').textContent = fmt(youShare);
     el('ed-partner-share').textContent = fmt(partnerShare);
 
-    var w = (youFrac * 100).toFixed(1) + '%';
+    var w = demo.youPct.toFixed(1) + '%';
     el('ed-bar-you').style.width = w;
     el('ed-bar-handle').style.left = w;
-
-    var presets = el('ed-presets').querySelectorAll('button');
-    presets.forEach(function (b) {
-      var p = b.getAttribute('data-preset');
-      var sel = p === 'fixed' ? demo.fixedMode : (!demo.fixedMode && demo.youPct === parseInt(p, 10));
-      b.classList.toggle('sel', sel);
-    });
+    el('ed-bar').setAttribute('aria-valuenow', String(partnerPct));
 
     el('ed-save').classList.toggle('disabled', amt <= 0);
   }
@@ -311,20 +323,53 @@
     updateEditor();
   });
 
-  el('ed-presets').addEventListener('click', function (ev) {
-    var btn = ev.target.closest('button');
-    if (!btn) return;
-    var p = btn.getAttribute('data-preset');
-    if (p === 'fixed') demo.fixedMode = true;
-    else { demo.fixedMode = false; demo.youPct = parseInt(p, 10); }
-    updateEditor();
-  });
+  (function wireSplitBar() {
+    var bar = el('ed-bar');
+    var dragging = false;
+
+    function pctFromEvent(ev) {
+      var rect = bar.getBoundingClientRect();
+      var x = (ev.touches ? ev.touches[0].clientX : ev.clientX) - rect.left;
+      return (x / rect.width) * 100;
+    }
+
+    function onMove(ev) {
+      if (!dragging) return;
+      ev.preventDefault();
+      setYouPct(pctFromEvent(ev));
+    }
+
+    function onUp() {
+      if (!dragging) return;
+      dragging = false;
+      bar.classList.remove('dragging');
+      window.removeEventListener('pointermove', onMove);
+      window.removeEventListener('pointerup', onUp);
+      window.removeEventListener('touchmove', onMove);
+      window.removeEventListener('touchend', onUp);
+    }
+
+    bar.addEventListener('pointerdown', function (ev) {
+      dragging = true;
+      bar.classList.add('dragging');
+      setYouPct(pctFromEvent(ev));
+      window.addEventListener('pointermove', onMove);
+      window.addEventListener('pointerup', onUp);
+    });
+    bar.addEventListener('touchstart', function (ev) {
+      dragging = true;
+      bar.classList.add('dragging');
+      setYouPct(pctFromEvent(ev));
+      window.addEventListener('touchmove', onMove, { passive: false });
+      window.addEventListener('touchend', onUp);
+    }, { passive: true });
+  })();
 
   el('ed-save').addEventListener('click', function () {
     var amt = parseFloat(demo.amountText) || 0;
     if (amt <= 0) return;
     var desc = noteInput.value.trim() || 'Expense';
-    var partnerPct = demo.fixedMode ? 50 : 100 - demo.youPct;
+    var partnerPct = 100 - demo.youPct;
     if (demo.editingId != null) {
       demo.expenses.forEach(function (e) {
         e.isNew = false;
@@ -332,28 +377,41 @@
           e.desc = desc;
           e.amount = amt;
           e.partnerPct = partnerPct;
-          if (demo.fixedMode) e.fixed = 10.00; else delete e.fixed;
+          delete e.fixed;
           e.isNew = true;
         }
       });
       renderMonth(false);
     } else {
-      var data = { desc: desc, amount: amt, partnerPct: partnerPct };
-      if (demo.fixedMode) data.fixed = 10.00;
-      addExpenses([data]);
+      addExpenses([{ desc: desc, amount: amt, partnerPct: partnerPct }]);
     }
     replay(el('app-partner'));
+    confirmEl.hidden = true;
     el('ed-overlay').hidden = true;
   });
 
   el('ed-remove').addEventListener('click', function () {
+    confirmEl.hidden = false;
+  });
+  el('ed-confirm-no').addEventListener('click', function () {
+    confirmEl.hidden = true;
+  });
+  el('ed-confirm-yes').addEventListener('click', function () {
     demo.expenses = demo.expenses.filter(function (e) { return e.id !== demo.editingId; });
     renderMonth(false);
+    confirmEl.hidden = true;
     el('ed-overlay').hidden = true;
   });
 
   el('app-plus').addEventListener('click', function () { openEditor(null); });
   el('app-settings').addEventListener('click', function () { el('st-overlay').hidden = false; });
+  el('st-help').addEventListener('click', function () {
+    el('st-overlay').hidden = true;
+  });
+  el('st-haptics-toggle').addEventListener('click', function () {
+    var on = this.getAttribute('aria-pressed') !== 'true';
+    this.setAttribute('aria-pressed', String(on));
+  });
 
   /* ----- voice overlay ----- */
 
@@ -478,6 +536,7 @@
     node.addEventListener('click', function () {
       var which = node.getAttribute('data-close');
       if (which === 'vc') clearVoiceTimers();
+      if (which === 'ed') confirmEl.hidden = true;
       el(which + '-overlay').hidden = true;
     });
   });

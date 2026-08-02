@@ -138,14 +138,18 @@
               </div>
 
               <div class="app-fabs">
-                <button type="button" class="app-fab-mic" id="app-mic" aria-label="Voice input">
-                  <svg width="17" height="17" viewBox="0 0 24 24" fill="none" style="stroke:var(--icon)" stroke-width="2.4" stroke-linecap="round"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0 0 14 0"/><line x1="12" y1="18" x2="12" y2="21"/></svg>
-                </button>
-                <button type="button" class="app-fab-plus" id="app-plus" aria-label="New expense">
+                <button type="button" class="app-fab app-fab-plus" id="app-plus" aria-label="New expense">
                   <div class="ear left"></div>
                   <div class="ear right"></div>
                   <div class="face">
-                    <svg width="24" height="24" viewBox="0 0 24 24" stroke="#241C05" stroke-width="3" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                    <svg class="fab-glyph" width="20" height="20" viewBox="0 0 24 24" stroke-width="3" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                  </div>
+                </button>
+                <button type="button" class="app-fab app-fab-mic" id="app-mic" aria-label="Voice input">
+                  <div class="ear left"></div>
+                  <div class="ear right"></div>
+                  <div class="face">
+                    <svg class="fab-glyph" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke-width="2.4" stroke-linecap="round"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0 0 14 0"/><line x1="12" y1="18" x2="12" y2="21"/></svg>
                   </div>
                 </button>
               </div>
@@ -169,8 +173,21 @@
                       <span class="cur">€</span>
                       <span class="val empty" id="ed-amount">0.00</span>
                     </div>
-                    <input id="ed-note" placeholder="Add a note" maxlength="40" autocomplete="off">
                   </div>
+                  <label class="ed-field" for="ed-note">
+                    <span class="ed-field-icon" aria-hidden="true">
+                      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#241C05" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg>
+                    </span>
+                    <input id="ed-note" placeholder="Add a note" maxlength="40" autocomplete="off">
+                  </label>
+                  <button type="button" class="ed-field ed-date" id="ed-date" aria-label="Date">
+                    <span class="ed-field-icon" aria-hidden="true">
+                      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#241C05" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="2"/><line x1="3" y1="10" x2="21" y2="10"/><line x1="8" y1="3" x2="8" y2="7"/><line x1="16" y1="3" x2="16" y2="7"/></svg>
+                    </span>
+                    <span class="ed-date-lab">DATE</span>
+                    <span class="ed-date-val" id="ed-date-val">Jul 10, 2026</span>
+                    <svg class="ed-date-chev" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9,6 15,12 9,18"/></svg>
+                  </button>
                   <div class="ed-details">
                     <div class="ed-shares">
                       <div class="you">
@@ -184,16 +201,21 @@
                         <span class="share" id="ed-partner-share">€0.00</span>
                       </div>
                     </div>
-                    <div class="ed-bar">
+                    <div class="ed-bar" id="ed-bar" role="slider" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50" aria-label="Partner share">
                       <div class="track"><div class="you-seg" id="ed-bar-you"></div><div class="maus-seg"></div></div>
                       <div class="handle" id="ed-bar-handle"></div>
                     </div>
-                    <div class="ed-presets" id="ed-presets">
-                      <button type="button" data-preset="50">50 / 50</button>
-                      <button type="button" data-preset="70">70 / 30</button>
-                      <button type="button" data-preset="fixed">Fixed €10</button>
+                  </div>
+                  <button type="button" class="ed-delete" id="ed-remove" hidden>
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="3,6 5,6 21,6"/><path d="M8 6V4h8v2"/><path d="M19 6l-1 14H6L5 6"/><line x1="10" y1="11" x2="10" y2="17"/><line x1="14" y1="11" x2="14" y2="17"/></svg>
+                    Delete expense
+                  </button>
+                  <div class="ed-confirm" id="ed-confirm" hidden>
+                    <div class="ed-confirm-card">
+                      <span class="ed-confirm-title">Delete this expense?</span>
+                      <button type="button" class="ed-confirm-yes" id="ed-confirm-yes">Delete expense</button>
+                      <button type="button" class="ed-confirm-no" id="ed-confirm-no">Cancel</button>
                     </div>
-                    <button type="button" class="ed-remove" id="ed-remove" hidden>Remove expense</button>
                   </div>
                   <div class="ed-keypad" id="ed-keypad">
                     <button type="button" data-key="1">1</button>
@@ -240,16 +262,29 @@
                     <div class="st-card">
                       <span class="st-label">VOICE MODE</span>
                       <div class="st-key-row">
-                        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" style="stroke:var(--icon)" stroke-width="2.2" stroke-linecap="round"><rect x="4" y="10" width="14" height="9" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg>
-                        <span class="key">sk-proj-••••••••••••</span>
-                        <span class="ok">VERIFIED</span>
+                        <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" style="color:var(--sub)"><path d="M17 10V7a5 5 0 0 0-10 0v3H5v11h14V10h-2zm-8 0V7a3 3 0 0 1 6 0v3H9z"/></svg>
+                        <div class="st-key-meta">
+                          <span class="st-key-title">OpenAI API key</span>
+                          <span class="key">sk-proj-••••••••••••</span>
+                        </div>
+                        <span class="ok">
+                          <svg width="11" height="11" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 1a7 7 0 1 0 0 14A7 7 0 0 0 8 1zm3.2 5.1L7.3 10.1 4.8 7.6l1-1 1.5 1.5 2.9-3z"/></svg>
+                          Verified
+                        </span>
                       </div>
                       <div class="st-toggle-row">
                         <div class="txt">
-                          <span class="t">Enable voice mode</span>
-                          <span class="b">Shows the mic on the main screen</span>
+                          <span class="t">Enable Voice Mode</span>
+                          <span class="b">Shows the mic button on the main screen</span>
                         </div>
                         <button type="button" class="st-toggle" id="st-voice-toggle" aria-pressed="true" aria-label="Enable voice mode"><div class="knob"></div></button>
+                      </div>
+                      <div class="st-toggle-row">
+                        <div class="txt">
+                          <span class="t">Haptic feedback</span>
+                          <span class="b">Vibrate when listening starts and when expenses are captured</span>
+                        </div>
+                        <button type="button" class="st-toggle" id="st-haptics-toggle" aria-pressed="true" aria-label="Haptic feedback"><div class="knob"></div></button>
                       </div>
                     </div>
                     <div class="st-card">
@@ -263,6 +298,32 @@
                         Import Backup
                       </button>
                     </div>
+                    <div class="st-card">
+                      <span class="st-label">PRIVACY &amp; SUPPORT</span>
+                      <a class="st-link" href="privacy.html" target="_blank" rel="noopener">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2 4 5v6c0 5 3.4 9.4 8 11 4.6-1.6 8-6 8-11V5l-8-3z"/></svg>
+                        <span>Privacy Policy</span>
+                        <svg class="st-link-ext" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg>
+                      </a>
+                      <a class="st-link" href="support.html" target="_blank" rel="noopener">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4 6h16v12H4V6zm2 2v2l6 3 6-3V8H6z"/></svg>
+                        <span>Support</span>
+                        <svg class="st-link-ext" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg>
+                      </a>
+                      <a class="st-link" href="terms.html" target="_blank" rel="noopener">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 3h8l4 4v14H7V3zm8 1.5V8h3.5L15 4.5z"/></svg>
+                        <span>Terms of Use</span>
+                        <svg class="st-link-ext" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg>
+                      </a>
+                    </div>
+                    <button type="button" class="st-card st-help" id="st-help">
+                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M9.5 9.5a2.5 2.5 0 1 1 3.6 2.2c-.8.4-1.6 1-1.6 2.3"/><circle cx="12" cy="17" r="1" fill="currentColor" stroke="none"/></svg>
+                      <div class="txt">
+                        <span class="t">Help &amp; About</span>
+                        <span class="b">Review the Mäuse welcome guide</span>
+                      </div>
+                      <svg class="st-help-chev" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9,6 15,12 9,18"/></svg>
+                    </button>
                   </div>
                 </div>
               </div>
@@ -335,7 +396,7 @@
       <div class="feature-card">
         <div class="feature-icon">%</div>
         <h3 data-i18n="f2t">Slice the cheese</h3>
-        <p data-i18n="f2b">Split by percent or a fixed amount, with preset chips for the usual 50 / 30 / 70 / 100.</p>
+        <p data-i18n="f2b">Drag the split slider in 5% steps - you and your Maus each see your share right away.</p>
       </div>
       <div class="feature-card">
         <div class="feature-icon">
