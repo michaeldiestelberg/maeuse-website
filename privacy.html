@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Privacy Policy - Mäuse</title>
-  <meta name="description" content="Privacy policy for the Mäuse iPhone app and website, including local expense storage, optional OpenAI Voice Mode, and Vercel Web Analytics.">
+  <meta name="description" content="Privacy policy for the Mäuse iPhone app and website, including local expense storage, on-device Apple Voice Mode, optional OpenAI Voice Mode, and Vercel Web Analytics.">
   <link rel="canonical" href="https://xn--muse-loa.app/privacy.html">
   <link rel="icon" type="image/png" sizes="192x192" href="assets/coin-mouse.png">
   <link rel="apple-touch-icon" href="assets/icon-180.png">
@@ -51,8 +51,9 @@
     <article class="lang-en">
       <span class="legal-kicker">PRIVACY</span>
       <h1>Privacy Policy</h1>
-      <p class="legal-lead">Mäuse is local-first. Manual expense tracking stays on your iPhone. The optional Voice Mode sends data to OpenAI only after you explicitly enable it. This policy also explains the privacy-focused analytics used on this website.</p>
-      <p class="legal-updated">Updated: September 27, 2026 · Version 1.1</p>
+      <p class="legal-lead">Mäuse is local-first. Manual expense tracking stays on your iPhone. Optional Voice Mode offers two ways to dictate: <strong>Apple · On device</strong>, which keeps audio and expense details on your iPhone, and <strong>OpenAI · Cloud</strong>, which sends data to OpenAI only after you explicitly agree. This policy also explains the privacy-focused analytics used on this website.</p>
+      <!-- TODO(1.5.0-publish): replace PLACEHOLDER_1_5_0_DATE with the App Store release date -->
+      <p class="legal-updated">Updated: <span class="date-placeholder">PLACEHOLDER_1_5_0_DATE</span> · Version 1.2</p>
 
       <section class="legal-card">
         <h2>Who is responsible?</h2>
@@ -64,12 +65,19 @@
       <p>You can edit or delete individual expenses in the app. You can also replace all local expenses by importing a backup.</p>
 
       <h2>2. Backup and restore</h2>
-      <p>When you export a backup, Mäuse creates a JSON file containing your expense records. You choose where to save or share that file using Apple’s system interface. Mäuse does not upload backups to a developer-operated server. Your OpenAI API key and Voice Mode consent settings are never included in backups.</p>
+      <p>When you export a backup, Mäuse creates a JSON file containing your expense records. You choose where to save or share that file using Apple’s system interface. Mäuse does not upload backups to a developer-operated server. Your OpenAI API key and Voice Mode consent settings are never included in backups. Your Voice Mode choice (Apple or OpenAI) is stored in Settings, not in the JSON backup.</p>
 
-      <h2 id="voice-mode">3. Optional Voice Mode and OpenAI</h2>
-      <p>Voice Mode is disabled by default. Before it can be enabled, Mäuse displays a dedicated disclosure and asks for your explicit consent. Manual entry remains available if you decline.</p>
+      <h2 id="voice-mode">3. Optional Voice Mode</h2>
+      <p>Voice Mode is disabled by default. You choose <strong>Apple · On device</strong> or <strong>OpenAI · Cloud</strong> in Settings. Manual entry remains available if you use neither.</p>
+
+      <h3>Apple · On device</h3>
+      <p>Apple · On device uses on-device speech recognition and Apple Foundation Models. Audio and expense details stay on your iPhone and are never sent to OpenAI or another third party. Mäuse doesn’t save the audio; recognized text and drafts stay in memory until you close the session, and only expenses you save enter your ledger.</p>
+      <p>Apple mode needs iOS 26 or later, an Apple Intelligence–compatible iPhone with Apple Intelligence turned on, and a downloaded speech model for the app language. The first download uses the internet; after that, capture works offline. iOS will ask for microphone access and Speech Recognition; Mäuse uses Speech Recognition on-device only. If Apple mode is not available, Mäuse explains why and does not switch you to OpenAI.</p>
+
+      <h3>OpenAI · Cloud</h3>
+      <p>OpenAI · Cloud is disabled until you verify your own API key and accept a dedicated disclosure. Manual entry and Apple · On device remain available if you decline.</p>
       <p>When you verify an API key, the key is sent directly over HTTPS to OpenAI to request a short-lived Realtime client secret. The API key is stored in Apple Keychain on your device. It is not sent to the Mäuse developer and is not included in backups.</p>
-      <p>Only while you run a Voice Mode session, Mäuse sends the following directly to OpenAI:</p>
+      <p>Only while you run an OpenAI · Cloud session, Mäuse sends the following directly to OpenAI:</p>
       <ul>
         <li>live microphone audio;</li>
         <li>the expense details you speak during that session;</li>
@@ -78,17 +86,18 @@
       </ul>
       <p>OpenAI returns interpreted request summaries, clarification questions, and structured expense drafts. “What I understood” shows those interpreted requests and corrections, not a verbatim transcript. Drafts are saved to your local expense database only when you choose to save them.</p>
       <p>According to OpenAI’s current API data controls, API content is not used to train OpenAI models unless the API account owner explicitly opts in. For the Realtime API, abuse-monitoring logs may retain customer content for up to 30 days by default, unless longer retention is required by law or needed for safety. See <a href="https://developers.openai.com/api/docs/guides/your-data" target="_blank" rel="noopener">OpenAI’s API data controls</a> and <a href="https://openai.com/policies/privacy-policy/" target="_blank" rel="noopener">OpenAI’s Privacy Policy</a>.</p>
-      <p>Voice Mode uses your own OpenAI API project. OpenAI may charge that project for usage. Mäuse does not receive any part of those charges.</p>
+      <p>OpenAI · Cloud uses your own OpenAI API project. OpenAI may charge that project for usage. Mäuse does not receive any part of those charges.</p>
 
       <h3>Your Voice Mode choices</h3>
       <ul>
-        <li>Turn Voice Mode off in Settings to revoke consent and stop future audio transmission. Enabling it again requires accepting the disclosure again.</li>
-        <li>Use “Remove Saved Key” to delete the API key from Keychain.</li>
-        <li>End a voice session to stop microphone capture and disconnect from OpenAI.</li>
+        <li>Turn Voice Mode off in Settings to stop all audio capture and transmission. Your consent stays saved, so turning Voice Mode back on doesn’t ask again.</li>
+        <li>Delete your saved OpenAI API key in Settings to withdraw your consent. Mäuse asks again before OpenAI mode is used next.</li>
+        <li>End a voice session to stop microphone capture. OpenAI · Cloud also disconnects from OpenAI; Apple · On device stops on-device recognition.</li>
+        <li>You can switch to Apple · On device, which never sends voice data off your iPhone.</li>
       </ul>
 
-      <h2>4. Microphone permission</h2>
-      <p>iOS asks for microphone access the first time Voice Mode needs it. Mäuse accesses the microphone only during an active Voice Mode session. You can revoke microphone access in iOS Settings.</p>
+      <h2>4. Microphone and Speech Recognition</h2>
+      <p>iOS asks for microphone access the first time Voice Mode needs it. Apple · On device also asks for Speech Recognition. Mäuse uses the microphone only during an active Voice Mode session, and Speech Recognition only for on-device Apple capture. You can revoke both in iOS Settings. Revoking Speech Recognition does not affect OpenAI · Cloud.</p>
 
       <h2>5. App analytics, advertising, and tracking</h2>
       <p>The Mäuse iPhone app contains no advertising SDK, analytics SDK, telemetry service, or cross-app tracking. It does not use Apple’s advertising identifier.</p>
@@ -99,16 +108,18 @@
       <p>The website stores only your language and theme preferences in browser local storage. These preferences stay in your browser until you clear them.</p>
 
       <h2>7. Legal bases for processing</h2>
-      <p>Where the EU General Data Protection Regulation applies, Voice Mode data is transmitted on the basis of your consent and at your request to provide the feature. Website delivery, security, and aggregated traffic measurement are based on legitimate interests in operating, protecting, and improving the website.</p>
+      <p>Where the EU General Data Protection Regulation applies, OpenAI · Cloud transmits data on the basis of your consent and at your request to provide that feature. Apple · On device processes speech and expense drafts on your iPhone only; it does not transmit that data to Mäuse or a third party. Website delivery, security, and aggregated traffic measurement are based on legitimate interests in operating, protecting, and improving the website.</p>
 
       <h2>8. International processing</h2>
-      <p>OpenAI and Vercel may process information outside your country. Their applicable contracts, privacy policies, and transfer safeguards govern that processing. Because Voice Mode uses your own OpenAI project, any project-level data residency or retention settings are controlled by the owner of that OpenAI account.</p>
+      <p>This section applies to OpenAI · Cloud and to this website. Apple · On device does not send voice data to OpenAI. OpenAI and Vercel may process information outside your country. Their applicable contracts, privacy policies, and transfer safeguards govern that processing. Because OpenAI · Cloud uses your own OpenAI project, any project-level data residency or retention settings are controlled by the owner of that OpenAI account.</p>
 
       <h2>9. Retention</h2>
       <ul>
         <li>Local expenses remain on your device until you delete them, replace them through import, or remove the app and its data.</li>
         <li>The API key remains in Keychain until you remove it or erase the relevant device data.</li>
         <li>Voice Mode consent remains on device until withdrawn or reset by a future consent update.</li>
+        <li>In Apple · On device, recognized text and drafts stay in memory until you close the session. Mäuse does not save the recording. Saved expenses remain on device like any manual entry.</li>
+        <li>Optional local diagnosis (Apple mode only) is technical metadata in memory until the app quits. It contains no transcript, amounts, or audio, and is shared only if you choose Share.</li>
         <li>OpenAI and Vercel retain information according to their policies and your applicable account configuration.</li>
       </ul>
 
@@ -116,7 +127,7 @@
       <p>Depending on applicable law, you may have rights to access, correct, delete, restrict, or object to processing, and to withdraw consent. You may also complain to your local data protection authority. Most app data is controlled directly by you on your device; the developer cannot retrieve local expenses or your API key.</p>
 
       <h2>11. Children</h2>
-      <p>Mäuse is not directed specifically at children and should not be used to send another person’s sensitive information to OpenAI without their permission.</p>
+      <p>Mäuse is not directed specifically at children. Do not dictate another person’s sensitive information, including in Apple · On device, and do not send it to OpenAI without their permission.</p>
 
       <h2>12. Changes to this policy</h2>
       <p>This policy may be updated when Mäuse, its service providers, or legal requirements change. Material changes to Voice Mode data sharing will require renewed in-app consent.</p>
@@ -131,8 +142,9 @@
     <article class="lang-de" hidden>
       <span class="legal-kicker">DATENSCHUTZ</span>
       <h1>Datenschutzerklärung</h1>
-      <p class="legal-lead">Mäuse ist „Local First“: Manuell erfasste Ausgaben bleiben auf deinem iPhone. Der optionale Sprachmodus übermittelt Daten erst nach deiner ausdrücklichen Einwilligung an OpenAI. Diese Erklärung beschreibt außerdem die datenschutzfreundliche Reichweitenmessung dieser Website.</p>
-      <p class="legal-updated">Aktualisiert: 27. September 2026 · Version 1.1</p>
+      <p class="legal-lead">Mäuse ist „Local First“: Manuell erfasste Ausgaben bleiben auf deinem iPhone. Der optionale Sprachmodus bietet zwei Arten zu diktieren: <strong>Apple · Auf dem Gerät</strong>, bei dem Audio und Ausgabendetails auf deinem iPhone bleiben, und <strong>OpenAI · Cloud</strong>, der Daten erst nach deiner ausdrücklichen Einwilligung an OpenAI sendet. Diese Erklärung beschreibt außerdem die datenschutzfreundliche Reichweitenmessung dieser Website.</p>
+      <!-- TODO(1.5.0-publish): replace PLACEHOLDER_1_5_0_DATE with the App Store release date -->
+      <p class="legal-updated">Aktualisiert: <span class="date-placeholder">PLACEHOLDER_1_5_0_DATE</span> · Version 1.2</p>
 
       <section class="legal-card">
         <h2>Wer ist verantwortlich?</h2>
@@ -144,12 +156,19 @@
       <p>Du kannst einzelne Ausgaben in der App ändern oder löschen. Durch den Import eines Backups kannst du außerdem alle lokalen Ausgaben ersetzen.</p>
 
       <h2>2. Backup und Wiederherstellung</h2>
-      <p>Beim Export erstellt Mäuse eine JSON-Datei mit deinen Ausgaben. Über Apples Systemdialog entscheidest du selbst, wo die Datei gespeichert oder geteilt wird. Mäuse lädt Backups nicht auf einen eigenen Server. Dein OpenAI-API-Schlüssel und die Einwilligung für den Sprachmodus sind niemals Teil eines Backups.</p>
+      <p>Beim Export erstellt Mäuse eine JSON-Datei mit deinen Ausgaben. Über Apples Systemdialog entscheidest du selbst, wo die Datei gespeichert oder geteilt wird. Mäuse lädt Backups nicht auf einen eigenen Server. Dein OpenAI-API-Schlüssel und die Einwilligung für den Sprachmodus sind niemals Teil eines Backups. Deine Sprachmodus-Wahl (Apple oder OpenAI) liegt in den Einstellungen, nicht in der JSON-Sicherung.</p>
 
-      <h2 id="voice-mode-de">3. Optionaler Sprachmodus und OpenAI</h2>
-      <p>Der Sprachmodus ist standardmäßig deaktiviert. Vor der Aktivierung zeigt Mäuse einen eigenen Hinweis und fragt nach deiner ausdrücklichen Einwilligung. Die manuelle Eingabe funktioniert auch ohne Einwilligung weiter.</p>
+      <h2 id="voice-mode-de">3. Optionaler Sprachmodus</h2>
+      <p>Der Sprachmodus ist standardmäßig deaktiviert. In den Einstellungen wählst du <strong>Apple · Auf dem Gerät</strong> oder <strong>OpenAI · Cloud</strong>. Die manuelle Eingabe funktioniert auch ohne Sprachmodus.</p>
+
+      <h3>Apple · Auf dem Gerät</h3>
+      <p>Apple · Auf dem Gerät nutzt die Spracherkennung auf dem Gerät und Apple Foundation Models. Audio und Ausgabendetails bleiben auf deinem iPhone und werden nie an OpenAI oder andere Dritte gesendet. Mäuse speichert das Audio nicht; erkannter Text und Entwürfe bleiben nur bis zum Schließen der Sitzung im Arbeitsspeicher, und nur gespeicherte Ausgaben landen in deinem Haushaltsbuch.</p>
+      <p>Der Apple-Modus benötigt iOS 26 oder neuer, ein mit Apple Intelligence kompatibles iPhone mit aktiviertem Apple Intelligence und ein geladenes Sprachmodell für die App-Sprache. Der erste Download braucht Internet; danach funktioniert die Erfassung offline. iOS fragt nach Mikrofonzugriff und Spracherkennung; Mäuse verwendet Spracherkennung nur auf dem Gerät. Ist der Apple-Modus nicht verfügbar, erklärt Mäuse warum und wechselt nicht zu OpenAI.</p>
+
+      <h3>OpenAI · Cloud</h3>
+      <p>OpenAI · Cloud bleibt deaktiviert, bis du deinen eigenen API-Schlüssel prüfst und einem eigenen Hinweis zustimmst. Manuelle Eingabe und Apple · Auf dem Gerät funktionieren auch ohne diese Einwilligung.</p>
       <p>Beim Prüfen eines API-Schlüssels wird dieser direkt über HTTPS an OpenAI gesendet, um ein kurzlebiges Realtime-Client-Secret anzufordern. Der API-Schlüssel wird im Apple-Schlüsselbund auf deinem Gerät gespeichert. Er wird weder an den Mäuse-Entwickler gesendet noch in Backups aufgenommen.</p>
-      <p>Nur während einer laufenden Sprachsitzung sendet Mäuse folgende Daten direkt an OpenAI:</p>
+      <p>Nur während einer laufenden Sitzung in OpenAI · Cloud sendet Mäuse folgende Daten direkt an OpenAI:</p>
       <ul>
         <li>Live-Mikrofonaudio;</li>
         <li>die während der Sitzung gesprochenen Ausgabendetails;</li>
@@ -158,17 +177,18 @@
       </ul>
       <p>OpenAI liefert Zusammenfassungen der verstandenen Anfragen, Rückfragen und strukturierte Ausgabenentwürfe zurück. „So habe ich dich verstanden“ zeigt diese verstandenen Anfragen und Korrekturen, kein wortgetreues Transkript. Entwürfe werden erst in deiner lokalen Ausgabendatenbank gespeichert, wenn du sie ausdrücklich speicherst.</p>
       <p>Laut den aktuellen API-Datenkontrollen von OpenAI werden API-Inhalte nicht zum Training von OpenAI-Modellen verwendet, sofern der Inhaber des API-Kontos dem nicht ausdrücklich zustimmt. Beim Realtime-API können Protokolle zur Missbrauchsprävention Kundeninhalte standardmäßig bis zu 30 Tage speichern; eine längere Speicherung kann gesetzlich oder aus Sicherheitsgründen erforderlich sein. Weitere Informationen: <a href="https://developers.openai.com/api/docs/guides/your-data" target="_blank" rel="noopener">OpenAI API-Datenkontrollen</a> und <a href="https://openai.com/policies/privacy-policy/" target="_blank" rel="noopener">OpenAI-Datenschutzrichtlinie</a>.</p>
-      <p>Der Sprachmodus nutzt dein eigenes OpenAI-API-Projekt. OpenAI kann die Nutzung diesem Projekt berechnen. Mäuse erhält keinen Anteil an diesen Kosten.</p>
+      <p>OpenAI · Cloud nutzt dein eigenes OpenAI-API-Projekt. OpenAI kann die Nutzung diesem Projekt berechnen. Mäuse erhält keinen Anteil an diesen Kosten.</p>
 
       <h3>Deine Wahlmöglichkeiten</h3>
       <ul>
-        <li>Deaktiviere den Sprachmodus in den Einstellungen, um deine Einwilligung zu widerrufen und zukünftige Audioübertragungen zu stoppen. Wenn du ihn erneut aktivierst, musst du dem Datenschutzhinweis erneut zustimmen.</li>
-        <li>Lösche den gespeicherten Schlüssel aus dem Schlüsselbund.</li>
-        <li>Beende eine Sprachsitzung, um Mikrofonaufnahme und OpenAI-Verbindung zu stoppen.</li>
+        <li>Deaktiviere den Sprachmodus in den Einstellungen, um jede Audioaufnahme und -übertragung zu stoppen. Deine Einwilligung bleibt gespeichert, sodass du beim erneuten Aktivieren nicht noch einmal gefragt wirst.</li>
+        <li>Lösche deinen gespeicherten OpenAI-API-Schlüssel in den Einstellungen, um deine Einwilligung zu widerrufen. Mäuse fragt erneut, bevor der OpenAI-Modus das nächste Mal verwendet wird.</li>
+        <li>Beende eine Sprachsitzung, um die Mikrofonaufnahme zu stoppen. OpenAI · Cloud trennt dann auch die Verbindung zu OpenAI; Apple · Auf dem Gerät beendet die Erkennung auf dem Gerät.</li>
+        <li>Du kannst zu Apple · Auf dem Gerät wechseln, das keine Sprachdaten von deinem iPhone sendet.</li>
       </ul>
 
-      <h2>4. Mikrofonberechtigung</h2>
-      <p>iOS fragt beim ersten Bedarf nach Mikrofonzugriff. Mäuse greift nur während einer aktiven Sprachsitzung auf das Mikrofon zu. Du kannst die Berechtigung jederzeit in den iOS-Einstellungen widerrufen.</p>
+      <h2>4. Mikrofon und Spracherkennung</h2>
+      <p>iOS fragt beim ersten Bedarf nach Mikrofonzugriff. Apple · Auf dem Gerät fragt zusätzlich nach Spracherkennung. Mäuse greift nur während einer aktiven Sprachsitzung auf das Mikrofon zu und nutzt Spracherkennung nur für die Apple-Erfassung auf dem Gerät. Beides kannst du in den iOS-Einstellungen widerrufen. Ein Widerruf der Spracherkennung betrifft OpenAI · Cloud nicht.</p>
 
       <h2>5. App-Analyse, Werbung und Tracking</h2>
       <p>Die Mäuse-iPhone-App enthält keine Werbe-, Analyse- oder Telemetrie-SDKs und kein App-übergreifendes Tracking. Sie verwendet nicht Apples Werbe-ID.</p>
@@ -179,16 +199,18 @@
       <p>Die Website speichert ausschließlich deine Sprach- und Designauswahl im lokalen Browserspeicher. Diese Einstellungen bleiben bis zum Löschen der Browserdaten erhalten.</p>
 
       <h2>7. Rechtsgrundlagen</h2>
-      <p>Soweit die DSGVO gilt, erfolgt die Übermittlung im Sprachmodus auf Grundlage deiner Einwilligung und zur Bereitstellung der von dir angeforderten Funktion. Auslieferung, Sicherheit und aggregierte Reichweitenmessung der Website beruhen auf berechtigten Interessen am Betrieb, Schutz und an der Verbesserung der Website.</p>
+      <p>Soweit die DSGVO gilt, erfolgt die Übermittlung bei OpenAI · Cloud auf Grundlage deiner Einwilligung und zur Bereitstellung der von dir angeforderten Funktion. Apple · Auf dem Gerät verarbeitet Sprache und Ausgabenentwürfe nur auf deinem iPhone; diese Daten werden weder an Mäuse noch an Dritte übermittelt. Auslieferung, Sicherheit und aggregierte Reichweitenmessung der Website beruhen auf berechtigten Interessen am Betrieb, Schutz und an der Verbesserung der Website.</p>
 
       <h2>8. Internationale Verarbeitung</h2>
-      <p>OpenAI und Vercel können Informationen außerhalb deines Landes verarbeiten. Maßgeblich sind deren Verträge, Datenschutzrichtlinien und Übermittlungsmechanismen. Da der Sprachmodus dein eigenes OpenAI-Projekt verwendet, werden projektspezifische Datenresidenz- und Aufbewahrungseinstellungen vom Inhaber dieses OpenAI-Kontos gesteuert.</p>
+      <p>Dieser Abschnitt gilt für OpenAI · Cloud und diese Website. Apple · Auf dem Gerät sendet keine Sprachdaten an OpenAI. OpenAI und Vercel können Informationen außerhalb deines Landes verarbeiten. Maßgeblich sind deren Verträge, Datenschutzrichtlinien und Übermittlungsmechanismen. Da OpenAI · Cloud dein eigenes OpenAI-Projekt verwendet, werden projektspezifische Datenresidenz- und Aufbewahrungseinstellungen vom Inhaber dieses OpenAI-Kontos gesteuert.</p>
 
       <h2>9. Speicherdauer</h2>
       <ul>
         <li>Lokale Ausgaben bleiben auf dem Gerät, bis du sie löschst, per Import ersetzt oder die App samt Daten entfernst.</li>
         <li>Der API-Schlüssel bleibt im Schlüsselbund, bis du ihn entfernst oder die zugehörigen Gerätedaten löschst.</li>
         <li>Die Einwilligung bleibt lokal gespeichert, bis du sie widerrufst oder eine zukünftige Einwilligungsversion sie ersetzt.</li>
+        <li>Bei Apple · Auf dem Gerät bleiben erkannter Text und Entwürfe nur bis zum Schließen der Sitzung im Arbeitsspeicher. Mäuse speichert die Aufnahme nicht. Gespeicherte Ausgaben bleiben wie manuelle Einträge auf dem Gerät.</li>
+        <li>Die optionale lokale Diagnose (nur Apple-Modus) ist technische Metadaten im Arbeitsspeicher bis zum Beenden der App. Sie enthält keinen Sprachtext, keine Beträge und kein Audio und wird nur geteilt, wenn du „Teilen“ wählst.</li>
         <li>OpenAI und Vercel speichern Informationen entsprechend ihren Richtlinien und deiner jeweiligen Kontokonfiguration.</li>
       </ul>
 
@@ -196,7 +218,7 @@
       <p>Je nach anwendbarem Recht kannst du Auskunft, Berichtigung, Löschung, Einschränkung oder Widerspruch verlangen und eine Einwilligung widerrufen. Du kannst dich außerdem bei einer Datenschutzaufsichtsbehörde beschweren. Die meisten App-Daten kontrollierst du direkt auf deinem Gerät; der Entwickler kann lokale Ausgaben oder deinen API-Schlüssel nicht abrufen.</p>
 
       <h2>11. Kinder</h2>
-      <p>Mäuse richtet sich nicht speziell an Kinder. Übermittle im Sprachmodus keine sensiblen Informationen anderer Personen ohne deren Erlaubnis.</p>
+      <p>Mäuse richtet sich nicht speziell an Kinder. Sprich keine sensiblen Informationen anderer Personen ein – auch nicht bei Apple · Auf dem Gerät – und sende sie nicht ohne deren Erlaubnis an OpenAI.</p>
 
       <h2>12. Änderungen</h2>
       <p>Diese Erklärung kann angepasst werden, wenn sich Mäuse, die eingesetzten Dienste oder rechtliche Anforderungen ändern. Wesentliche Änderungen an der Datenweitergabe im Sprachmodus erfordern eine erneute Einwilligung in der App.</p>
