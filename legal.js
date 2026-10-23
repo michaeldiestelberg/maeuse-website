@@ -50,6 +50,21 @@
     return (navigator.language || 'en').toLowerCase().indexOf('de') === 0 ? 'de' : 'en';
   }
 
+  function languageFromHash() {
+    var id = (location.hash || '').replace(/^#/, '');
+    if (id === 'voice-mode') return 'en';
+    if (id === 'voice-mode-de') return 'de';
+    return null;
+  }
+
+  function scrollToHash() {
+    var id = (location.hash || '').replace(/^#/, '');
+    if (!id) return;
+    var target = document.getElementById(id);
+    if (!target || target.closest('[hidden]')) return;
+    target.scrollIntoView();
+  }
+
   langEn.addEventListener('click', function () { applyLanguage('en'); });
   langDe.addEventListener('click', function () { applyLanguage('de'); });
 
@@ -60,5 +75,7 @@
     try { localStorage.setItem('maeuse-site-theme', dark ? 'dark' : 'light'); } catch (e) {}
   });
 
-  applyLanguage(initialLanguage());
+  applyLanguage(languageFromHash() || initialLanguage());
+  // Toggling hidden articles cancels the browser's initial hash scroll.
+  scrollToHash();
 })();
