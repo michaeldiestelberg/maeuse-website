@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Mäuse - Say what you spent. That's it.</title>
-<meta name="description" content="Mäuse is a local-first iPhone expense tracker for two. Split shared costs, keep portable backups, and optionally add expenses with OpenAI-powered voice entry.">
+<meta name="description" content="Share costs fairly without a joint account. Log expenses by voice and always see who owes whom. Local-first and made for couples.">
 <link rel="canonical" href="https://xn--muse-loa.app/">
 <meta name="theme-color" content="#FFF6DE" media="(prefers-color-scheme: light)">
 <meta name="theme-color" content="#211A09" media="(prefers-color-scheme: dark)">
@@ -14,7 +14,7 @@
 <meta property="og:url" content="https://xn--muse-loa.app/">
 <meta property="og:site_name" content="Mäuse">
 <meta property="og:title" content="Mäuse - Say what you spent. That's it.">
-<meta property="og:description" content="A local-first expense tracker for two, with flexible splits, portable backups, and optional voice entry.">
+<meta property="og:description" content="Share costs fairly without a joint account. Log expenses by voice and always see who owes whom. Made for couples.">
 <meta property="og:image" content="https://xn--muse-loa.app/assets/og-image.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -25,7 +25,7 @@
 <!-- Twitter / X -->
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Mäuse - Say what you spent. That's it.">
-<meta name="twitter:description" content="A local-first expense tracker for two, with flexible splits, portable backups, and optional voice entry.">
+<meta name="twitter:description" content="Share costs fairly without a joint account. Log expenses by voice and always see who owes whom. Made for couples.">
 <meta name="twitter:image" content="https://xn--muse-loa.app/assets/og-image.png">
 <meta name="twitter:image:alt" content="Mäuse coin-mouse logo with the tagline: Say what you spent. That's it.">
 
@@ -81,7 +81,7 @@
     <div class="hero-copy">
       <span class="hero-badge" data-i18n="badge">NOW ON THE APP STORE</span>
       <h1><span data-i18n="h1a">Say what you spent.</span><br><span class="h1-highlight" data-i18n="h1b">That's it.</span></h1>
-      <p class="hero-sub" data-i18n="heroSub">Mäuse is the expense tracker for you and your favorite Maus. Log it, slice the cheese, and always know who owes what - right on your iPhone.</p>
+      <p class="hero-sub" data-i18n="heroSub">Mäuse is the expense tracker for you and your favorite Maus: share costs fairly, no joint account needed. And always know who owes what.</p>
       <div class="voice-hint">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#D19000" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0 0 14 0"/><line x1="12" y1="18" x2="12" y2="21"/></svg>
         <span data-i18n="voiceHint">"Paid forty-two fifty for dinner at Luigi's" - logged.</span>
@@ -209,6 +209,7 @@
                   <div class="ed-confirm" id="ed-confirm" hidden>
                     <div class="ed-confirm-card">
                       <span class="ed-confirm-title">Delete this expense?</span>
+                      <span class="ed-confirm-msg">This cannot be undone.</span>
                       <button type="button" class="ed-confirm-yes" id="ed-confirm-yes">Delete expense</button>
                       <button type="button" class="ed-confirm-no" id="ed-confirm-no">Cancel</button>
                     </div>
@@ -257,16 +258,29 @@
                     </div>
                     <div class="st-card">
                       <span class="st-label">VOICE MODE</span>
-                      <div class="st-key-row">
-                        <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" style="color:var(--sub)"><path d="M17 10V7a5 5 0 0 0-10 0v3H5v11h14V10h-2zm-8 0V7a3 3 0 0 1 6 0v3H9z"/></svg>
-                        <div class="st-key-meta">
-                          <span class="st-key-title">OpenAI API key</span>
-                          <span class="key">sk-proj-••••••••••••</span>
+                      <div class="st-provider-row">
+                        <div class="st-provider-meta">
+                          <span class="st-provider-name" id="st-provider-name">OpenAI · Cloud</span>
+                          <span class="st-provider-badge" id="st-provider-badge">Recommended</span>
                         </div>
-                        <span class="ok">
-                          <svg width="11" height="11" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 1a7 7 0 1 0 0 14A7 7 0 0 0 8 1zm3.2 5.1L7.3 10.1 4.8 7.6l1-1 1.5 1.5 2.9-3z"/></svg>
-                          Verified
-                        </span>
+                        <button type="button" class="st-change" id="st-change-mode">Change</button>
+                      </div>
+                      <p class="st-provider-caption" id="st-provider-caption">Records continuously and processes requests with OpenAI. Audio and expense context are sent to OpenAI.</p>
+                      <div id="st-openai-block">
+                        <div class="st-key-row">
+                          <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" style="color:var(--sub)"><path d="M17 10V7a5 5 0 0 0-10 0v3H5v11h14V10h-2zm-8 0V7a3 3 0 0 1 6 0v3H9z"/></svg>
+                          <div class="st-key-meta">
+                            <span class="st-key-title">OpenAI API key</span>
+                            <span class="key">sk-proj-••••••••••••</span>
+                          </div>
+                          <span class="ok">
+                            <svg width="11" height="11" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 1a7 7 0 1 0 0 14A7 7 0 0 0 8 1zm3.2 5.1L7.3 10.1 4.8 7.6l1-1 1.5 1.5 2.9-3z"/></svg>
+                            Verified
+                          </span>
+                        </div>
+                      </div>
+                      <div id="st-apple-block" hidden>
+                        <p class="st-apple-ready" id="st-apple-ready">Ready on this iPhone.</p>
                       </div>
                       <div class="st-toggle-row">
                         <div class="txt">
@@ -324,6 +338,47 @@
                 </div>
               </div>
 
+              <!-- ===== voice mode chooser ===== -->
+              <div class="app-overlay" id="md-overlay" hidden>
+                <div class="app-dim" data-close="md"></div>
+                <div class="app-sheet md-sheet">
+                  <div class="sheet-grab"><div></div></div>
+                  <div class="sheet-head">
+                    <span class="st-title">How would you like to dictate?</span>
+                    <button type="button" class="st-done" data-close="md">Done</button>
+                  </div>
+                  <div class="st-body">
+                    <p class="st-provider-caption">Dictate expenses and review your drafts before saving.</p>
+                    <button type="button" class="st-mode-card sel" id="md-openai" data-mode="openai">
+                      <div class="st-mode-head">
+                        <span class="st-mode-title">OpenAI · Cloud</span>
+                        <span class="st-provider-badge">Recommended</span>
+                      </div>
+                      <span class="st-mode-summary">Speak naturally: several expenses, corrections, and dates in one go, with almost no mistakes.</span>
+                      <ul class="st-mode-points">
+                        <li>Most accurate</li>
+                        <li>Keep talking; pauses are detected automatically</li>
+                        <li>About $1–2 per 100 dictated expenses, billed to your OpenAI account</li>
+                        <li>Audio is sent to OpenAI; needs internet and your API key</li>
+                      </ul>
+                    </button>
+                    <button type="button" class="st-mode-card" id="md-apple" data-mode="apple">
+                      <div class="st-mode-head">
+                        <span class="st-mode-title">Apple · On device</span>
+                        <span class="st-provider-badge free">Free</span>
+                      </div>
+                      <span class="st-mode-summary">Simpler and stricter. Best for one short, clear expense at a time.</span>
+                      <ul class="st-mode-points">
+                        <li>Misunderstands more often; check every draft</li>
+                        <li>One expense per recording: speak, check, save</li>
+                        <li>No cost</li>
+                        <li>Stays on your iPhone; needs Apple Intelligence</li>
+                      </ul>
+                    </button>
+                  </div>
+                </div>
+              </div>
+
               <!-- ===== voice overlay ===== -->
               <div class="app-voice-overlay" id="vc-overlay" hidden>
                 <div class="app-voice-top">
@@ -353,17 +408,17 @@
                   </div>
                   <span class="app-voice-hint">Squeak away - "add flowers for 12 euros…"</span>
                 </div>
-                <div class="app-transcript">
-                  <div class="bubble-user" id="vc-user" hidden><div class="bubble">Add flowers for 12 euros and two cinema tickets for 24 - split both in half.</div></div>
-                  <div class="bubble-app" id="vc-app" hidden><div class="bubble">Got both! Two expenses in the trap - check them below.</div></div>
-                </div>
                 <div class="app-tray">
                   <div class="app-tray-head">
-                    <span class="label" id="vc-count">IN THE TRAP · 0</span>
+                    <span class="label" id="vc-count">Your drafts</span>
                     <span class="total" id="vc-total"></span>
                   </div>
                   <div class="none" id="vc-none">Nothing captured yet - keep talking.</div>
                   <div class="app-drafts" id="vc-drafts"></div>
+                  <button type="button" class="app-understood" id="vc-understood" hidden>
+                    <span>What I understood</span>
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9,6 15,12 9,18"/></svg>
+                  </button>
                 </div>
               </div>
             </div>
@@ -387,7 +442,7 @@
           <svg width="20" height="20" viewBox="0 0 24 24" stroke="#241C05" stroke-width="3" stroke-linecap="round" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
         </div>
         <h3 data-i18n="f1t">Fast as a mouse</h3>
-        <p data-i18n="f1b">Amount, note, done. Logging an expense takes seconds, not taps.</p>
+        <p data-i18n="f1b">Amount, note, done. Logging an expense takes seconds.</p>
       </div>
       <div class="feature-card">
         <div class="feature-icon">%</div>
@@ -399,7 +454,7 @@
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#241C05" stroke-width="2.6" stroke-linecap="round" aria-hidden="true"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0 0 14 0"/><line x1="12" y1="18" x2="12" y2="21"/></svg>
         </div>
         <h3 data-i18n="f3t">Squeak to log</h3>
-        <p data-i18n="f3b">Say what you spent - even a few things at once. Mäuse drafts them, you tap save.</p>
+        <p data-i18n="f3b">Just say what you spent. Mäuse turns it into entries, you check and save.</p>
       </div>
       <div class="feature-card">
         <div class="feature-icon">€</div>
@@ -429,7 +484,7 @@
                 </div>
                 <div class="app-voice-save">
                   <svg width="13" height="13" viewBox="0 0 16 16" fill="none" stroke="#241C05" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="2.5,8.5 6,12 13.5,4"/></svg>
-                  <span>Save 2</span>
+                  <span>Save</span>
                 </div>
               </div>
               <div class="app-voice-mouse-block">
@@ -446,32 +501,30 @@
                 </div>
                 <span class="app-voice-hint">Squeak away - "add flowers for 12 euros…"</span>
               </div>
-              <div class="app-transcript">
-                <div class="bubble-user"><div class="bubble">Add flowers for 12 euros and two cinema tickets for 24 - split both in half.</div></div>
-                <div class="bubble-app"><div class="bubble">Got both! Two expenses in the trap - check them below.</div></div>
-              </div>
               <div class="app-tray">
                 <div class="app-tray-head">
-                  <span class="label">IN THE TRAP · 2</span>
+                  <span class="label">Your drafts</span>
                   <span class="total">€36.00 total</span>
                 </div>
                 <div class="app-drafts">
                   <div class="app-draft">
                     <div class="app-draft-head">
                       <span class="desc">Flowers</span>
-                      <svg width="14" height="14" viewBox="0 0 14 14" style="stroke:var(--sub)" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><line x1="2" y1="2" x2="12" y2="12"/><line x1="12" y1="2" x2="2" y2="12"/></svg>
+                      <span class="amount">€12.00</span>
                     </div>
-                    <span class="amount">€12.00</span>
-                    <div class="app-draft-chips"><span class="pct">50%</span><span class="when">Today</span></div>
+                    <div class="app-draft-chips"><span class="when">Today</span><span class="pct">Partner 50%</span></div>
                   </div>
                   <div class="app-draft">
                     <div class="app-draft-head">
                       <span class="desc">Cinema tickets</span>
-                      <svg width="14" height="14" viewBox="0 0 14 14" style="stroke:var(--sub)" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><line x1="2" y1="2" x2="12" y2="12"/><line x1="12" y1="2" x2="2" y2="12"/></svg>
+                      <span class="amount">€24.00</span>
                     </div>
-                    <span class="amount">€24.00</span>
-                    <div class="app-draft-chips"><span class="pct">50%</span><span class="when">Today</span></div>
+                    <div class="app-draft-chips"><span class="when">Today</span><span class="pct">Partner 50%</span></div>
                   </div>
+                </div>
+                <div class="app-understood" aria-hidden="true">
+                  <span>What I understood</span>
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="9,6 15,12 9,18"/></svg>
                 </div>
               </div>
             </div>
@@ -504,7 +557,33 @@
           <span class="b" data-i18n="v3b">Review the drafts it caught, then save them all at once.</span>
         </div>
       </div>
-      <p class="voice-note" data-i18n="vNote">Voice mode is optional. Your API key is stored in Keychain and sent only to OpenAI over HTTPS; live audio and expense details are shared with OpenAI only during a voice session.</p>
+      <div class="voice-compare">
+        <p class="voice-note" data-i18n="vNote">Voice Mode is optional. Two options:</p>
+        <div class="voice-compare-grid">
+          <div class="voice-mode-card">
+            <div class="voice-mode-head">
+              <span class="voice-mode-title" data-i18n="vAppleTitle">On-device AI (Apple)</span>
+              <span class="voice-mode-badge" data-i18n="vAppleTag">New</span>
+            </div>
+            <ul class="voice-mode-points">
+              <li data-i18n="vApple1">Free</li>
+              <li data-i18n="vApple2">Runs on your iPhone, nothing leaves the device</li>
+              <li data-i18n="vApple3">One expense at a time</li>
+              <li data-i18n="vApple4">For every iPhone with Apple Intelligence</li>
+            </ul>
+          </div>
+          <div class="voice-mode-card">
+            <div class="voice-mode-head">
+              <span class="voice-mode-title" data-i18n="vCloudTitle">Cloud AI (OpenAI)</span>
+            </div>
+            <ul class="voice-mode-points">
+              <li data-i18n="vCloud1">Understands several expenses at once</li>
+              <li data-i18n="vCloud2">With your own OpenAI key</li>
+              <li data-i18n="vCloud3">Audio goes to OpenAI only after you agree</li>
+            </ul>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -513,7 +592,7 @@
 <section id="privacy" class="section on-card">
   <div class="container privacy-inner">
     <h2 data-i18n="pTitle">Local first. Clear about cloud.</h2>
-    <p class="section-sub" data-i18n="pSub">Manual expenses stay on your iPhone. Voice Mode connects directly to OpenAI only after you choose to enable it.</p>
+    <p class="section-sub" data-i18n="pSub">Manual expenses stay on your iPhone. Voice Mode connects to OpenAI only after you agree.</p>
     <div class="privacy-card">
       <div class="privacy-item">
         <span class="privacy-check" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 16 16" fill="none" stroke="#241C05" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="2.5,8.5 6,12 13.5,4"/></svg></span>
@@ -533,7 +612,7 @@
       </div>
       <div class="privacy-item">
         <span class="privacy-check neutral" aria-hidden="true"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" style="stroke:var(--icon)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"/></svg></span>
-        <div class="privacy-text"><strong data-i18n="p5t">One optional cloud connection.</strong> <span data-i18n="p5b">With your consent, Voice Mode sends live audio and spoken expense details to OpenAI. Your key is stored in Keychain and excluded from backups.</span></div>
+        <div class="privacy-text"><strong data-i18n="p5t">Cloud only if you choose it.</strong> <span data-i18n="p5b">With on-device AI, everything stays on your iPhone. With cloud AI, Mäuse sends live audio and spoken expense details to OpenAI only after you agree. Your key is stored in Keychain and excluded from backups.</span></div>
       </div>
     </div>
   </div>

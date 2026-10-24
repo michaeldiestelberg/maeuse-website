@@ -1,6 +1,6 @@
 # Mäuse Website
 
-This repository contains the website for Mäuse, a local-first expense tracker for couples with built-in voice mode.
+This repository contains the website for Mäuse, a local-first expense tracker for couples with optional on-device or OpenAI voice mode.
 
 Live website: [mäuse.app](https://xn--muse-loa.app)
 

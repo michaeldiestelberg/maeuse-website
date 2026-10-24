@@ -10,28 +10,37 @@
       navFeatures: 'Features', navVoice: 'Voice', navSupport: 'Support', navGet: 'Get the app',
       badge: 'NOW ON THE APP STORE',
       h1a: 'Say what you spent.', h1b: 'That’s it.',
-      heroSub: 'Mäuse is the expense tracker for you and your favorite Maus. Log it, slice the cheese, and always know who owes what - right on your iPhone.',
+      heroSub: 'Mäuse is the expense tracker for you and your favorite Maus: share costs fairly, no joint account needed. And always know who owes what.',
       voiceHint: '“Paid forty-two fifty for dinner at Luigi’s” - logged.',
       downloadCta: 'Download on the App Store',
       slang: '“Mäuse” is German slang for money - literally “mice”.',
       tapAround: 'GO AHEAD, IT’S THE REAL APP - TAP AROUND',
       featTitle: 'Everything a Maus needs.', featSub: 'Nothing that nibbles at your attention.',
-      f1t: 'Fast as a mouse', f1b: 'Amount, note, done. Logging an expense takes seconds, not taps.',
+      f1t: 'Fast as a mouse', f1b: 'Amount, note, done. Logging an expense takes seconds.',
       f2t: 'Slice the cheese', f2b: 'Drag the split slider in 5% steps - you and your Maus each see your share right away.',
-      f3t: 'Squeak to log', f3b: 'Say what you spent - even a few things at once. Mäuse drafts them, you tap save.',
+      f3t: 'Squeak to log', f3b: 'Just say what you spent. Mäuse turns it into entries, you check and save.',
       f4t: 'The monthly stash', f4b: 'Totals per month and exactly what your Maus owes you. No spreadsheets, no math.',
       vTitle: 'Talk. It’s logged.',
       v1t: 'Tap the mic', v1b: 'It’s right there on the main screen.',
       v2t: 'Squeak away', v2b: '“Flowers for 12, cinema tickets for 24 - split both in half.”',
       v3t: 'Check the trap', v3b: 'Review the drafts it caught, then save them all at once.',
-      vNote: 'Voice mode is optional. Your API key is stored in Keychain and sent only to OpenAI over HTTPS; live audio and expense details are shared with OpenAI only during a voice session.',
+      vNote: 'Voice Mode is optional. Two options:',
+      vAppleTitle: 'On-device AI (Apple)', vAppleTag: 'New',
+      vApple1: 'Free',
+      vApple2: 'Runs on your iPhone, nothing leaves the device',
+      vApple3: 'One expense at a time',
+      vApple4: 'For every iPhone with Apple Intelligence',
+      vCloudTitle: 'Cloud AI (OpenAI)',
+      vCloud1: 'Understands several expenses at once',
+      vCloud2: 'With your own OpenAI key',
+      vCloud3: 'Audio goes to OpenAI only after you agree',
       pTitle: 'Local first. Clear about cloud.',
-      pSub: 'Manual expenses stay on your iPhone. Voice Mode connects directly to OpenAI only after you choose to enable it.',
+      pSub: 'Manual expenses stay on your iPhone. Voice Mode connects to OpenAI only after you agree.',
       p1t: 'Manual expenses stay on your device.', p1b: 'Amounts, notes, dates, splits, and imported backups are stored locally on your iPhone.',
       p2t: 'Works offline.', p2b: 'On a plane, in the basement, in a mouse hole - logging always works.',
       p3t: 'No app account, ads, or tracking.', p3b: 'The iPhone app has no analytics or telemetry. This website uses cookie-free, aggregated Vercel Web Analytics.',
       p4t: 'Portable backups.', p4b: 'Export your data as a file, import it anywhere. You own it.',
-      p5t: 'One optional cloud connection.', p5b: 'With your consent, Voice Mode sends live audio and spoken expense details to OpenAI. Your key is stored in Keychain and excluded from backups.',
+      p5t: 'Cloud only if you choose it.', p5b: 'With on-device AI, everything stays on your iPhone. With cloud AI, Mäuse sends live audio and spoken expense details to OpenAI only after you agree. Your key is stored in Keychain and excluded from backups.',
       dlTitle: 'The trap is set.',
       dlBody: 'Mäuse is free on the App Store for iPhone. No Mäuse account required.',
       dlMeta: 'Free · iPhone · No account required',
@@ -41,28 +50,37 @@
       navFeatures: 'Funktionen', navVoice: 'Sprachmodus', navSupport: 'Support', navGet: 'App holen',
       badge: 'JETZT IM APP STORE',
       h1a: 'Sag, was du ausgegeben hast.', h1b: 'Mehr nicht.',
-      heroSub: 'Mäuse ist der Ausgaben-Tracker für dich und deine Lieblingsmaus. Eintragen, den Käse teilen und immer wissen, wer wem was schuldet - direkt auf deinem iPhone.',
+      heroSub: 'Mäuse ist der Ausgaben-Tracker für dich und deine Lieblingsmaus: gemeinsame Kosten fair teilen, ohne gemeinsames Konto. Und immer wissen, wer wem was schuldet.',
       voiceHint: '„Zweiundvierzig fünfzig fürs Abendessen bei Luigi“ - erfasst.',
       downloadCta: 'Im App Store laden',
-      slang: '„Mäuse“ ist umgangssprachlich Geld - wortwörtlich: Mäuse.',
+      slang: '„Mäuse“ ist Umgangssprache für Geld.',
       tapAround: 'NUR ZU, DAS IST DIE ECHTE APP - TIPP DICH DURCH',
       featTitle: 'Alles, was eine Maus braucht.', featSub: 'Nichts, was an deiner Aufmerksamkeit knabbert.',
-      f1t: 'Flink wie eine Maus', f1b: 'Betrag, Notiz, fertig. Eine Ausgabe ist in Sekunden drin - nicht in Minuten.',
+      f1t: 'Flink wie eine Maus', f1b: 'Betrag, Notiz, fertig. Eine Ausgabe ist in Sekunden erfasst.',
       f2t: 'Den Käse teilen', f2b: 'Zieh den Split-Regler in 5%-Schritten - du und deine Maus seht sofort euren Anteil.',
-      f3t: 'Piepsen statt tippen', f3b: 'Sag, was du ausgegeben hast - auch mehrere Dinge auf einmal. Mäuse entwirft die Einträge, du tippst auf Speichern.',
+      f3t: 'Piepsen statt tippen', f3b: 'Sag einfach, was du ausgegeben hast. Mäuse macht daraus Einträge, du prüfst und speicherst.',
       f4t: 'Der Monatsvorrat', f4b: 'Monatssummen und genau das, was deine Maus dir schuldet. Keine Tabellen, kein Kopfrechnen.',
       vTitle: 'Sprich. Schon erfasst.',
       v1t: 'Tipp aufs Mikro', v1b: 'Sitzt direkt auf dem Hauptbildschirm.',
       v2t: 'Piepse los', v2b: '„Blumen für 12, Kinokarten für 24 - beides halbe-halbe.“',
       v3t: 'Schau in die Falle', v3b: 'Prüfe die gefangenen Entwürfe und speichere alle auf einmal.',
-      vNote: 'Der Sprachmodus ist optional. Dein API-Schlüssel liegt im Schlüsselbund und wird nur verschlüsselt an OpenAI gesendet; Live-Audio und Ausgabendetails gehen ausschließlich während einer Sprachsitzung an OpenAI.',
+      vNote: 'Der Sprachmodus ist optional. Du hast zwei Varianten:',
+      vAppleTitle: 'Lokale KI (Apple)', vAppleTag: 'Neu',
+      vApple1: 'Kostenlos',
+      vApple2: 'Läuft auf deinem iPhone, nichts verlässt das Gerät',
+      vApple3: 'Eine Ausgabe nach der anderen',
+      vApple4: 'Für jedes iPhone mit Apple Intelligence',
+      vCloudTitle: 'Cloud-KI (OpenAI)',
+      vCloud1: 'Versteht mehrere Ausgaben auf einmal',
+      vCloud2: 'Mit deinem eigenen OpenAI-Schlüssel',
+      vCloud3: 'Audio geht erst nach deiner Zustimmung an OpenAI',
       pTitle: 'Lokal zuerst. Cloud ganz klar.',
-      pSub: 'Manuelle Ausgaben bleiben auf deinem iPhone. Der Sprachmodus verbindet sich erst nach deiner Zustimmung direkt mit OpenAI.',
+      pSub: 'Manuelle Ausgaben bleiben auf deinem iPhone. Der Sprachmodus verbindet sich erst nach deiner Zustimmung mit OpenAI.',
       p1t: 'Manuelle Ausgaben bleiben auf deinem Gerät.', p1b: 'Beträge, Notizen, Daten, Aufteilungen und importierte Backups werden lokal auf deinem iPhone gespeichert.',
       p2t: 'Funktioniert offline.', p2b: 'Im Flugzeug, im Keller, im Mauseloch - Eintragen geht immer.',
       p3t: 'Kein App-Konto, keine Werbung, kein Tracking.', p3b: 'Die iPhone-App enthält weder Analytics noch Telemetrie. Diese Website nutzt aggregierte, cookiefreie Vercel Web Analytics.',
       p4t: 'Backups zum Mitnehmen.', p4b: 'Exportiere deine Daten als Datei und importiere sie überall. Sie gehören dir.',
-      p5t: 'Eine optionale Cloud-Verbindung.', p5b: 'Mit deiner Einwilligung sendet der Sprachmodus Live-Audio und gesprochene Ausgabendetails an OpenAI. Dein Schlüssel liegt im Schlüsselbund und ist nie im Backup.',
+      p5t: 'Cloud nur, wenn du sie wählst.', p5b: 'Mit lokaler KI bleibt alles auf deinem iPhone. Mit Cloud-KI sendet Mäuse erst nach deiner Zustimmung Live-Audio und gesprochene Ausgabendetails an OpenAI. Dein Schlüssel liegt im Schlüsselbund und ist nie im Backup.',
       dlTitle: 'Die Falle ist gestellt.',
       dlBody: 'Mäuse ist kostenlos im App Store fürs iPhone. Kein Mäuse-Konto nötig.',
       dlMeta: 'Gratis · iPhone · Kein Konto nötig',
@@ -416,21 +434,22 @@
 
   function renderDrafts() {
     var total = demo.drafts.reduce(function (a, d) { return a + d.amount; }, 0);
-    el('vc-count').textContent = 'IN THE TRAP · ' + demo.drafts.length;
+    el('vc-count').textContent = 'Your drafts';
     el('vc-total').textContent = demo.drafts.length ? fmt(total) + ' total' : '';
-    el('vc-save-label').textContent = demo.drafts.length ? 'Save ' + demo.drafts.length : 'Save';
+    el('vc-save-label').textContent = 'Save';
     el('vc-save').classList.toggle('disabled', demo.drafts.length === 0);
     el('vc-none').hidden = demo.drafts.length > 0;
+    el('vc-understood').hidden = demo.drafts.length === 0;
     var html = '';
     demo.drafts.forEach(function (d) {
       html +=
         '<div class="app-draft" data-id="' + d.id + '">' +
           '<div class="app-draft-head">' +
             '<span class="desc">' + esc(d.desc) + '</span>' +
+            '<span class="amount">' + fmt(d.amount) + '</span>' +
             '<svg class="remove" width="14" height="14" viewBox="0 0 14 14" style="stroke:var(--sub)" stroke-width="2.2" stroke-linecap="round"><line x1="2" y1="2" x2="12" y2="12"/><line x1="12" y1="2" x2="2" y2="12"/></svg>' +
           '</div>' +
-          '<span class="amount">' + fmt(d.amount) + '</span>' +
-          '<div class="app-draft-chips"><span class="pct">50%</span><span class="when">Today</span></div>' +
+          '<div class="app-draft-chips"><span class="when">Today</span><span class="pct">Partner 50%</span></div>' +
         '</div>';
     });
     el('vc-drafts').innerHTML = html;
@@ -440,16 +459,12 @@
     clearVoiceTimers();
     demo.drafts = [];
     el('vc-state').textContent = 'Listening…';
-    el('vc-user').hidden = true;
-    el('vc-app').hidden = true;
     renderDrafts();
     el('vc-overlay').hidden = false;
     demo.voiceTimer1 = setTimeout(function () {
-      el('vc-user').hidden = false;
       el('vc-state').textContent = 'Updating…';
     }, 1600);
     demo.voiceTimer2 = setTimeout(function () {
-      el('vc-app').hidden = false;
       el('vc-state').textContent = 'Listening…';
       demo.drafts = [
         { id: 'd1', desc: 'Flowers', amount: 12.00 },
@@ -514,6 +529,35 @@
     document.querySelector('.hero .app').classList.toggle('no-voice', !on);
   });
 
+  demo.voiceProvider = 'openai';
+
+  function applyVoiceProvider(mode) {
+    demo.voiceProvider = mode;
+    var isApple = mode === 'apple';
+    el('st-provider-name').textContent = isApple ? 'Apple · On device' : 'OpenAI · Cloud';
+    el('st-provider-badge').textContent = isApple ? 'Free' : 'Recommended';
+    el('st-provider-badge').classList.toggle('free', isApple);
+    el('st-provider-caption').textContent = isApple
+      ? 'Simpler and stricter. Best for one short, clear expense at a time.'
+      : 'Records continuously and processes requests with OpenAI. Audio and expense context are sent to OpenAI.';
+    el('st-openai-block').hidden = isApple;
+    el('st-apple-block').hidden = !isApple;
+    el('md-openai').classList.toggle('sel', !isApple);
+    el('md-apple').classList.toggle('sel', isApple);
+  }
+
+  el('st-change-mode').addEventListener('click', function () {
+    el('md-overlay').hidden = false;
+  });
+  el('md-openai').addEventListener('click', function () {
+    applyVoiceProvider('openai');
+    el('md-overlay').hidden = true;
+  });
+  el('md-apple').addEventListener('click', function () {
+    applyVoiceProvider('apple');
+    el('md-overlay').hidden = true;
+  });
+
   // sync the appearance segment with the current theme when opening settings
   el('app-settings').addEventListener('click', function () {
     var stored = null;
@@ -531,6 +575,7 @@
       var which = node.getAttribute('data-close');
       if (which === 'vc') clearVoiceTimers();
       if (which === 'ed') confirmEl.hidden = true;
+      if (which === 'st') el('md-overlay').hidden = true;
       el(which + '-overlay').hidden = true;
     });
   });
