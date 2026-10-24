@@ -618,6 +618,21 @@
   </div>
 </section>
 
+<!-- ===== STORY ===== -->
+<section id="story" class="section story-section">
+  <div class="container section-inner">
+    <h2 id="story-title" data-i18n="homeStoryTitle">The story so far.</h2>
+    <p class="section-sub" data-i18n="homeStorySub">Open a cover. The comic is on the left, the contents on the right.</p>
+    <div id="manga-slot" class="manga-slot"></div>
+    <noscript>
+      <p class="story-fallback"><a href="changelog.html">Read the volumes in the changelog.</a></p>
+    </noscript>
+    <p class="story-fallback" id="manga-fallback" hidden>
+      <a href="changelog.html" data-i18n="homeStoryFallback">Read the volumes in the changelog.</a>
+    </p>
+  </div>
+</section>
+
 <!-- ===== DOWNLOAD ===== -->
 <section id="download" class="section">
   <div class="container download-inner">
@@ -652,5 +667,7 @@
 </footer>
 
 <script src="app.js"></script>
+<script src="manga-strings.js"></script>
+<script src="manga.js"></script>
 </body>
 </html>

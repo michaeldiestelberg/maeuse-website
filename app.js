@@ -44,6 +44,9 @@
       dlTitle: 'The trap is set.',
       dlBody: 'Mäuse is free on the App Store for iPhone. No Mäuse account required.',
       dlMeta: 'Free · iPhone · No account required',
+      homeStoryTitle: 'The story so far.',
+      homeStorySub: 'Open a cover. The comic is on the left, the contents on the right.',
+      homeStoryFallback: 'Read the volumes in the changelog.',
       footerTag: 'Made for couples who keep it simple.', footerPrivacy: 'Privacy', footerSupport: 'Support', footerChangelog: 'Changelog', footerTerms: 'Terms'
     },
     de: {
@@ -84,6 +87,9 @@
       dlTitle: 'Die Falle ist gestellt.',
       dlBody: 'Mäuse ist kostenlos im App Store fürs iPhone. Kein Mäuse-Konto nötig.',
       dlMeta: 'Gratis · iPhone · Kein Konto nötig',
+      homeStoryTitle: 'Die Geschichte bisher.',
+      homeStorySub: 'Schlag eine Titelseite auf. Links der Comic, rechts der Inhalt.',
+      homeStoryFallback: 'Die Bände im Changelog lesen.',
       footerTag: 'Gemacht für Paare, die es einfach halten.', footerPrivacy: 'Datenschutz', footerSupport: 'Support', footerChangelog: 'Changelog', footerTerms: 'Bedingungen'
     }
   };
@@ -100,9 +106,15 @@
       var key = nodes[i].getAttribute('data-i18n');
       if (t[key] != null) nodes[i].textContent = t[key];
     }
+    var german = lang === 'de';
+    var englishNodes = document.querySelectorAll('.lang-en');
+    var germanNodes = document.querySelectorAll('.lang-de');
+    for (var e = 0; e < englishNodes.length; e++) englishNodes[e].hidden = german;
+    for (var g = 0; g < germanNodes.length; g++) germanNodes[g].hidden = !german;
     document.documentElement.lang = lang;
     langEn.setAttribute('aria-pressed', String(lang === 'en'));
     langDe.setAttribute('aria-pressed', String(lang === 'de'));
+    document.dispatchEvent(new CustomEvent('maeuse:lang', { detail: { lang: lang } }));
   }
 
   function setLang(lang) {
