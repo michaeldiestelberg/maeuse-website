@@ -6,11 +6,23 @@
   var strings = {
     en: {
       navFeatures: 'Features', navVoice: 'Voice', navSupport: 'Support', navGet: 'Get the app',
-      footerTag: 'Made for couples who keep it simple.', footerPrivacy: 'Privacy', footerSupport: 'Support', footerChangelog: 'Changelog', footerTerms: 'Terms'
+      footerTag: 'Made for couples who keep it simple.', footerPrivacy: 'Privacy', footerSupport: 'Support', footerChangelog: 'Changelog', footerTerms: 'Terms',
+      mangaPrev: 'Previous volume', mangaNext: 'Next volume', mangaClose: 'Close volume',
+      mangaHint: 'Swipe, use the arrows or keys — click the front cover to open.',
+      mangaKicker: 'RELEASES', mangaTitle: 'Changelog',
+      mangaLead: 'What’s new in Mäuse, as manga volumes.',
+      mangaContents: 'CONTENTS', mangaContinued: 'To be continued …',
+      mangaGallery: 'Mäuse manga volumes', mangaRead: 'Open volume'
     },
     de: {
       navFeatures: 'Funktionen', navVoice: 'Sprachmodus', navSupport: 'Support', navGet: 'App holen',
-      footerTag: 'Gemacht für Paare, die es einfach halten.', footerPrivacy: 'Datenschutz', footerSupport: 'Support', footerChangelog: 'Changelog', footerTerms: 'Bedingungen'
+      footerTag: 'Gemacht für Paare, die es einfach halten.', footerPrivacy: 'Datenschutz', footerSupport: 'Support', footerChangelog: 'Changelog', footerTerms: 'Bedingungen',
+      mangaPrev: 'Vorheriger Band', mangaNext: 'Nächster Band', mangaClose: 'Band schließen',
+      mangaHint: 'Wischen, Pfeile oder Tasten — die vordere Titelseite öffnet den Band.',
+      mangaKicker: 'VERSIONEN', mangaTitle: 'Changelog',
+      mangaLead: 'Was ist neu in Mäuse, als Manga-Bände.',
+      mangaContents: 'INHALT', mangaContinued: 'Fortsetzung folgt …',
+      mangaGallery: 'Mäuse-Manga-Bände', mangaRead: 'Band öffnen'
     }
   };
 
@@ -24,6 +36,11 @@
     for (var i = 0; i < nodes.length; i++) {
       var key = nodes[i].getAttribute('data-i18n');
       if (t[key] != null) nodes[i].textContent = t[key];
+    }
+    var ariaNodes = document.querySelectorAll('[data-i18n-aria]');
+    for (var j = 0; j < ariaNodes.length; j++) {
+      var ariaKey = ariaNodes[j].getAttribute('data-i18n-aria');
+      if (t[ariaKey] != null) ariaNodes[j].setAttribute('aria-label', t[ariaKey]);
     }
   }
 
@@ -40,6 +57,7 @@
     applyChrome(useGerman ? 'de' : 'en');
 
     try { localStorage.setItem('maeuse-site-lang', useGerman ? 'de' : 'en'); } catch (e) {}
+    document.dispatchEvent(new CustomEvent('maeuse:lang', { detail: { lang: useGerman ? 'de' : 'en' } }));
   }
 
   function initialLanguage() {
