@@ -738,25 +738,37 @@
     }
   }
 
+  function mangaSheetReady(link) {
+    if (!link || !link.sheet) return false;
+    try {
+      return link.sheet.cssRules.length > 0;
+    } catch (e) {
+      return false;
+    }
+  }
+
   function ensureMangaCss() {
     var existing = document.querySelector('link[href="manga.css"]');
-    if (existing && existing.sheet) return Promise.resolve();
-    return new Promise(function (resolve) {
+    if (mangaSheetReady(existing)) return Promise.resolve();
+    return new Promise(function (resolve, reject) {
       var link = existing || document.createElement('link');
       var settled = false;
-      function done() {
+      function finish(ok) {
         if (settled) return;
         settled = true;
-        resolve();
+        if (ok) resolve();
+        else reject(new Error('manga.css'));
       }
-      link.addEventListener('load', done);
-      link.addEventListener('error', done);
+      link.addEventListener('load', function () { finish(mangaSheetReady(link)); });
+      link.addEventListener('error', function () { finish(false); });
       if (!existing) {
         link.rel = 'stylesheet';
         link.href = 'manga.css';
         document.head.appendChild(link);
       }
-      if (link.sheet) done();
+      // A failed load can expose an empty or opaque sheet before `error`.
+      if (mangaSheetReady(link)) finish(true);
+      else if (link.sheet) finish(false);
     });
   }
 
