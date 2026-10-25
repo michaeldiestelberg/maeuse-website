@@ -44,7 +44,7 @@
       dlTitle: 'The trap is set.',
       dlBody: 'Mäuse is free on the App Store for iPhone. No Mäuse account required.',
       dlMeta: 'Free · iPhone · No account required',
-      homeStoryTitle: 'What’s happened so far.',
+      homeStoryTitle: 'Previously on Mäuse.',
       homeStorySub: 'See how Mäuse has evolved so far – told in little comics.',
       homeStoryFallback: 'Read the volumes in the changelog.',
       footerTag: 'Made for couples who keep it simple.', footerPrivacy: 'Privacy', footerSupport: 'Support', footerChangelog: 'Changelog', footerTerms: 'Terms'
