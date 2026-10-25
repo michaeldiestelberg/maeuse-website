@@ -94,6 +94,20 @@
     try { localStorage.setItem('maeuse-site-theme', dark ? 'dark' : 'light'); } catch (e) {}
   });
 
+  // without a saved choice, follow the system setting live
+  var darkMq = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)');
+  if (darkMq) {
+    var followSystem = function () {
+      var saved = null;
+      try { saved = localStorage.getItem('maeuse-site-theme'); } catch (e) {}
+      if (saved === 'dark' || saved === 'light') return;
+      if (darkMq.matches) document.documentElement.setAttribute('data-theme', 'dark');
+      else document.documentElement.removeAttribute('data-theme');
+    };
+    if (darkMq.addEventListener) darkMq.addEventListener('change', followSystem);
+    else if (darkMq.addListener) darkMq.addListener(followSystem);
+  }
+
   applyLanguage(languageFromHash() || initialLanguage());
   // Toggling hidden articles cancels the browser's initial hash scroll.
   scrollToHash();
