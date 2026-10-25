@@ -11,36 +11,51 @@
       badge: 'NOW ON THE APP STORE',
       h1a: 'Say what you spent.', h1b: 'That’s it.',
       heroSub: 'Mäuse is the expense tracker for you and your favorite Maus: share costs fairly, no joint account needed. And always know who owes what.',
-      voiceHint: '“Paid forty-two fifty for dinner at Luigi’s” - logged.',
+      voiceHint: '“Paid sixty-two fifty for dinner at Luigi’s”', voiceLogged: 'Logged',
       downloadCta: 'Download on the App Store',
       slang: '“Mäuse” is German slang for money - literally “mice”.',
-      tapAround: 'GO AHEAD, IT’S THE REAL APP - TAP AROUND',
+      tapAround: 'It’s the real app.', tapAround2: 'Tap around!',
       featTitle: 'Everything a Maus needs.', featSub: 'Nothing that nibbles at your attention.',
       f1t: 'Fast as a mouse', f1b: 'Amount, note, done. Logging an expense takes seconds.',
       f2t: 'Slice the cheese', f2b: 'Drag the split slider in 5% steps - you and your Maus each see your share right away.',
       f3t: 'Squeak to log', f3b: 'Just say what you spent. Mäuse turns it into entries, you check and save.',
       f4t: 'The monthly stash', f4b: 'Totals per month and exactly what your Maus owes you. No spreadsheets, no math.',
+      bSplitItem: 'Groceries', bSplitAria: 'Your share of the expense', bYou: 'You', bMaus: 'Your Maus',
+      bMonth: 'JULY 2026', bOwes: 'Your Maus owes you',
+      bAmount: 'Amount', bNote: 'Note', bNoteValue: 'Coffee at Röstlab', bSave: 'Save', bDraft: 'Flowers',
       vTitle: 'Talk. It’s logged.',
       v1t: 'Tap the mic', v1b: 'It’s right there on the main screen.',
       v2t: 'Squeak away', v2b: '“Flowers for 12, cinema tickets for 24 - split both in half.”',
       v3t: 'Check the trap', v3b: 'Review the drafts it caught, then save them all at once.',
       vNote: 'Voice Mode is optional. Two options:',
-      vAppleTitle: 'On-device AI (Apple)', vAppleTag: 'New',
-      vApple1: 'Free',
-      vApple2: 'Runs on your iPhone, nothing leaves the device',
-      vApple3: 'One expense at a time',
-      vApple4: 'For every iPhone with Apple Intelligence',
-      vCloudTitle: 'Cloud AI (OpenAI)',
-      vCloud1: 'Understands several expenses at once',
-      vCloud2: 'With your own OpenAI key',
-      vCloud3: 'Audio goes to OpenAI only after you agree',
+      vAppleTitle: 'Local AI (Apple)',
+      vCloudTitle: 'Cloud AI (OpenAI)', vCloudTag: 'Recommended',
+      vRowCost: 'Cost', vAppleCost: 'Free', vCloudCost: 'About $1–2 per 100 dictated expenses, charged to your OpenAI account',
+      vRowAudio: 'Your audio', vAppleAudio: 'Stays on your iPhone', vCloudAudio: 'Goes to OpenAI, only after you agree',
+      vRowPer: 'Per recording', vApplePer: 'One expense at a time', vCloudPer: 'Several expenses and corrections at once',
+      vRowOffline: 'Offline', vAppleOffline: 'Yes, after a one-time speech model download', vCloudOffline: 'No, needs internet',
+      vRowNeeds: 'You need', vAppleNeeds: 'An iPhone with Apple Intelligence and iOS 26 or later', vCloudNeeds: 'Your own OpenAI API key',
       pTitle: 'Local first. Clear about cloud.',
       pSub: 'Manual expenses stay on your iPhone. Voice Mode connects to OpenAI only after you agree.',
+      mapPhone: 'Your iPhone', mapExpenses: 'Expenses & splits', mapNotes: 'Notes & dates', mapLocalAi: 'Local AI (Apple)',
+      mapKey: 'OpenAI key in Keychain', mapBackup: 'Backups are a file you export yourself.',
+      mapWire: 'Only with Cloud AI, after you agree', mapOpenAi: 'Live audio and spoken expense details',
+      mapCloud: 'Mäuse cloud', mapCloudNone: 'There is none. No account, no cloud database.',
       p1t: 'Manual expenses stay on your device.', p1b: 'Amounts, notes, dates, splits, and imported backups are stored locally on your iPhone.',
       p2t: 'Works offline.', p2b: 'On a plane, in the basement, in a mouse hole - logging always works.',
       p3t: 'No app account, ads, or tracking.', p3b: 'The iPhone app has no analytics or telemetry. This website uses cookie-free, aggregated Vercel Web Analytics.',
       p4t: 'Portable backups.', p4b: 'Export your data as a file, import it anywhere. You own it.',
-      p5t: 'Cloud only if you choose it.', p5b: 'With on-device AI, everything stays on your iPhone. With cloud AI, Mäuse sends live audio and spoken expense details to OpenAI only after you agree. Your key is stored in Keychain and excluded from backups.',
+      p5t: 'Cloud only if you choose it.', p5b: 'With local AI, everything stays on your iPhone. With cloud AI, Mäuse sends live audio and spoken expense details to OpenAI only after you agree. Your key is stored in Keychain and excluded from backups.',
+      faqTitle: 'Quick answers.',
+      faq1q: 'Where are my expenses stored?',
+      faq1a: 'On your iPhone. Mäuse has no user accounts and no cloud database. Before you switch devices, export a backup in Settings → Backup & Restore.',
+      faq2q: 'Which voice mode should I choose?',
+      faq2a: 'Both turn speech into drafts you review before saving. Cloud AI (OpenAI) is recommended: it understands several expenses and corrections in one go, and sends audio to OpenAI. Local AI (Apple) is free and keeps everything on your iPhone, one expense at a time.',
+      faq3q: 'Who pays for Voice Mode?',
+      faq3a: 'Local AI is free. Cloud AI uses your own OpenAI API key, and OpenAI may charge about $1–2 per 100 dictated expenses. Mäuse gets no part of that.',
+      faq4q: 'What do I need?',
+      faq4a: 'An iPhone with iOS 17 or later. No Mäuse account. Manual tracking works offline, and Voice Mode is optional.',
+      faqMore: 'More answers on the support page',
       dlTitle: 'The trap is set.',
       dlBody: 'Mäuse is free on the App Store for iPhone. No Mäuse account required.',
       dlMeta: 'Free · iPhone · No account required',
@@ -54,36 +69,51 @@
       badge: 'JETZT IM APP STORE',
       h1a: 'Sag, was du ausgegeben hast.', h1b: 'Mehr nicht.',
       heroSub: 'Mäuse ist der Ausgaben-Tracker für dich und deine Lieblingsmaus: gemeinsame Kosten fair teilen, ohne gemeinsames Konto. Und immer wissen, wer wem was schuldet.',
-      voiceHint: '„Zweiundvierzig fünfzig fürs Abendessen bei Luigi“ - erfasst.',
+      voiceHint: '„Zweiundsechzig fünfzig fürs Abendessen bei Luigi“', voiceLogged: 'Erfasst',
       downloadCta: 'Im App Store laden',
       slang: '„Mäuse“ ist Umgangssprache für Geld.',
-      tapAround: 'NUR ZU, DAS IST DIE ECHTE APP - TIPP DICH DURCH',
+      tapAround: 'Das ist die echte App.', tapAround2: 'Tipp dich durch!',
       featTitle: 'Alles, was eine Maus braucht.', featSub: 'Nichts, was an deiner Aufmerksamkeit knabbert.',
       f1t: 'Flink wie eine Maus', f1b: 'Betrag, Notiz, fertig. Eine Ausgabe ist in Sekunden erfasst.',
       f2t: 'Den Käse teilen', f2b: 'Zieh den Split-Regler in 5%-Schritten - du und deine Maus seht sofort euren Anteil.',
       f3t: 'Piepsen statt tippen', f3b: 'Sag einfach, was du ausgegeben hast. Mäuse macht daraus Einträge, du prüfst und speicherst.',
       f4t: 'Der Monatsvorrat', f4b: 'Monatssummen und genau das, was deine Maus dir schuldet. Keine Tabellen, kein Kopfrechnen.',
+      bSplitItem: 'Lebensmittel', bSplitAria: 'Dein Anteil an der Ausgabe', bYou: 'Du', bMaus: 'Deine Maus',
+      bMonth: 'JULI 2026', bOwes: 'Deine Maus schuldet dir',
+      bAmount: 'Betrag', bNote: 'Notiz', bNoteValue: 'Kaffee bei Röstlab', bSave: 'Speichern', bDraft: 'Blumen',
       vTitle: 'Sprich. Schon erfasst.',
       v1t: 'Tipp aufs Mikro', v1b: 'Sitzt direkt auf dem Hauptbildschirm.',
       v2t: 'Piepse los', v2b: '„Blumen für 12, Kinokarten für 24 - beides halbe-halbe.“',
       v3t: 'Schau in die Falle', v3b: 'Prüfe die gefangenen Entwürfe und speichere alle auf einmal.',
       vNote: 'Der Sprachmodus ist optional. Du hast zwei Varianten:',
-      vAppleTitle: 'Lokale KI (Apple)', vAppleTag: 'Neu',
-      vApple1: 'Kostenlos',
-      vApple2: 'Läuft auf deinem iPhone, nichts verlässt das Gerät',
-      vApple3: 'Eine Ausgabe nach der anderen',
-      vApple4: 'Für jedes iPhone mit Apple Intelligence',
-      vCloudTitle: 'Cloud-KI (OpenAI)',
-      vCloud1: 'Versteht mehrere Ausgaben auf einmal',
-      vCloud2: 'Mit deinem eigenen OpenAI-Schlüssel',
-      vCloud3: 'Audio geht erst nach deiner Zustimmung an OpenAI',
+      vAppleTitle: 'Lokale KI (Apple)',
+      vCloudTitle: 'Cloud-KI (OpenAI)', vCloudTag: 'Empfohlen',
+      vRowCost: 'Kosten', vAppleCost: 'Kostenlos', vCloudCost: 'Etwa 1–2 $ pro 100 diktierte Ausgaben, abgerechnet über dein OpenAI-Konto',
+      vRowAudio: 'Dein Audio', vAppleAudio: 'Bleibt auf deinem iPhone', vCloudAudio: 'Geht an OpenAI, erst nach deiner Zustimmung',
+      vRowPer: 'Pro Aufnahme', vApplePer: 'Eine Ausgabe nach der anderen', vCloudPer: 'Mehrere Ausgaben und Korrekturen auf einmal',
+      vRowOffline: 'Offline', vAppleOffline: 'Ja, nach einmaligem Laden des Sprachmodells', vCloudOffline: 'Nein, braucht Internet',
+      vRowNeeds: 'Du brauchst', vAppleNeeds: 'Ein iPhone mit Apple Intelligence und iOS 26 oder neuer', vCloudNeeds: 'Deinen eigenen OpenAI-API-Schlüssel',
       pTitle: 'Lokal zuerst. Cloud ganz klar.',
       pSub: 'Manuelle Ausgaben bleiben auf deinem iPhone. Der Sprachmodus verbindet sich erst nach deiner Zustimmung mit OpenAI.',
+      mapPhone: 'Dein iPhone', mapExpenses: 'Ausgaben & Aufteilungen', mapNotes: 'Notizen & Daten', mapLocalAi: 'Lokale KI (Apple)',
+      mapKey: 'OpenAI-Schlüssel im Schlüsselbund', mapBackup: 'Backups sind eine Datei, die du selbst exportierst.',
+      mapWire: 'Nur mit Cloud-KI, nach deiner Zustimmung', mapOpenAi: 'Live-Audio und gesprochene Ausgabendetails',
+      mapCloud: 'Mäuse-Cloud', mapCloudNone: 'Gibt es nicht. Kein Konto, keine Cloud-Datenbank.',
       p1t: 'Manuelle Ausgaben bleiben auf deinem Gerät.', p1b: 'Beträge, Notizen, Daten, Aufteilungen und importierte Backups werden lokal auf deinem iPhone gespeichert.',
       p2t: 'Funktioniert offline.', p2b: 'Im Flugzeug, im Keller, im Mauseloch - Eintragen geht immer.',
       p3t: 'Kein App-Konto, keine Werbung, kein Tracking.', p3b: 'Die iPhone-App enthält weder Analytics noch Telemetrie. Diese Website nutzt aggregierte, cookiefreie Vercel Web Analytics.',
       p4t: 'Backups zum Mitnehmen.', p4b: 'Exportiere deine Daten als Datei und importiere sie überall. Sie gehören dir.',
       p5t: 'Cloud nur, wenn du sie wählst.', p5b: 'Mit lokaler KI bleibt alles auf deinem iPhone. Mit Cloud-KI sendet Mäuse erst nach deiner Zustimmung Live-Audio und gesprochene Ausgabendetails an OpenAI. Dein Schlüssel liegt im Schlüsselbund und ist nie im Backup.',
+      faqTitle: 'Kurz gefragt.',
+      faq1q: 'Wo werden meine Ausgaben gespeichert?',
+      faq1a: 'Auf deinem iPhone. Mäuse hat keine Benutzerkonten und keine Cloud-Datenbank. Bevor du das Gerät wechselst, erstelle unter Einstellungen → Backup & Wiederherstellung eine Sicherung.',
+      faq2q: 'Welchen Sprachmodus soll ich wählen?',
+      faq2a: 'Beide machen aus Sprache Entwürfe, die du vor dem Speichern prüfst. Cloud-KI (OpenAI) ist empfohlen: Sie versteht mehrere Ausgaben und Korrekturen in einem Rutsch und schickt Audio an OpenAI. Lokale KI (Apple) ist kostenlos und lässt alles auf deinem iPhone, eine Ausgabe nach der anderen.',
+      faq3q: 'Wer bezahlt den Sprachmodus?',
+      faq3a: 'Lokale KI ist kostenlos. Cloud-KI nutzt deinen eigenen OpenAI-API-Schlüssel; OpenAI kann dafür etwa 1–2 $ pro 100 diktierte Ausgaben berechnen. Mäuse erhält davon nichts.',
+      faq4q: 'Was brauche ich?',
+      faq4a: 'Ein iPhone mit iOS 17 oder neuer. Kein Mäuse-Konto. Die manuelle Erfassung funktioniert offline, der Sprachmodus ist optional.',
+      faqMore: 'Mehr Antworten auf der Support-Seite',
       dlTitle: 'Die Falle ist gestellt.',
       dlBody: 'Mäuse ist kostenlos im App Store fürs iPhone. Kein Mäuse-Konto nötig.',
       dlMeta: 'Gratis · iPhone · Kein Konto nötig',
@@ -97,6 +127,13 @@
   var langEn = document.getElementById('lang-en');
   var langDe = document.getElementById('lang-de');
   var currentLang = 'en';
+  var reduceMotion = !!(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches);
+
+  // website copy (not the English-only phone demo) uses local number formats
+  function money(n, lang) {
+    var v = n.toFixed(2);
+    return (lang || currentLang) === 'de' ? v.replace('.', ',') + ' €' : '€' + v;
+  }
 
   function applyLang(lang) {
     currentLang = lang;
@@ -105,6 +142,15 @@
     for (var i = 0; i < nodes.length; i++) {
       var key = nodes[i].getAttribute('data-i18n');
       if (t[key] != null) nodes[i].textContent = t[key];
+    }
+    var ariaNodes = document.querySelectorAll('[data-i18n-aria]');
+    for (var a = 0; a < ariaNodes.length; a++) {
+      var ariaKey = ariaNodes[a].getAttribute('data-i18n-aria');
+      if (t[ariaKey] != null) ariaNodes[a].setAttribute('aria-label', t[ariaKey]);
+    }
+    var moneyNodes = document.querySelectorAll('[data-money]');
+    for (var m = 0; m < moneyNodes.length; m++) {
+      moneyNodes[m].textContent = money(parseFloat(moneyNodes[m].getAttribute('data-money')), lang);
     }
     var german = lang === 'de';
     var englishNodes = document.querySelectorAll('.lang-en');
@@ -136,12 +182,36 @@
 
   var themeToggle = document.getElementById('theme-toggle');
 
-  themeToggle.addEventListener('click', function () {
-    var dark = document.documentElement.getAttribute('data-theme') !== 'dark';
+  var darkMq = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)');
+
+  function savedTheme() {
+    try { return localStorage.getItem('maeuse-site-theme'); } catch (e) { return null; }
+  }
+
+  function setDark(dark) {
     if (dark) document.documentElement.setAttribute('data-theme', 'dark');
     else document.documentElement.removeAttribute('data-theme');
+  }
+
+  function followSystemTheme() {
+    setDark(!!(darkMq && darkMq.matches));
+  }
+
+  themeToggle.addEventListener('click', function () {
+    var dark = document.documentElement.getAttribute('data-theme') !== 'dark';
+    setDark(dark);
     try { localStorage.setItem('maeuse-site-theme', dark ? 'dark' : 'light'); } catch (e) {}
   });
+
+  // without a saved choice, follow the system setting live
+  if (darkMq) {
+    var onSystemTheme = function () {
+      var saved = savedTheme();
+      if (saved !== 'dark' && saved !== 'light') followSystemTheme();
+    };
+    if (darkMq.addEventListener) darkMq.addEventListener('change', onSystemTheme);
+    else if (darkMq.addListener) darkMq.addListener(onSystemTheme);
+  }
 
   /* ---------- hero phone: interactive app demo ---------- */
   /* A vanilla replica of the iOS app: month navigation, expense
@@ -211,13 +281,23 @@
 
   /* ----- main screen ----- */
 
-  function renderMonth(animateMonth) {
-    var inMonth = demo.expenses
-      .filter(function (e) { return e.m === demo.monthIdx; })
+  function monthExpenses() {
+    return demo.expenses
+      .filter(function (e) { return e.m === demo.monthIdx && !e.held; })
       .sort(function (a, b) { return b.day - a.day; });
+  }
 
+  function monthSums() {
     var total = 0, partner = 0;
-    inMonth.forEach(function (e) { total += e.amount; partner += partnerOf(e); });
+    monthExpenses().forEach(function (e) { total += e.amount; partner += partnerOf(e); });
+    return { total: total, partner: partner };
+  }
+
+  function renderMonth(animateMonth) {
+    stopCountUp();
+    var inMonth = monthExpenses();
+    var sums = monthSums();
+    var total = sums.total, partner = sums.partner;
 
     var html = '';
     if (inMonth.length === 0) {
@@ -529,8 +609,8 @@
       document.documentElement.removeAttribute('data-theme');
       try { localStorage.setItem('maeuse-site-theme', 'light'); } catch (e) {}
     } else {
-      document.documentElement.removeAttribute('data-theme');
       try { localStorage.removeItem('maeuse-site-theme'); } catch (e) {}
+      followSystemTheme();
     }
   });
   wireSegment('st-language', null);
@@ -592,5 +672,157 @@
     });
   });
 
+  /* ----- hero intro: the voice hint plays out once ----- */
+  /* Types the spoken sentence, stamps it "Logged", then drops the matching
+     row into the demo while the totals count up. Any tap on the phone, a
+     language switch or reduced motion skips straight to the end state. */
+
+  var hint = el('voice-hint');
+  var hintQuote = el('voice-hint-quote');
+  var hintLogged = el('voice-hint-logged');
+  var heroPhone = el('hero-phone');
+  var spoken = demo.expenses.find(function (e) { return e.id === 6; });
+  var intro = { running: false, timers: [], raf: 0 };
+
+  function stopCountUp() {
+    if (intro && intro.raf) { cancelAnimationFrame(intro.raf); intro.raf = 0; }
+  }
+
+  function countUp(from, to) {
+    var start = null;
+    function step(now) {
+      if (start === null) start = now;
+      var p = Math.min(1, (now - start) / 650);
+      var ease = 1 - Math.pow(1 - p, 3);
+      el('app-total').textContent = fmt(from.total + (to.total - from.total) * ease);
+      el('app-partner').textContent = fmt(from.partner + (to.partner - from.partner) * ease);
+      intro.raf = p < 1 ? requestAnimationFrame(step) : 0;
+    }
+    intro.raf = requestAnimationFrame(step);
+  }
+
+  function paintTyped(text, n) {
+    hintQuote.textContent = text.slice(0, n);
+    var caret = document.createElement('span');
+    caret.className = 'voice-hint-caret';
+    var ghost = document.createElement('span');
+    ghost.className = 'voice-hint-ghost';
+    ghost.textContent = text.slice(n);
+    hintQuote.appendChild(caret);
+    hintQuote.appendChild(ghost);
+  }
+
+  function endIntro(dropRow) {
+    if (!intro.running) return;
+    intro.running = false;
+    intro.timers.forEach(clearTimeout);
+    intro.timers = [];
+    hintQuote.textContent = strings[currentLang].voiceHint;
+    hint.classList.remove('is-typing');
+    hintQuote.removeAttribute('aria-hidden');
+    hintLogged.classList.remove('is-off');
+    hintLogged.removeAttribute('aria-hidden');
+    if (!spoken.held) return;
+    if (dropRow && demo.monthIdx === spoken.m) {
+      var before = monthSums();
+      spoken.held = false;
+      demo.expenses.forEach(function (e) { e.isNew = e === spoken; });
+      renderMonth(false);
+      countUp(before, monthSums());
+      replay(el('app-partner'));
+    } else {
+      spoken.held = false;
+      renderMonth(false);
+    }
+  }
+
+  function startIntro() {
+    if (reduceMotion || !spoken || !hint || window.scrollY > 120) return;
+    intro.running = true;
+    spoken.held = true;
+    renderMonth(false);
+    hint.classList.add('is-typing');
+    hintQuote.setAttribute('aria-hidden', 'true');
+    hintLogged.setAttribute('aria-hidden', 'true');
+    hintLogged.classList.add('is-off');
+    paintTyped(strings[currentLang].voiceHint, 0);
+
+    var n = 0;
+    function later(fn, ms) { intro.timers.push(setTimeout(fn, ms)); }
+    function type() {
+      var text = strings[currentLang].voiceHint;
+      n++;
+      paintTyped(text, n);
+      if (n < text.length) later(type, 32);
+      else later(stamp, 260);
+    }
+    function stamp() {
+      hint.classList.remove('is-typing');
+      hintQuote.textContent = strings[currentLang].voiceHint;
+      hintLogged.classList.remove('is-off');
+      later(function () { endIntro(true); }, 420);
+    }
+    later(type, 650);
+  }
+
+  function touchPhone() {
+    heroPhone.classList.add('is-touched');
+    endIntro(false);
+  }
+  heroPhone.addEventListener('pointerdown', touchPhone, true);
+  heroPhone.addEventListener('keydown', touchPhone, true);
+  document.addEventListener('maeuse:lang', function () { endIntro(false); });
+
+  /* ----- features: split slider ----- */
+
+  var splitRange = el('split-demo');
+  var SPLIT_AMOUNT = 84.30;
+
+  function updateSplit() {
+    var you = parseInt(splitRange.value, 10);
+    var maus = 100 - you;
+    var youAmt = Math.round(SPLIT_AMOUNT * you) / 100;
+    var mausAmt = Math.round((SPLIT_AMOUNT - youAmt) * 100) / 100;
+    var t = strings[currentLang];
+    el('split-you-pct').textContent = you + '%';
+    el('split-maus-pct').textContent = maus + '%';
+    el('split-you-amt').textContent = money(youAmt);
+    el('split-maus-amt').textContent = money(mausAmt);
+    splitRange.style.setProperty('--you', you + '%');
+    splitRange.setAttribute('aria-valuetext',
+      t.bYou + ' ' + you + '% (' + money(youAmt) + '), ' + t.bMaus + ' ' + maus + '% (' + money(mausAmt) + ')');
+  }
+  splitRange.addEventListener('input', updateSplit);
+  document.addEventListener('maeuse:lang', updateSplit);
+  updateSplit();
+
+  /* ----- phones: download bar once the hero button has scrolled away ----- */
+
+  var mobileCta = el('mobile-cta');
+  var heroActions = document.querySelector('.hero-actions');
+  var downloadSection = el('download');
+  var ctaShown = false;
+  var ctaQueued = false;
+
+  function updateMobileCta() {
+    ctaQueued = false;
+    var show = heroActions.getBoundingClientRect().bottom < 0 &&
+      downloadSection.getBoundingClientRect().top > window.innerHeight;
+    if (show === ctaShown) return;
+    ctaShown = show;
+    mobileCta.classList.toggle('is-visible', show);
+    if (show) mobileCta.removeAttribute('inert');
+    else mobileCta.setAttribute('inert', '');
+  }
+  function queueMobileCta() {
+    if (ctaQueued) return;
+    ctaQueued = true;
+    requestAnimationFrame(updateMobileCta);
+  }
+  window.addEventListener('scroll', queueMobileCta, { passive: true });
+  window.addEventListener('resize', queueMobileCta);
+
   renderMonth(false);
+  updateMobileCta();
+  startIntro();
 })();

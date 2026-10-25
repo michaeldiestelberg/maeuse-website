@@ -12,7 +12,7 @@
   <meta name="theme-color" content="#211A09" media="(prefers-color-scheme: dark)">
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="legal.css">
-  <script>try { if (localStorage.getItem('maeuse-site-theme') === 'dark') document.documentElement.setAttribute('data-theme', 'dark'); } catch (e) {}</script>
+  <script>(function () { var t = null; try { t = localStorage.getItem('maeuse-site-theme'); } catch (e) {} if (t === 'dark' || (t !== 'light' && window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches)) document.documentElement.setAttribute('data-theme', 'dark'); })();</script>
   <script>window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };</script>
   <script defer src="/_vercel/insights/script.js"></script>
 </head>

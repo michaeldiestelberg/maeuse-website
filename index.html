@@ -33,12 +33,15 @@
 <link rel="apple-touch-icon" href="assets/icon-180.png">
 <link rel="stylesheet" href="style.css">
 <script>
-  // apply saved theme before first paint to avoid a flash
-  try {
-    if (localStorage.getItem('maeuse-site-theme') === 'dark') {
+  // apply the saved theme, or the system setting, before first paint to avoid a flash
+  (function () {
+    var saved = null;
+    try { saved = localStorage.getItem('maeuse-site-theme'); } catch (e) {}
+    var systemDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+    if (saved === 'dark' || (saved !== 'light' && systemDark)) {
       document.documentElement.setAttribute('data-theme', 'dark');
     }
-  } catch (e) {}
+  })();
 </script>
 <script>
   window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
@@ -75,16 +78,18 @@
 
 <!-- ===== HERO ===== -->
 <section id="top" class="hero">
-  <div class="hole hole-1" aria-hidden="true"></div>
-  <div class="hole hole-2" aria-hidden="true"></div>
   <div class="container hero-inner">
     <div class="hero-copy">
       <span class="hero-badge" data-i18n="badge">NOW ON THE APP STORE</span>
       <h1><span data-i18n="h1a">Say what you spent.</span><br><span class="h1-highlight" data-i18n="h1b">That's it.</span></h1>
       <p class="hero-sub" data-i18n="heroSub">Mäuse is the expense tracker for you and your favorite Maus: share costs fairly, no joint account needed. And always know who owes what.</p>
-      <div class="voice-hint">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#D19000" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0 0 14 0"/><line x1="12" y1="18" x2="12" y2="21"/></svg>
-        <span data-i18n="voiceHint">"Paid forty-two fifty for dinner at Luigi's" - logged.</span>
+      <div class="voice-hint" id="voice-hint">
+        <svg class="voice-hint-mic" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0 0 14 0"/><line x1="12" y1="18" x2="12" y2="21"/></svg>
+        <span class="voice-hint-quote" id="voice-hint-quote" data-i18n="voiceHint">“Paid sixty-two fifty for dinner at Luigi’s”</span>
+        <span class="voice-hint-logged" id="voice-hint-logged">
+          <svg width="11" height="11" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="2.5,8.5 6,12 13.5,4"/></svg>
+          <span data-i18n="voiceLogged">Logged</span>
+        </span>
       </div>
       <div class="hero-actions">
         <a href="https://apps.apple.com/de/app/m%C3%A4use/id6769447003" target="_blank" rel="noopener" class="btn-dark" data-link="appstore">
@@ -95,7 +100,8 @@
       <span class="slang-note" data-i18n="slang">"Mäuse" is German slang for money - literally "mice".</span>
     </div>
 
-    <div class="phone-col">
+    <div class="phone-col hero-phone" id="hero-phone">
+      <p class="tap-sticker"><strong data-i18n="tapAround">It’s the real app.</strong> <span data-i18n="tapAround2">Tap around!</span></p>
       <div class="phone-frame lg">
         <div class="phone-screen">
           <div class="app-scale">
@@ -127,7 +133,7 @@
                   </div>
                   <div class="app-total">
                     <span class="big" id="app-total">€213.50</span>
-                    <span class="owes">Your Maus owes you <span class="app-owes-chip" id="app-partner">€107.30</span></span>
+                    <span class="owes">Your Maus owes you <span class="app-owes-chip" id="app-partner">€107.69</span></span>
                   </div>
                 </div>
                 <div class="app-list" id="app-list"></div>
@@ -426,41 +432,97 @@
           <div class="phone-notch" aria-hidden="true"></div>
         </div>
       </div>
-      <p class="phone-caption" data-i18n="tapAround">GO AHEAD, IT'S THE REAL APP - TAP AROUND</p>
     </div>
   </div>
 </section>
 
 <!-- ===== FEATURES ===== -->
-<section id="features" class="section on-card">
+<div class="rind" aria-hidden="true"></div>
+<section id="features" class="section on-card after-rind">
   <div class="container section-inner">
     <h2 data-i18n="featTitle">Everything a Maus needs.</h2>
     <p class="section-sub" data-i18n="featSub">Nothing that nibbles at your attention.</p>
-    <div class="features-grid">
-      <div class="feature-card">
-        <div class="feature-icon">
-          <svg width="20" height="20" viewBox="0 0 24 24" stroke="#241C05" stroke-width="3" stroke-linecap="round" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+    <div class="bento">
+      <article class="tile tile-split">
+        <div class="tile-head">
+          <div class="feature-icon" aria-hidden="true">%</div>
+          <div class="tile-copy">
+            <h3 data-i18n="f2t">Slice the cheese</h3>
+            <p data-i18n="f2b">Drag the split slider in 5% steps - you and your Maus each see your share right away.</p>
+          </div>
         </div>
-        <h3 data-i18n="f1t">Fast as a mouse</h3>
-        <p data-i18n="f1b">Amount, note, done. Logging an expense takes seconds.</p>
-      </div>
-      <div class="feature-card">
-        <div class="feature-icon">%</div>
-        <h3 data-i18n="f2t">Slice the cheese</h3>
-        <p data-i18n="f2b">Drag the split slider in 5% steps - you and your Maus each see your share right away.</p>
-      </div>
-      <div class="feature-card">
-        <div class="feature-icon">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#241C05" stroke-width="2.6" stroke-linecap="round" aria-hidden="true"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0 0 14 0"/><line x1="12" y1="18" x2="12" y2="21"/></svg>
+        <div class="split-demo">
+          <div class="split-demo-top">
+            <span data-i18n="bSplitItem">Groceries</span>
+            <span class="split-demo-total" data-money="84.30">€84.30</span>
+          </div>
+          <input type="range" class="split-demo-range" id="split-demo" min="0" max="100" step="5" value="50" data-i18n-aria="bSplitAria" aria-label="Your share">
+          <div class="split-demo-shares">
+            <span><span class="lab" data-i18n="bYou">You</span> <b id="split-you-pct">50%</b> <span class="amt" id="split-you-amt">€42.15</span></span>
+            <span class="maus"><span class="lab" data-i18n="bMaus">Your Maus</span> <b id="split-maus-pct">50%</b> <span class="amt" id="split-maus-amt">€42.15</span></span>
+          </div>
         </div>
-        <h3 data-i18n="f3t">Squeak to log</h3>
-        <p data-i18n="f3b">Just say what you spent. Mäuse turns it into entries, you check and save.</p>
-      </div>
-      <div class="feature-card">
-        <div class="feature-icon">€</div>
-        <h3 data-i18n="f4t">The monthly stash</h3>
+      </article>
+
+      <article class="tile tile-stash">
+        <div class="tile-head">
+          <div class="feature-icon" aria-hidden="true">€</div>
+          <h3 data-i18n="f4t">The monthly stash</h3>
+        </div>
+        <div class="stash-demo">
+          <span class="stash-month" data-i18n="bMonth">JULY 2026</span>
+          <span class="stash-total" data-money="213.50">€213.50</span>
+          <span class="stash-owes"><span data-i18n="bOwes">Your Maus owes you</span> <b data-money="107.69">€107.69</b></span>
+        </div>
         <p data-i18n="f4b">Totals per month and exactly what your Maus owes you. No spreadsheets, no math.</p>
-      </div>
+      </article>
+
+      <article class="tile tile-fast">
+        <div class="tile-head">
+          <div class="feature-icon" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 24 24" stroke="#241C05" stroke-width="3" stroke-linecap="round" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          </div>
+          <div class="tile-copy">
+            <h3 data-i18n="f1t">Fast as a mouse</h3>
+            <p data-i18n="f1b">Amount, note, done. Logging an expense takes seconds.</p>
+          </div>
+        </div>
+        <div class="fast-demo" aria-hidden="true">
+          <div class="fast-field"><span data-i18n="bAmount">Amount</span><b data-money="7.60">€7.60</b></div>
+          <div class="fast-field"><span data-i18n="bNote">Note</span><b data-i18n="bNoteValue">Coffee at Röstlab</b></div>
+          <span class="fast-save" data-i18n="bSave">Save</span>
+        </div>
+      </article>
+
+      <article class="tile tile-voice">
+        <div class="tile-head">
+          <div class="feature-icon" aria-hidden="true">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#241C05" stroke-width="2.6" stroke-linecap="round" aria-hidden="true"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0 0 14 0"/><line x1="12" y1="18" x2="12" y2="21"/></svg>
+          </div>
+          <div class="tile-copy">
+            <h3 data-i18n="f3t">Squeak to log</h3>
+            <p data-i18n="f3b">Just say what you spent. Mäuse turns it into entries, you check and save.</p>
+          </div>
+        </div>
+        <div class="squeak-demo" aria-hidden="true">
+          <div class="app-voice-mouse">
+            <div class="ear left"></div>
+            <div class="ear right"></div>
+            <div class="face">
+              <div class="bar b1"></div>
+              <div class="bar b2"></div>
+              <div class="bar b3"></div>
+              <div class="bar b4"></div>
+              <div class="bar b5"></div>
+            </div>
+          </div>
+          <div class="squeak-draft">
+            <span class="desc" data-i18n="bDraft">Flowers</span>
+            <b data-money="12.00">€12.00</b>
+            <span class="pct">50 / 50</span>
+          </div>
+        </div>
+      </article>
     </div>
   </div>
 </section>
@@ -559,29 +621,43 @@
       </div>
       <div class="voice-compare">
         <p class="voice-note" data-i18n="vNote">Voice Mode is optional. Two options:</p>
-        <div class="voice-compare-grid">
-          <div class="voice-mode-card">
-            <div class="voice-mode-head">
-              <span class="voice-mode-title" data-i18n="vAppleTitle">On-device AI (Apple)</span>
-              <span class="voice-mode-badge" data-i18n="vAppleTag">New</span>
-            </div>
-            <ul class="voice-mode-points">
-              <li data-i18n="vApple1">Free</li>
-              <li data-i18n="vApple2">Runs on your iPhone, nothing leaves the device</li>
-              <li data-i18n="vApple3">One expense at a time</li>
-              <li data-i18n="vApple4">For every iPhone with Apple Intelligence</li>
-            </ul>
-          </div>
-          <div class="voice-mode-card">
-            <div class="voice-mode-head">
-              <span class="voice-mode-title" data-i18n="vCloudTitle">Cloud AI (OpenAI)</span>
-            </div>
-            <ul class="voice-mode-points">
-              <li data-i18n="vCloud1">Understands several expenses at once</li>
-              <li data-i18n="vCloud2">With your own OpenAI key</li>
-              <li data-i18n="vCloud3">Audio goes to OpenAI only after you agree</li>
-            </ul>
-          </div>
+        <div class="voice-table-wrap">
+          <table class="voice-table">
+            <thead>
+              <tr>
+                <td></td>
+                <th scope="col"><span class="voice-mode-title" data-i18n="vAppleTitle">Local AI (Apple)</span></th>
+                <th scope="col"><span class="voice-mode-title" data-i18n="vCloudTitle">Cloud AI (OpenAI)</span> <span class="voice-mode-badge" data-i18n="vCloudTag">Recommended</span></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row" data-i18n="vRowCost">Cost</th>
+                <td data-i18n="vAppleCost">Free</td>
+                <td data-i18n="vCloudCost">About $1–2 per 100 dictated expenses, charged to your OpenAI account</td>
+              </tr>
+              <tr>
+                <th scope="row" data-i18n="vRowAudio">Your audio</th>
+                <td data-i18n="vAppleAudio">Stays on your iPhone</td>
+                <td data-i18n="vCloudAudio">Goes to OpenAI, only after you agree</td>
+              </tr>
+              <tr>
+                <th scope="row" data-i18n="vRowPer">Per recording</th>
+                <td data-i18n="vApplePer">One expense at a time</td>
+                <td data-i18n="vCloudPer">Several expenses and corrections at once</td>
+              </tr>
+              <tr>
+                <th scope="row" data-i18n="vRowOffline">Offline</th>
+                <td data-i18n="vAppleOffline">Yes, after a one-time speech model download</td>
+                <td data-i18n="vCloudOffline">No, needs internet</td>
+              </tr>
+              <tr>
+                <th scope="row" data-i18n="vRowNeeds">You need</th>
+                <td data-i18n="vAppleNeeds">An iPhone with Apple Intelligence and iOS 26 or later</td>
+                <td data-i18n="vCloudNeeds">Your own OpenAI API key</td>
+              </tr>
+            </tbody>
+          </table>
         </div>
       </div>
     </div>
@@ -593,6 +669,27 @@
   <div class="container privacy-inner">
     <h2 data-i18n="pTitle">Local first. Clear about cloud.</h2>
     <p class="section-sub" data-i18n="pSub">Manual expenses stay on your iPhone. Voice Mode connects to OpenAI only after you agree.</p>
+    <div class="data-map">
+      <div class="data-map-device">
+        <span class="data-map-title" data-i18n="mapPhone">Your iPhone</span>
+        <ul class="data-map-chips">
+          <li data-i18n="mapExpenses">Expenses &amp; splits</li>
+          <li data-i18n="mapNotes">Notes &amp; dates</li>
+          <li data-i18n="mapLocalAi">Local AI (Apple)</li>
+          <li class="is-key" data-i18n="mapKey">OpenAI key in Keychain</li>
+        </ul>
+        <span class="data-map-foot" data-i18n="mapBackup">Backups are a file you export yourself.</span>
+      </div>
+      <div class="data-map-wire"><span data-i18n="mapWire">Only with Cloud AI, after you agree</span></div>
+      <div class="data-map-ext is-openai">
+        <strong>OpenAI</strong>
+        <span data-i18n="mapOpenAi">Live audio and spoken expense details</span>
+      </div>
+      <div class="data-map-ext is-none">
+        <strong data-i18n="mapCloud">Mäuse cloud</strong>
+        <span data-i18n="mapCloudNone">There is none. No account, no cloud database.</span>
+      </div>
+    </div>
     <div class="privacy-card">
       <div class="privacy-item">
         <span class="privacy-check" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 16 16" fill="none" stroke="#241C05" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="2.5,8.5 6,12 13.5,4"/></svg></span>
@@ -612,7 +709,7 @@
       </div>
       <div class="privacy-item">
         <span class="privacy-check neutral" aria-hidden="true"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" style="stroke:var(--icon)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"/></svg></span>
-        <div class="privacy-text"><strong data-i18n="p5t">Cloud only if you choose it.</strong> <span data-i18n="p5b">With on-device AI, everything stays on your iPhone. With cloud AI, Mäuse sends live audio and spoken expense details to OpenAI only after you agree. Your key is stored in Keychain and excluded from backups.</span></div>
+        <div class="privacy-text"><strong data-i18n="p5t">Cloud only if you choose it.</strong> <span data-i18n="p5b">With local AI, everything stays on your iPhone. With cloud AI, Mäuse sends live audio and spoken expense details to OpenAI only after you agree. Your key is stored in Keychain and excluded from backups.</span></div>
       </div>
     </div>
   </div>
@@ -633,8 +730,35 @@
   </div>
 </section>
 
+<!-- ===== FAQ ===== -->
+<section id="faq" class="section on-card">
+  <div class="container faq-inner">
+    <h2 data-i18n="faqTitle">Quick answers.</h2>
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary data-i18n="faq1q">Where are my expenses stored?</summary>
+        <p data-i18n="faq1a">On your iPhone. Mäuse has no user accounts and no cloud database. Before you switch devices, export a backup in Settings → Backup &amp; Restore.</p>
+      </details>
+      <details class="faq-item">
+        <summary data-i18n="faq2q">Which voice mode should I choose?</summary>
+        <p data-i18n="faq2a">Both turn speech into drafts you review before saving. Cloud AI (OpenAI) is recommended: it understands several expenses and corrections in one go, and sends audio to OpenAI. Local AI (Apple) is free and keeps everything on your iPhone, one expense at a time.</p>
+      </details>
+      <details class="faq-item">
+        <summary data-i18n="faq3q">Who pays for Voice Mode?</summary>
+        <p data-i18n="faq3a">Local AI is free. Cloud AI uses your own OpenAI API key, and OpenAI may charge about $1–2 per 100 dictated expenses. Mäuse gets no part of that.</p>
+      </details>
+      <details class="faq-item">
+        <summary data-i18n="faq4q">What do I need?</summary>
+        <p data-i18n="faq4a">An iPhone with iOS 17 or later. No Mäuse account. Manual tracking works offline, and Voice Mode is optional.</p>
+      </details>
+    </div>
+    <a class="faq-more" href="support.html" data-i18n="faqMore">More answers on the support page</a>
+  </div>
+</section>
+
 <!-- ===== DOWNLOAD ===== -->
-<section id="download" class="section">
+<div class="rind" aria-hidden="true"></div>
+<section id="download" class="section after-rind">
   <div class="container download-inner">
     <div class="download-banner">
       <div class="hole hole-a" aria-hidden="true"></div>
@@ -665,6 +789,16 @@
     </div>
   </div>
 </footer>
+
+<!-- ===== MOBILE DOWNLOAD BAR ===== -->
+<div class="mobile-cta" id="mobile-cta" inert>
+  <img src="assets/icon-120.png" alt="" width="40" height="40">
+  <div class="mobile-cta-text">
+    <strong>Mäuse</strong>
+    <span data-i18n="dlMeta">Free · iPhone · No account required</span>
+  </div>
+  <a href="https://apps.apple.com/de/app/m%C3%A4use/id6769447003" target="_blank" rel="noopener" class="mobile-cta-btn" data-link="appstore" data-i18n="navGet">Get the app</a>
+</div>
 
 <script src="app.js"></script>
 <script src="manga-strings.js"></script>

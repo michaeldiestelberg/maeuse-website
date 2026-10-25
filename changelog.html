@@ -13,7 +13,7 @@
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="legal.css">
   <link rel="stylesheet" href="manga.css">
-  <script>try { if (localStorage.getItem('maeuse-site-theme') === 'dark') document.documentElement.setAttribute('data-theme', 'dark'); } catch (e) {}</script>
+  <script>(function () { var t = null; try { t = localStorage.getItem('maeuse-site-theme'); } catch (e) {} if (t === 'dark' || (t !== 'light' && window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches)) document.documentElement.setAttribute('data-theme', 'dark'); })();</script>
   <script>window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };</script>
   <script defer src="/_vercel/insights/script.js"></script>
 </head>
@@ -67,7 +67,7 @@
               </span>
               <span class="manga-card-meta">
                 <span class="manga-card-badge">Band 1.5</span>
-                <span class="manga-card-title"><span class="lang-en">Voice mode with on-device AI</span><span class="lang-de">Sprachmodus mit lokaler KI</span></span>
+                <span class="manga-card-title"><span class="lang-en">Voice mode with local AI</span><span class="lang-de">Sprachmodus mit lokaler KI</span></span>
                 <span class="manga-card-sub"><span class="lang-en">+ iPhone Duo</span><span class="lang-de">+ iPhone Duo</span></span>
               </span>
             </button>
@@ -114,7 +114,7 @@
                 <ol class="manga-toc">
                     <li>
                       <span class="n" aria-hidden="true">01</span>
-                      <h3><span class="lang-en">Voice mode with on-device AI – free</span><span class="lang-de">Sprachmodus mit lokaler KI – kostenlos</span></h3>
+                      <h3><span class="lang-en">Voice mode with local AI – free</span><span class="lang-de">Sprachmodus mit lokaler KI – kostenlos</span></h3>
                       <p><span class="lang-en">For every iPhone with Apple Intelligence. The AI runs on your iPhone – nothing leaves the device.</span><span class="lang-de">Für jedes iPhone mit Apple Intelligence. Die KI läuft auf deinem iPhone – nichts verlässt das Gerät.</span></p>
                     </li>
                     <li>
