@@ -7,26 +7,25 @@
     en: {
       navFeatures: 'Features', navVoice: 'Voice', navSupport: 'Support', navGet: 'Get the app',
       footerTag: 'Made for couples who keep it simple.', footerPrivacy: 'Privacy', footerSupport: 'Support', footerChangelog: 'Changelog', footerTerms: 'Terms',
-      mangaPrev: 'Previous volume', mangaNext: 'Next volume', mangaClose: 'Close volume',
-      mangaHint: 'Drag, scroll sideways, or use the arrows and keys — click the front cover to open.',
-      mangaHintTouch: 'Swipe through the volumes — tap the front cover to open, swipe inside to turn.',
       mangaKicker: 'RELEASES', mangaTitle: 'Changelog',
-      mangaLead: 'What’s new in Mäuse, as manga volumes.',
-      mangaContents: 'CONTENTS', mangaContinued: 'To be continued …',
-      mangaGallery: 'Mäuse manga volumes', mangaRead: 'Open volume'
+      mangaLead: 'What’s new in Mäuse, as manga volumes.'
     },
     de: {
       navFeatures: 'Funktionen', navVoice: 'Sprachmodus', navSupport: 'Support', navGet: 'App holen',
       footerTag: 'Gemacht für Paare, die es einfach halten.', footerPrivacy: 'Datenschutz', footerSupport: 'Support', footerChangelog: 'Changelog', footerTerms: 'Bedingungen',
-      mangaPrev: 'Vorheriger Band', mangaNext: 'Nächster Band', mangaClose: 'Band schließen',
-      mangaHint: 'Ziehen, seitlich scrollen, Pfeile oder Tasten — die vordere Titelseite öffnet den Band.',
-      mangaHintTouch: 'Durch die Bände wischen — Titelseite antippen zum Öffnen, im Band wischen zum Blättern.',
       mangaKicker: 'VERSIONEN', mangaTitle: 'Changelog',
-      mangaLead: 'Was ist neu in Mäuse, als Manga-Bände.',
-      mangaContents: 'INHALT', mangaContinued: 'Fortsetzung folgt …',
-      mangaGallery: 'Mäuse-Manga-Bände', mangaRead: 'Band öffnen'
+      mangaLead: 'Was ist neu in Mäuse, als Manga-Bände.'
     }
   };
+
+  var mangaPacks = window.MAEUSE_MANGA_STRINGS;
+  if (mangaPacks) {
+    ['en', 'de'].forEach(function (lang) {
+      var pack = mangaPacks[lang];
+      if (!pack) return;
+      Object.keys(pack).forEach(function (key) { strings[lang][key] = pack[key]; });
+    });
+  }
 
   var langEn = document.getElementById('lang-en');
   var langDe = document.getElementById('lang-de');

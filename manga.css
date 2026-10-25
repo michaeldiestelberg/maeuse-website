@@ -288,20 +288,6 @@ html.manga-js .manga-volume.is-selected .manga-card-badge {
 .manga-dot[aria-current="true"] { background: #FFCF3F; }
 .manga-dot:focus-visible { outline: 2px solid #FFF6DE; outline-offset: 3px; }
 
-.manga-hint {
-  margin: 14px 0 0;
-  text-align: center;
-  color: var(--sub);
-  font-size: 14px;
-  font-weight: 700;
-}
-
-.manga-hint-touch { display: none; }
-@media (hover: none) {
-  .manga-hint-pointer { display: none; }
-  .manga-hint-touch { display: inline; }
-}
-
 .manga-live {
   position: absolute;
   width: 1px;
@@ -358,7 +344,6 @@ html.manga-open .manga-reader-nav:not([disabled]) { opacity: 1; }
 html.manga-reading { overflow: hidden; padding-right: var(--manga-sbw, 0); }
 html.manga-reading .manga-stage-frame { pointer-events: none; }
 html.manga-reading .manga-arrow:not(.manga-reader-nav) { visibility: hidden; }
-html.manga-reading .manga-hint { visibility: hidden; }
 
 .manga-reader {
   position: fixed;
@@ -681,7 +666,6 @@ html.manga-reading .manga-reader-nav.manga-arrow-next { right: 10px; }
 /* ---------- no-JS stacked catalog ---------- */
 html:not(.manga-js) .manga-arrow,
 html:not(.manga-js) .manga-dots,
-html:not(.manga-js) .manga-hint,
 html:not(.manga-js) .manga-close,
 html:not(.manga-js) .manga-backdrop,
 html:not(.manga-js) .manga-reader,

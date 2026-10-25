@@ -1198,6 +1198,45 @@ html[data-theme="dark"] .theme-toggle .icon-sun { display: block; }
 }
 .section-sub { margin: 0 0 44px; font-size: 17px; font-weight: 700; color: var(--sub); }
 
+/* story: the shared manga shelf, between the pitch and the download */
+.story-section h2,
+.story-section .section-sub { text-align: center; }
+.story-section .section-sub {
+  max-width: 36rem;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 28px;
+}
+.story-section .manga-gallery { margin-top: 0; }
+.manga-slot.is-pending:not(.is-ready):not(.is-failed) {
+  min-height: 520px;
+  border-radius: 28px;
+  background: #241C05;
+  border: 2.5px solid var(--ink);
+  box-shadow: 8px 8px 0 var(--hard);
+}
+html[data-theme="dark"] .manga-slot.is-pending:not(.is-ready):not(.is-failed) {
+  background: #0E0A02;
+  border-color: var(--border);
+  box-shadow: 8px 8px 0 #000;
+}
+.manga-slot.is-ready,
+.manga-slot.is-failed {
+  min-height: 0;
+  background: none;
+  border: 0;
+  box-shadow: none;
+}
+.story-fallback {
+  margin: 12px 0 0;
+  text-align: center;
+  font-size: 15px;
+  font-weight: 800;
+}
+@media (max-width: 760px) {
+  .manga-slot.is-pending:not(.is-ready):not(.is-failed) { min-height: 420px; }
+}
+
 /* features */
 .features-grid {
   display: grid;
