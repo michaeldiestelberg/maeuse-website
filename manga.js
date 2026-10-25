@@ -660,7 +660,7 @@
     function applyMangaCopy() {
       var packs = window.MAEUSE_MANGA_STRINGS || {};
       var pack = packs[currentLang()] || {};
-      var nodes = document.querySelectorAll('[data-i18n="mangaHint"], [data-i18n="mangaHintTouch"], [data-i18n="mangaContents"], [data-i18n="mangaContinued"]');
+      var nodes = document.querySelectorAll('[data-i18n="mangaContents"], [data-i18n="mangaContinued"]');
       for (var n = 0; n < nodes.length; n++) {
         var key = nodes[n].getAttribute('data-i18n');
         if (pack[key] != null) nodes[n].textContent = pack[key];

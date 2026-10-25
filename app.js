@@ -44,8 +44,8 @@
       dlTitle: 'The trap is set.',
       dlBody: 'Mäuse is free on the App Store for iPhone. No Mäuse account required.',
       dlMeta: 'Free · iPhone · No account required',
-      homeStoryTitle: 'The story so far.',
-      homeStorySub: 'Open a cover. The comic is on the left, the contents on the right.',
+      homeStoryTitle: 'What’s happened so far.',
+      homeStorySub: 'See how Mäuse has evolved so far – told in little comics.',
       homeStoryFallback: 'Read the volumes in the changelog.',
       footerTag: 'Made for couples who keep it simple.', footerPrivacy: 'Privacy', footerSupport: 'Support', footerChangelog: 'Changelog', footerTerms: 'Terms'
     },
@@ -87,8 +87,8 @@
       dlTitle: 'Die Falle ist gestellt.',
       dlBody: 'Mäuse ist kostenlos im App Store fürs iPhone. Kein Mäuse-Konto nötig.',
       dlMeta: 'Gratis · iPhone · Kein Konto nötig',
-      homeStoryTitle: 'Die Geschichte bisher.',
-      homeStorySub: 'Schlag eine Titelseite auf. Links der Comic, rechts der Inhalt.',
+      homeStoryTitle: 'Was bisher geschah.',
+      homeStorySub: 'Schau dir an, wie sich Mäuse bislang entwickelt hat – in Form kleiner Comics.',
       homeStoryFallback: 'Die Bände im Changelog lesen.',
       footerTag: 'Gemacht für Paare, die es einfach halten.', footerPrivacy: 'Datenschutz', footerSupport: 'Support', footerChangelog: 'Changelog', footerTerms: 'Bedingungen'
     }
